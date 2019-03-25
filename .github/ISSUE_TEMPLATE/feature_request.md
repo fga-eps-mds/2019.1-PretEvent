@@ -2,7 +2,7 @@
 name: Feature request
 about: Sugestão de nova funcionalidade
 title: "[FEATURE] - Criar conta de usuário"
-labels: enhancement
+labels: ''
 assignees: ''
 
 ---
