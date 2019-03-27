@@ -1,0 +1,300 @@
+.btn-large {
+  margin: .4em;
+}
+
+#bug-btn {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+main .collection a.disabled {
+  color: #aaa;
+  background-color: #eee;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+main .collection .collection-item {
+  /* this is to use when theme colors are defined */
+  color: #666 !important;
+}
+
+main .collection .collection-item:hover {
+  color: #fff176 !important;
+  background-color: #3f3f3f !important;
+}
+
+.row a,
+footer a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'IBM Plex Sans', 'Roboto', sans-serif;
+  color: #3f3f3f;
+  padding-top: .5em;
+  padding-bottom: .7em;
+  margin-top: .2em;
+  margin-bottom: .2em;
+  margin-left: 0;
+  margin-right: 0;
+  word-break: break-word;
+}
+
+p {
+  font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+  color: #303030;
+  font-size: 1.1em;
+}
+
+footer {
+  /* margin-top: 2em; */
+  color: #fafafa;
+  padding-top: 4em !important;
+  padding-bottom: 4em;
+  font-size: .7em;
+}
+
+.col .s12 h1,
+.col .s12 h2,
+.col .s12 h3,
+.col .s12 h4,
+.col .s12 h5,
+.col .s12 h6,
+.col .s12 p {
+  padding-top: .3em;
+  padding-bottom: .3em;
+}
+
+header h1,
+header p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-top: none;
+}
+
+#has-background {
+  padding-bottom: 3em;
+  background: rgba(14, 14, 14, .7);
+  color: #fefefe;
+  height: 100%;
+}
+
+#has-background .container h1 {
+  padding: .3em;
+  color: inherit;
+}
+
+.nav-wrapper {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.btn-large .fa {
+  font-size: 1.5em;
+}
+
+main .container .row {
+  background-color: #fefefe;
+}
+
+#index-header {
+  background: url(optimized-banner.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 90vh;
+}
+
+#index-header .valign-wrapper {
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(60, 60, 60, .7), rgba(00, 00, 00, .7));
+}
+
+#index-header h1 {
+  margin-top: .5em;
+}
+
+#index-header h1,
+#index-header h2 {
+  color: #eee !important;
+}
+
+#index-header h2 {
+  font-weight: lighter;
+}
+
+#about {
+  padding-top: 5em;
+  padding-bottom: 10em;
+}
+
+#about, #about .container .col {
+  background-color: #f3f3f3;
+}
+
+header {
+  background: url(https://www.iaspaper.net/wp-content/uploads/2017/01/Library.jpg) no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+  font-weight: bold;
+}
+
+header h2 {
+  color: inherit;
+  margin: 0;
+}
+header h5 {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: inherit;
+}
+
+.collection a {
+  text-decoration: none;
+}
+
+.collection-header {
+  margin: 0;
+}
+
+hr {
+  border-color: #aaa;
+  width: 45%;
+}
+
+.row h2 {
+  margin: 0 auto .2em auto;
+  padding: .2em;
+}
+
+#section2 {
+  padding-top: 28em;
+}
+
+#explanation {
+  padding: 10em 0;
+}
+
+
+.hide-on-small-only {
+  font-size: 1.2em;
+}
+
+nav li a {
+  font-size: 1em;
+}
+
+.selection {
+  /* top right bottom left */
+  padding: 4em 2.5em;
+  background-color: #fff;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+.filter {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+#promo1 .filter h3 {
+  color: #fafafa;
+}
+
+#promo1 {
+  background: url(banner-home-01.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#promo2 {
+  padding-bottom: 5em;
+  padding-top: 5em;
+}
+
+
+
+.promo-icon {
+  font-size: 3em;
+}
+
+.promo-icon,
+.promo-heading {
+  color: #fd5c63;
+}
+
+.promo-row {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.promo-icon {
+  margin-bottom: .2em;
+}
+
+#curious {
+  text-decoration: none;
+  color: #fafafa;
+}
+
+.promo-row p b {
+  color: #1f7a8c;
+  text-transform: capitalize;
+}
+
+@media (min-width: 600px) {
+  header div div h1 {
+    margin-top: 1.3em;
+  }
+
+  header div div p {
+    padding: 1em;
+  }
+
+  .nav-wrapper {
+    padding-right: 2vw;
+  }
+
+  #menu-btn {
+    margin-right: 0;
+  }
+}
+
+.module-link {
+  text-decoration: none !important;
+}
+.module-link h4 {
+  color: #fd5c63;
+}
+
+.module-link:hover *{
+  color: black !important;
+}
+
+.row .myPushpin a {
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.card.medium.hoverable {
+  padding: 2em;
+}
+
+#offsetBox .card {
+  padding: 0.5em;
+}
