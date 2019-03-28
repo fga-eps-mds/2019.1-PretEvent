@@ -7,11 +7,11 @@ assignees: gustavocarvalho1002
 
 ---
 
-** Descrição **:  
+**Descrição**:  
 Descrever aqui tarefa
 
-** Atividade(s) a ser(em) realizada(s) **: 
+**Atividade(s) a ser(em) realizada(s)**: 
 - [ ]
 - [ ] 
 
-** Informações Adcionais **:
+**Informações Adcionais**:
