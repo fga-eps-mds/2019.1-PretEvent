@@ -1,9 +1,9 @@
 # Planejamento Sprint 0
 
 
-**Data de Início**: 23/03/2019
+**Data de Início**: 30/03/2019
 
-**Data de Término**: 30/03/2019
+**Data de Término**: 06/04/2019
 
 **Duração**: Uma semana
 
@@ -44,11 +44,12 @@
 
 |Tarefas|Pontos|
 |--|:--:|
-| T01 - Definir Pipeline e Configurar ZenHub | 1 |
-| T02 - Criar GitHub Pages do Projeto | 3 |
-| T03 - Criar Templates para Issues e Pull Request (PR) | 2 |
-| T04 - Criar quadros de conhecimento e planilha de horários | 1 |
-| T05 - Criar documento de visão | 1 |
-| T06 - Criar eap | 1 |
-| S01 - Treinamento de Git| 1 |
-| S02 - Estudos sobre tecnologias envolvidas no projeto | 5 |
+| T07 - Configurar o Travis | - |
+| T08 - Criar Identidade Visual | - |
+| T09 - Documento de Arquitetura | - |
+| T10 - Protótipo de alta fidelidade | - |
+| T11 - Configurar o zenhub | - |
+| T12 - Configurar o code climate | - |
+| T13 - Criar o road map de produto | - |
+| T14 - Configurar pytest. | - |
+| F01 - Criar Crud de usuário | - |
