@@ -1,4 +1,4 @@
 # Estrutura Analítica do Projeto
 
 
-![](https://i.imgur.com/mn9zVGo.jpg)
+![](https://github.com/fga-eps-mds/2019.1-PretEvent/blob/master/docs/images/eap_pretevent.png?raw=true)
