@@ -1,36 +1,27 @@
+language: generic
 sudo: required
-
 services:
   - docker
-
 env:
   - DOCKER_COMPOSE_VERSION=1.15.0
-
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-
 before_script:
   - cp env.tmpl .env
-
 script:
   - docker-compose up -d
-
 notifications:
   email:
     recipients:
     - rodrigodadamos@gmail.com
-
-# deploy:
-#   # deploy develop to the staging environment
-#   - provider: heroku
-#     api_key: $SECRET_USER_KEY
-#     app: testeci
-#     on: master
-  # deploy master to production
-  # - provider: heroku
-  #   api_key: $SECRET_USER_KEY
-  #   app: testeci
-  #   on: master
+    - andrebargas@gmail.com
+    - gustavocarvalho1002@gmail.com
+    - djorkaeff.unb@gmail.com
+    - messhman.dmc@gmail.com
+    - felipeb.agustini@gmail.com
+    - onerb2198@gmail.com
+    - andremotta96@gmail.com
+    - ianrocha.df@gmail.com
