@@ -2,7 +2,7 @@
 name: Bug report
 about: Crie um report para nos ajudar a melhorar
 title: "[BUG] - Comportamento atual"
-labels: bug
+labels: ''
 assignees: ''
 
 ---

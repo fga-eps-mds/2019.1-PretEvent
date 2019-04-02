@@ -22,9 +22,9 @@ Todos os contribuidores do projeto devem seguir os seguintes passos:
 
   1. Clone o repositório
   ```bash
-  git clone https://github.com/fga-eps-mds/2019.1-Grupo-9.git
+  git clone https://github.com/fga-eps-mds/2019.1-Eventte.git
   ```
-  2. Abra o projeto [2019.1-Grupo-9](https://github.com/fga-eps-mds/2019.1-Grupo-9) no editor de texto de sua preferência
+  2. Abra o projeto [2019.1-Eventte](https://github.com/fga-eps-mds/2019.1-Eventte) no editor de texto de sua preferência
   3. Faça as suas contribuições
 
 ## Politicas de Branches
@@ -61,7 +61,7 @@ Mais documentação é algo que você pode contribuir de forma simples:
 
   1. Clone o repositório
   ```bash
-  git clone https://github.com/fga-eps-mds/2019.1-Grupo-9.git
+  git clone https://github.com/fga-eps-mds/2019.1-Eventte.git
   ```  
   2. Acesse a pasta docs
   ```bash

@@ -13,3 +13,5 @@ Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
 
 .sass-cache
+
+__pycache__/
