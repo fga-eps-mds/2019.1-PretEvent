@@ -25,3 +25,8 @@ notifications:
     - onerb2198@gmail.com
     - andremotta96@gmail.com
     - ianrocha.df@gmail.com
+deploy:
+  - provider: heroku
+    api_key: $SECRET_USER_KEY
+    app: pretevent
+    on: master
