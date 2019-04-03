@@ -2,10 +2,10 @@
 
 ## <i>Sprint</i> 0
 
-- [Planejamento](/sprint0-planejamento.md)
-- [Resultado](/sprint0-resultado.md) 
+- [Planejamento](/plan_sprint0.md)
+- [Resultado](/res_sprint0.md) 
 
 ## <i>Sprint</i> 1
 
-- [Planejamento](/sprint1-planejamento.md)
-- [Resultado](/sprint1-resultado.md) 
+- [Planejamento](/plan_sprint1.md)
+- [Resultado](/res_sprint1.md) 
