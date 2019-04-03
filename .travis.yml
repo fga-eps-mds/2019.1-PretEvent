@@ -26,6 +26,12 @@ notifications:
     - andremotta96@gmail.com
     - ianrocha.df@gmail.com
 deploy:
+  # development
+  - provider: heroku
+    api_key: $SECRET_USER_KEY
+    app: pretevent-devel
+    on: development
+  # master
   - provider: heroku
     api_key: $SECRET_USER_KEY
     app: pretevent
