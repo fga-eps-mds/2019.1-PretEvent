@@ -3,7 +3,7 @@
 - [Termo de Abertura do Projeto]()
 - [Estrutura Analítica do Projeto (EAP)](/wbs.md)
 - [Backlog]()
-- [Canvas]()
+- [Canvas](/canvas.md)
 - [Documento de Visão](/vision_doc.md)
 - [Documento de Arquitetura](/arq_doc.md)
 - [Roadmap dos Papéis](/roadmap_all.md)
