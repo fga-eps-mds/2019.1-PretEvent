@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User, Group
+from players.models import Player
 from rest_framework import serializers
 
 class PlayerSerializer(serializers.HyperlinkedModelSerializer):

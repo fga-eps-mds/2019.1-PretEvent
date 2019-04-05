@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from rest_framework import routers
-from tutorial.quickstart import views
+from players import views
 
 router = routers.DefaultRouter()
 router.register(r'players', views.PlayerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('player/', include(player.urls)),
+    #path('player/', include(player.urls)),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
