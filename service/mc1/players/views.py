@@ -25,5 +25,5 @@ class PlayerDelete(DeleteView):
     success_url = reverse_lazy('player_list')
 
 class PlayerViewSet(viewsets.ModelViewSet):
-    queryset = Player.objects.all().order_by('-date_joined')
+    queryset = Player.objects.all().order_by('id')
     serializer_class = PlayerSerializer 
