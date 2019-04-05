@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from rest_framework import viewsets
+from players.serializers import PlayerSerializer
 
 from players.models import Player
 
@@ -28,3 +30,7 @@ class PlayerUpdate(UpdateView):
 class PlayerDelete(DeleteView):
     model = Player
     success_url = reverse_lazy('player_list')
+
+class PlayerViewSet(viewsets.ModelViewSet):
+    queryset = Player.objects.all().order_by('-date_joined')
+    serializer_class = PlayerSerializer

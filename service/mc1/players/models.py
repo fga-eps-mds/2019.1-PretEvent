@@ -6,7 +6,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Player(models.Model):
-    #id = models.IntegerField()
+    id = models.IntegerField()
     name = models.CharField(max_length=200)
     university_id = models.IntegerField()
     points = models.IntegerField()
