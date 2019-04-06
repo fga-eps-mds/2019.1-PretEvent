@@ -11,6 +11,15 @@ services:
     ports:
       - 5000:5432
 
+  app:
+    build: ./front-end/pret-event/
+    volumes:
+      - ./:/src/app/
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
   web1:
     build: ./service/mc1/
     command: /bin/sh ./boot.sh
