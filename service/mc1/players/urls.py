@@ -1,12 +1,10 @@
 from django.urls import path
+from rest_framework import routers
+from players import views
 
-from . import views
+app_name = 'players'
 
 urlpatterns = [
-    path('', views.PlayerList.as_view(), name='player_list'),
-    path('view/<int:pk>', views.player.as_view(), name='player_view'),
-    path('new', views.playerCreate.as_view(), name='player_new'),
-    path('view/<int:pk>', views.playerView.as_view(), name='player_view'),
-    path('edit/<int:pk>', views.playerUpdate.as_view(), name='player_edit'),
-    path('delete/<int:pk>', views.playerDelete.as_view(), name='player_delete'),
+    path('', views.PlayerList.as_view(), name='players'),
+    path('view/<int:pk>', views.PlayerDetail(), name='player-detail'),
 ]

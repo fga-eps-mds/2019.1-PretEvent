@@ -1,29 +1,55 @@
-from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
+from django.contrib.auth.models import User
 from rest_framework import viewsets
-from players.serializers import PlayerSerializer
+from rest_framework import status
+from players.serializers import PlayerCreateSerializer, PlayerUpdateSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+from django.http import Http404
+
 
 from players.models import Player
 
-class PlayerList(ListView):
-    model = Player
-class PlayerView(DetailView):
-    model = Player
-class PlayerCreate(CreateView):
-    model = Player
-    fields = ['id','name', 'university_id', 'points', 'photo_url']
-    success_url = reverse_lazy('player_list')
-class PlayerUpdate(UpdateView):
-    model = Player
-    fields = ['id','name', 'university_id', 'points', 'photo_url']
-    success_url = reverse_lazy('player_list')
+class PlayerList(APIView):
 
-class PlayerDelete(DeleteView):
-    model = Player
-    success_url = reverse_lazy('player_list') 
-    success_url = reverse_lazy('player_list')
+    queryset = Player.objects.all()
 
-class PlayerViewSet(viewsets.ModelViewSet):
-    queryset = Player.objects.all().order_by('id')
-    serializer_class = PlayerSerializer 
+    def get_extra_actions():
+        return []
+
+    def get(self, request, format=None):
+        players = Player.objects.all()
+        serializer = PlayerCreateSerializer(players, many = True)
+
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = PlayerCreateSerializer(data = request.data)
+
+        return Response(serializer.data, status = status.HTTP_201_CREATED)
+
+class PlayerDetail(APIView):
+
+    def get_object(self, pk):
+        try:
+            return User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        player = self.get_object(pk)
+        serializer = PlayerCreateSerializer(player)
+
+        return Response(serializer.data)
+
+    def put(self, request, pk, format=None):
+        player = self.get_object(pk)
+        serializer = PlayerUpdateSerializer(player, data=request.data)
+
+        return Response(serializer.data, status = status.HTTP_200_OK)
+
+    def delete(self, request, pk, format=None):
+        player = self.get_object(pk)
+        player.delete()
+
+        return Response(status = status.HTTP_204_NO_CONTENT)
