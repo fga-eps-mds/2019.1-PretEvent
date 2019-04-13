@@ -9,6 +9,6 @@ app_name = "players"
 urlpatterns = [
     #path('', views.PlayerList.as_view(), name='players'),
     #path('view/<int:pk>', views.PlayerDetail(), name='player-detail'),
-    path('players/', PlayerList.as_view()),
+    path('players', PlayerList.as_view()),
     path('players/<int:pk>', PlayerDetail.as_view()),
 ]

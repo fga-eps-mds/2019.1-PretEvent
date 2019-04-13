@@ -14,6 +14,8 @@ class PlayerList(APIView):
 
     queryset = Player.objects.all()
 
+    serializer_class = PlayerCreateSerializer
+
     def get_extra_actions():
         return []
 
@@ -25,15 +27,22 @@ class PlayerList(APIView):
 
     def post(self, request, format=None):
         serializer = PlayerCreateSerializer(data = request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
         
-        return Response(serializer.data, status = status.HTTP_201_CREATED)
+        return Response(serializer.errors, status = status.HTTP_401_BAD_REQUEST)
 
 class PlayerDetail(APIView):
 
+    serializer_class = PlayerCreateSerializer
+
     def get_object(self, pk):
         try:
-            return User.objects.get(pk=pk)
-        except User.DoesNotExist:
+            return Player.objects.get(pk=pk)
+        except Player.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):

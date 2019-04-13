@@ -8,10 +8,10 @@ class PlayerCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         player = Player (
-            name = ['name'],
-            university_id = ['university_id'],
-            points = ['points'],
-            photo_url = ['photo_url']
+            name = validated_data['name'],
+            university_id = validated_data['university_id'],
+            points = validated_data['points'],
+            photo_url = validated_data['photo_url']
         )
         player.save()
         return player
