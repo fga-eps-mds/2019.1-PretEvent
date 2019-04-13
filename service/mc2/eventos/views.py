@@ -45,7 +45,7 @@ class EventDetail(APIView):
     def put(self, request, pk, format=None):
         evento = self.get_object(pk)
         serializer = EventoUpdateSerializer(evento, data=request.data)
-        
+
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -55,4 +55,4 @@ class EventDetail(APIView):
     def delete(self, request, pk, format=None):
         evento = self.get_object(pk)
         evento.delete()
-        return Response(serializer.data, status = status.HTTP_204_NO_CONTENT)
+        return Response(status = status.HTTP_204_NO_CONTENT)
