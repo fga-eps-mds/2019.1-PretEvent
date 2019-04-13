@@ -50,3 +50,5 @@
 | T16 - Configurar Heroku | 3 | Divida|
 | F05 - Criar Crud de eventos | 3 | Planejado|
 | F15 - Criar Tela de home | 5 | Planejado|
+| T22 - Criar Canvas | 2 | Planejado|
+| T23 - Criar Tap | 1 | Planejado|
