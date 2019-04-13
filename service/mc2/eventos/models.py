@@ -5,5 +5,3 @@ class Evento(models.Model):
     date = models.DateField()
     points = models.IntegerField()
     description = models.TextField()
-
-# Create your models here.
