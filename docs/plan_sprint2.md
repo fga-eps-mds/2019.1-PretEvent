@@ -1,9 +1,9 @@
-# Planejamento Sprint 0
+# Planejamento Sprint 2
 
 
-**Data de Início**: 30/03/2019
+**Data de Início**: 06/04/2019
 
-**Data de Término**: 06/04/2019
+**Data de Término**: 13/04/2019
 
 **Duração**: Uma semana
 
