@@ -25,7 +25,7 @@ class PlayerList(APIView):
 
     def post(self, request, format=None):
         serializer = PlayerCreateSerializer(data = request.data)
-
+        
         return Response(serializer.data, status = status.HTTP_201_CREATED)
 
 class PlayerDetail(APIView):

@@ -24,7 +24,8 @@ router.register(r'players', views.PlayerList)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('player/', include(player.urls)),
+    #path('player/', include('players.urls')),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include('players.urls')),
 ]
