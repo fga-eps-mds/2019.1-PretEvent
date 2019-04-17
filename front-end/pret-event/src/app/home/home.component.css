@@ -10,4 +10,13 @@
   h1 {
     background-color: rgb(100, 92, 76);
   }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3c3f3ac9;
+  }
+  
  
