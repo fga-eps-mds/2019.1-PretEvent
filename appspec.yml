@@ -1,0 +1,8 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ubuntu/
+hooks:
+  AfterInstall:
+    - location: prod_update.sh

@@ -12,27 +12,40 @@ before_install:
 before_script:
   - cp env.tmpl .env
 script:
-  - docker-compose up -d
+  # - docker-compose up -d
+  - zip -r latest appspec.yml prod_update.sh docker-compose-prod.yml
+  - mkdir -p prod_scripts
+  - mv latest.zip prod_scripts/latest.zip
 notifications:
   email:
     recipients:
     - rodrigodadamos@gmail.com
-    - andrebargas@gmail.com
-    - gustavocarvalho1002@gmail.com
-    - djorkaeff.unb@gmail.com
-    - messhman.dmc@gmail.com
-    - felipeb.agustini@gmail.com
-    - onerb2198@gmail.com
-    - andremotta96@gmail.com
-    - ianrocha.df@gmail.com
+    # - andrebargas@gmail.com
+    # - gustavocarvalho1002@gmail.com
+    # - djorkaeff.unb@gmail.com
+    # - messhman.dmc@gmail.com
+    # - felipeb.agustini@gmail.com
+    # - onerb2198@gmail.com
+    # - andremotta96@gmail.com
+    # - ianrocha.df@gmail.com
 deploy:
-  # development
-  - provider: heroku
-    api_key: $SECRET_USER_KEY
-    app: pretevent-devel
-    on: development
-  # master
-  - provider: heroku
-    api_key: $SECRET_USER_KEY
-    app: pretevent
-    on: master
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: prod_scripts
+  skip_cleanup: true
+  on:
+    branch: T20
+  bucket: preteventbucket
+  region: us-east-2
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: testecibucket
+  key: latest.zip
+  bundle_type: zip
+  application: pretevent
+  deployment_group: deploypretevent
+  region: us-east-2
+  on:
+    branch: T20
