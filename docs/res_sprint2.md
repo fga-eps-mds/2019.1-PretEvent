@@ -4,12 +4,12 @@
 
 ### 1.1 Fechamento da _Sprint_
 
-**Pontos Concluídos:** 32
+**Pontos Concluídos:** 27
 
 | Tarefas | Pontos | Status |
 |:-------:|:------:|:------:|
 | F01 |5| Concluída(Débito da sprint 1) |
-| F02 |5| Concluída |
+| F02 |5| Dívida |
 | F05 |3| Concluída |
 | F15 |3| Concluída |
 | T10 |2| Concluída(Débito da sprint 1) |
@@ -39,9 +39,11 @@
 
 ### 1.4 Justificativas Dívidas
 
-Não houveram Dívidas.
+F02 - Houve uam discordância de como seria guardado a foto do usuário no nosso sistema, e isso atrasou a entrega da feature por completo, sendo a mesma classificada como dívida para a próxima sprint.
+F15 - Falta de conhecimento atrasou a entrega da mesma.  
 
 ## 2. Análise do _Scrum Master_
 
 <p align="justify">Houve um uma melhora significativa no conhecimento de MDS, e isto resultou no fechamento de features que estavam como débito da sprint passada.</p>
 <p align="justify">A falta de planejamento da sprint fez com que todas as atividades propostas fossem finalizadas somente no último dia da sprint, com isso o burndown teve uma queda repentina.</p>
+<p align="justify"> Um risco foi adcionado no projeto, uma vez que optamos por usar os serviços da google para armazenamento de nossas imagens. Tivemos que estudar para aplicação de tal, oque causou o atraso da feature "F02 - Formulário de cadastro de player".
