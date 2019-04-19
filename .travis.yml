@@ -20,27 +20,27 @@ notifications:
   email:
     recipients:
     - rodrigodadamos@gmail.com
-    # - andrebargas@gmail.com
-    # - gustavocarvalho1002@gmail.com
-    # - djorkaeff.unb@gmail.com
-    # - messhman.dmc@gmail.com
-    # - felipeb.agustini@gmail.com
-    # - onerb2198@gmail.com
-    # - andremotta96@gmail.com
-    # - ianrocha.df@gmail.com
+    - andrebargas@gmail.com
+    - gustavocarvalho1002@gmail.com
+    - djorkaeff.unb@gmail.com
+    - messhman.dmc@gmail.com
+    - felipeb.agustini@gmail.com
+    - onerb2198@gmail.com
+    - andremotta96@gmail.com
+    - ianrocha.df@gmail.com
 deploy:
 - provider: script
   script: bash docker-push.sh
   skip_cleanup: true
   on:
-    branch: T20
+    branch: development
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   local_dir: prod_scripts
   skip_cleanup: true
   on:
-    branch: T20
+    branch: development
   bucket: preteventbucket
   region: us-east-2
 - provider: codedeploy
@@ -53,4 +53,4 @@ deploy:
   deployment_group: deploypretevent
   region: us-east-2
   on:
-    branch: T20
+    branch: development
