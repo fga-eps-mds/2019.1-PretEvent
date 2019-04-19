@@ -1,8 +1,8 @@
 ## Documentos
 - [<i>Sprints</i>](/sprints.md)
-- [Termo de Abertura do Projeto]()
+- [Termo de Abertura do Projeto](/tap.md)
 - [Estrutura Analítica do Projeto (EAP)](/wbs.md)
-- [Backlog]()
+- [Backlog](/backlog.md)
 - [Canvas](/canvas.md)
 - [Documento de Visão](/vision_doc.md)
 - [Documento de Arquitetura](/arq_doc.md)
