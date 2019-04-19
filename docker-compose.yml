@@ -1,7 +1,5 @@
 version: '3'
-
 services:
-
   db:
     image: postgres
     environment:
@@ -10,18 +8,18 @@ services:
         POSTGRES_USER: "${POSTGRES_USER}"
     ports:
       - 5000:5432
-
   app:
     build: ./front-end/pret-event/
+    image: pretevent:app
     volumes:
       - ./:/src/app/
     ports:
       - "8080:80"
     depends_on:
       - db
-
   web1:
     build: ./service/mc1/
+    image: pretevent:web1
     command: /bin/sh ./boot.sh
     volumes:
       - ./service/mc1/:/code
@@ -31,6 +29,7 @@ services:
       - db
   web2:
     build: ./service/mc2/
+    image: pretevent:web2
     command: /bin/sh ./boot.sh
     volumes:
       - ./service/mc2/:/code
@@ -40,6 +39,7 @@ services:
       - db
   web3:
     build: ./service/mc3/
+    image: pretevent:web3
     command: /bin/sh ./boot.sh
     volumes:
       - ./service/mc3/:/code

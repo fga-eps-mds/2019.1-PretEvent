@@ -5,4 +5,4 @@ files:
     destination: /home/ubuntu/
 hooks:
   AfterInstall:
-    - location: prod_update.sh
+    - location: prod-update.sh

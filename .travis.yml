@@ -29,6 +29,10 @@ notifications:
     # - andremotta96@gmail.com
     # - ianrocha.df@gmail.com
 deploy:
+- provider: script
+  script: bash docker-push.sh
+  on:
+    branch: T20
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
