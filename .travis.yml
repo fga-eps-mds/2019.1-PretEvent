@@ -31,6 +31,7 @@ notifications:
 deploy:
 - provider: script
   script: bash docker-push.sh
+  skip_cleanup: true
   on:
     branch: T20
 - provider: s3
