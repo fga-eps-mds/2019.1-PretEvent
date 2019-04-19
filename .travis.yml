@@ -12,7 +12,7 @@ before_install:
 before_script:
   - cp env.tmpl .env
 script:
-  # - docker-compose up -d
+  - docker-compose up -d
   - zip -r latest appspec.yml prod_update.sh docker-compose-prod.yml
   - mkdir -p prod_scripts
   - mv latest.zip prod_scripts/latest.zip
