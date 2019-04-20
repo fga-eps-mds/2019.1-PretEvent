@@ -29,7 +29,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/', include('players.urls')),
-    path('rest-auth/', include('rest_auth.urls'), name='rest-auth'),
+    path('rest-auth/', include('rest_auth.urls')),
     path('refresh-token/', refresh_jwt_token),
     path('verify-token/', verify_jwt_token),
     path('obtain-token/', obtain_jwt_token),
