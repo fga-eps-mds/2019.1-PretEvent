@@ -6,7 +6,8 @@
   <input formControlName="name"><br>
   <label for="file">Matricula:</label>
   <input formControlName="university_id"><br>
-  <!-- <label for="file">File:</label>
-  <input type="file" (change)="upload($event)" accept=".png,.jpg" /> -->
-  <button (click)="registerPLayer()">Finalizar Cadastro</button>
+  <button (click)="registerPlayer()">Finalizar Cadastro</button>
 </form>
+
+<label for="file">File:</label>
+  <input type="file" (change)="detectFiles($event)" accept=".png,.jpg" />
