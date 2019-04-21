@@ -1,3 +1,12 @@
-<p>
-  player-registration works!
-</p>
+<form [formGroup]="playerForm">
+
+  Value: {{playerForm.value | json}}
+
+  <label for="file">Nome:</label>
+  <input formControlName="name"><br>
+  <label for="file">Matricula:</label>
+  <input formControlName="university_id"><br>
+  <!-- <label for="file">File:</label>
+  <input type="file" (change)="upload($event)" accept=".png,.jpg" /> -->
+  <button (click)="registerPLayer()">Finalizar Cadastro</button>
+</form>
