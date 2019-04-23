@@ -11,13 +11,15 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 //Component's imports
 import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
+import { PlayerProfileComponent } from './player-profile/player-profile.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerRegistrationComponent
+    PlayerRegistrationComponent,
+    PlayerProfileComponent
   ],
   imports: [
     BrowserModule,

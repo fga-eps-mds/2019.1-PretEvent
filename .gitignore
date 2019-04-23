@@ -15,3 +15,6 @@ Corridor/Library/metadata/
 .sass-cache
 
 __pycache__/
+service/mc1/db.sqlite3
+service/mc2/db.sqlite3
+service/mc3/db.sqlite3

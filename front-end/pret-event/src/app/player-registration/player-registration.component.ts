@@ -19,18 +19,19 @@ export class PlayerRegistrationComponent implements OnInit {
   ngOnInit() {
     this.playerForm = this.formBuilder.group({
       name: '',
+      lastname: '',
       university_id: ''
     });
   }
 
   registerPlayer() {
     const player: Player = new Player(
-      this.playerForm.get('name').value,
+      this.playerForm.get('name').value + ' ' + this.playerForm.get('lastname').value,
       this.playerForm.get('university_id').value,
       0
     );
 
-    console.log("RegisterPlayer:" + player);
+    // console.log("RegisterPlayer:" + player);
     this.service.registerPlayer(player, this.file);
   }
 

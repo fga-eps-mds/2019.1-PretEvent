@@ -4,8 +4,6 @@ WORKDIR /app
 COPY package.json /app/
 RUN npm i npm@latest -g
 RUN npm install
-RUN npm i firebase angularfire2
-Run ng add ngx-bootstrap
 COPY ./ /app/
 ARG env=prod
 RUN npm start
