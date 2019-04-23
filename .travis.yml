@@ -13,6 +13,9 @@ before_script:
   - cp env.tmpl .env
 script:
   - docker-compose up -d
+  - zip -r latest appspec.yml prod-update.sh docker-compose-prod.yml
+  - mkdir -p prod_scripts
+  - mv latest.zip prod_scripts/latest.zip
 notifications:
   email:
     recipients:
@@ -26,13 +29,28 @@ notifications:
     - andremotta96@gmail.com
     - ianrocha.df@gmail.com
 deploy:
-  # development
-  - provider: heroku
-    api_key: $SECRET_USER_KEY
-    app: pretevent-devel
-    on: development
-  # master
-  - provider: heroku
-    api_key: $SECRET_USER_KEY
-    app: pretevent
-    on: master
+- provider: script
+  script: bash docker-push.sh
+  skip_cleanup: true
+  on:
+    branch: development
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: prod_scripts
+  skip_cleanup: true
+  on:
+    branch: development
+  bucket: preteventbucket
+  region: us-east-2
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: preteventbucket
+  key: latest.zip
+  bundle_type: zip
+  application: pretevent
+  deployment_group: deploypretevent
+  region: us-east-2
+  on:
+    branch: development
