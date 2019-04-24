@@ -9,11 +9,9 @@
 * 3. [Metas e Restrições de Arquitetura](#3-metas-e-restrições-de-arquitetura)
 * 4. [Visão de Casos de Uso](#4-visão-de-casos-de-uso)
 * 5. [Visão Lógica](#5-visão-lógica)
-* 6. [Visão de Processos](#6-visão-de-processos)
-* 7. [Visão de Implantação](#7-visão-de-implantação)
-* 8. [Visão de Implementação](#8-visão-de-implementação)
-* 9. [Tamanho e Desempenho](#10-tamanho-e-desempenho)
-* 10. [Qualidade](#11-qualidade)
+* 6. [Arquitetura dos Serviços e visão de Implementação](#6-arquitetura-de-derviços-e-visão-de-implementação)
+* 7. [Visão de Dados](#7-visão-de-dados)
+
 
 
 
@@ -25,7 +23,7 @@ Este documento apresenta uma visão geral abrangente da arquitetura do projeto P
 Neste documento serão descritos os componentes de software, padrões arquiteturais adotados e frameworks escolhidos para o desenvolvimento do projeto que tem por objetivo a criação de um sistema capaz de envolver mais os alunos com as atividades realizadas no campus, através de um gamificação cujo objetivo é a participação em eventos. O aluno, por sua vez, podera usufrui de um ambiente ludico com elementos tradicionais de um rpg, como personagem, pontos de nivel e recompensas. O documento explora a fundo as características da arquitetura e como estas se relacionam com o projeto.
 #### 1.3 Definições, Acrônimos e Abreviações
 * Player: Usuário do sistema.
-* Quest: Evento ou atividade onde o player poderá ganhar pontos e/ou itens
+* Evento: Evento ou atividade onde o player poderá ganhar pontos e/ou itens
 * Recompensa: Itens de estilo para o avatar do player e/ou pontos de experiência.
 * MVC: model-view-controller
 * MVT: model-view-template
@@ -53,16 +51,14 @@ Angular js: uma framework javascript para construção de interfaces de usuário
 ### 5. Visão Lógica
 
 #### 5.1 Visão Geral: Pacotes e Camadas
-O framework Django organiza os projetos em apps, que são pastas que contêm uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.
+O framework Django organiza os projetos em apps, que são pastas que contêm uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas do projeto.
 
-![diagrama de visao geral](images/diagrama_visao_logica.png)diagrama_visao_logica.png
+![diagrama de visao geral](images/diagrama_visao_logica.png)
 
-### 6. Visão de Processos
+### 6. Arquitetura dos Serviços e visão de Implementação
+Nesta seção está descrita descrita a estrutura geral das camadas e Micro Serviços integrados ao software, detalhando e apresentando a interação entre os diversos serviços e sistemas. Os principais componentes e sub-componentes estão descritos nos tópicos a seguir.
 
-### 7. Visão de Implantação
+#### 6.1 Visão Geral
+![visão arquitetura geral](images/diagrama_visao_arq_geral.png)
 
-### 8. Visão de Implementação
-
-### 9. Tamanho e Desempenho
-
-### 10. Qualidade
+### 7. Visão de Dados
