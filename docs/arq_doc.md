@@ -61,4 +61,10 @@ Nesta seção está descrita descrita a estrutura geral das camadas e Micro Serv
 #### 6.1 Visão Geral
 ![visão arquitetura geral](images/diagrama_visao_arq_geral.png)
 
+#### 6.1 Micro Serviços
+Os micro serviços presentes no diagrama estão detalhados abaixo, descrevendo suas comunicações, conexões e justificativas para a escolha dos mesmos.
+
+##### 6.1.1 Serviço de Players
+Este será o serviço que irá administrar toda a parte ligada aos players do jogo. Por se estar instricicamente ligado a parte de login, este serviço será responsavel por estas funções também. Foi escolhido serapar este recurso como um serviço já que pode ser desenvolvido separado do restante da aplicação e seu funcionamento é independente do restante dos recursos. 
+
 ### 7. Visão de Dados
