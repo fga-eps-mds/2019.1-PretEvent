@@ -1,0 +1,32 @@
+<div class="bg-modal">
+  <div class="modal-header border-modal">
+    <h4 class="modal-title pull-left">Entrar/Cadastrar</h4>
+    <button type="button" class="close pull-right close-bt" aria-label="Close" (click)="modalClose()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="content-modal">
+      <div>
+        <div *ngIf="signup">
+          <br>Nome<br><input class="input-st" type="text" name="name" value=""><br>
+        </div>
+        <br>Email<br><input class="input-st" type="text" name="email" value=""><br><br>
+        Senha<br><input class="input-st" type="{{ typePassword ? 'text' : 'password' }}" name="password" value=""><br>
+        <div *ngIf="signup">
+          <br>Confirmação de senha<br><input class="input-st" type="{{ typePassword ? 'text' : 'password' }}"
+            name="password" value=""><br>
+        </div>
+        <br><input type="checkbox" (click)="showPassword()"> Mostrar Senha<br><br>
+        <div *ngIf="!signup">
+          <button class="button bg-bt" (click)="typeSign();">Me Cadastrar</button>
+          <button class="button bg-bt bt-right" (click)="modalClose();loginClick()">Entrar</button>
+        </div>
+        <div *ngIf="signup">
+          <button class="button bg-bt" (click)="typeSign();">Voltar</button>
+          <button class="button bg-bt bt-right" (click)="modalClose();signup();">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
