@@ -7,7 +7,7 @@ class PlayerCreateSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'password', 'university_id', 'points', 'photo_url')
 
     def create(self, validated_data):
-        player = Player (
+        player = Player.objects.create_user (
             username = validated_data['username'],
             password = validated_data['password'],
             university_id = validated_data['university_id'],
@@ -28,7 +28,7 @@ class PlayerUpdateSerializer(serializers.ModelSerializer):
         instance.university_id = validated_data.get('university_id', instance.university_id)
         instance.points = validated_data.get('points', instance.points)
         instance.photo_url = validated_data.get('photo_url', instance.photo_url)
-
+            
         instance.save()
         return instance
 
