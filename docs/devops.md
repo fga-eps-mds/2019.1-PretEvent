@@ -43,7 +43,7 @@ Esse passo e os seguintes são executados no AWS Management Console (encontrado 
 ![](./images/devops/devops_tutorial_2-1.png)
 
 #### 2.1. Objetivo
-Criar uma política no AWS Management Console para que a a instância EC2 tenha permissão para "pegar" qualquer arquivo de um serviço S3. Depois, essa política será atrelada a um "Role" para a instância EC2.
+Criar uma política no AWS Management Console para que a a instância EC2 tenha permissão para "pegar" qualquer arquivo de um serviço S3. Depois, essa política será atrelada a um "Role" para a instância EC2 no passo 5. desse tutorial.
 
 #### 2.2. Criar política
 Em "Find Services", procurar por IAM.
@@ -79,7 +79,7 @@ Para ver suas políticas criadas, em IAM, "Policies", clicar em "Filter policies
 ### 3. Políticas para o Travis CI
 
 #### 3.1. Objetivo
-Criar duas políticas no AWS Management Console para que o Travis possa enviar arquivos para o Bucket S3 e outra para que o Travis possa "avisar" o AWS CodeDeploy para a instância AWS EC2 "pegar" os arquivos no Bucket. Depois, essas políticas serão atreladas a um "Role" para o Travis.
+Criar duas políticas no AWS Management Console para que o Travis possa enviar arquivos para o Bucket S3 e outra para que o Travis possa "avisar" o AWS CodeDeploy para a instância AWS EC2 "pegar" os arquivos no Bucket. Depois, essas políticas serão atreladas a um "Role" para o Travis no passo 4.
 
 #### 3.2. Criar políticas
 
@@ -154,6 +154,8 @@ O AccId pode ser encontrado no Dashboard do IAM. O AccId é a sequência de núm
 
 ![](./images/devops/devops_tutorial_3-2.png)
 
+O "NOMEAPLICACAOCODEDEPLOY" escolhido será usado no passo 9.
+
 Clicar em "Review policy" e então dar um nome para ela como "Travis-Code-Deploy-Policy" e clicar em "Create policy".
 
 
@@ -164,16 +166,20 @@ Selecionar "Attach existing policies directly" em "Set permissions", clicar em "
 
 ![](./images/devops/devops_tutorial_4-1.png)
 
-Então selecionar as duas políticas criadas anteriormente, "Travis-Deploy-To-S3" e "Travis-Code-Deploy-Policy" e clicar no botão azul "Next: Tags". Depois clicar em "Next: Review" e finalmente em "Create user".
+Então selecionar as duas políticas criadas anteriormente (passos 3.2.1. e 3.2.2.), "Travis-Deploy-To-S3" e "Travis-Code-Deploy-Policy" e clicar no botão azul "Next: Tags". Clicar em "Next: Review" e depois em "Create user".
+
+Você será direcionado para a tela se "Success" do "Add user". Nessa tela você deve copiar e guardar o "Access key ID" e o "Secret access key" (que só será exibido uma única vez nessa tela) para utilizarmos no passo 10.1. e 11.
+
+![](./images/devops/devops_tutorial_4-2.png)
 
 ### 5. Criar IAM Role para instância EC2
 Em IAM, clicar em "Roles" e depois clicar no botão azul "Create role". Em "Select type of trusted entity" selecionar "AWS service", em "Choose the service that will use this role" selecionar "EC2" e clicar no botão azul "Next: Permissions".
 
-Clicar em "Filter policies", selecionar "Customer managed", selecionar nossa primeira política criada "CodeDeploy-EC2-Permissions" e clicar no botão azul "Next: Tags". Depois clicar em "Next: Review", dar um nome para o IAM Role como "CodeDeploy_EC2_DEPLOY_INSTANCE" e finalmente clicar em "Create role".
+Clicar em "Filter policies", selecionar "Customer managed", selecionar nossa primeira política criada (no passo 2.2.) "CodeDeploy-EC2-Permissions" e clicar no botão azul "Next: Tags". Depois clicar em "Next: Review", dar um nome para o IAM Role como "CodeDeploy_EC2_DEPLOY_INSTANCE" e finalmente clicar em "Create role". Esse Role será usado no passo 7.
 
 
 ### 6. Criar IAM Role para a aplicação AWS CodeDeploy
-Em IAM, clicar em "Roles" e depois clicar no botão azul "Create role". Em "Select type of trusted entity" selecionar "AWS service", em "Choose the service that will use this role" selecionar "Codedeploy", em "Select your use case" selecionar "Codedeploy" e clicar no botão azul "Next: Permissions". Depois clicar em "Next: Tags", depois em "Next: Review", dar um nome para o IAM Role como "CodeDeployServiceRole" e finalmente clicar em "Create role".
+Em IAM, clicar em "Roles" e depois clicar no botão azul "Create role". Em "Select type of trusted entity" selecionar "AWS service", em "Choose the service that will use this role" selecionar "Codedeploy", em "Select your use case" selecionar "Codedeploy" e clicar no botão azul "Next: Permissions". Depois clicar em "Next: Tags", depois em "Next: Review", dar um nome para o IAM Role como "CodeDeployServiceRole" e finalmente clicar em "Create role". Esse Role será usado no passo 9.
 
 ### 7. Criar a instância EC2
 Em "Find Services" no AWS Management Console, procurar por "EC2". 
@@ -188,11 +194,11 @@ Depois clicar no botão "Next: Configure Instance Details" e selecionar o role "
 
 ![](./images/devops/devops_tutorial_7-2.png)
 
-Clicar no botão "Next: Add Tags" e depois no botão "Add Tag" e dar uma Key e um Value de sua preferência. Clicar no botão azul "Review and Launch" e finalmente clicar no botão azul "Launch".
+Clicar no botão "Next: Add Tags" e depois no botão "Add Tag" e dar uma Key e um Value de sua preferência (essa tag será usado no passo 9.). Clicar no botão azul "Review and Launch" e finalmente clicar no botão azul "Launch".
 
 ### 8. Criar o S3 Bucket
 Em "Find Services" no AWS Management Console, procurar por "S3".
-Clicar no botão azul "Create bucket", entrar com um nome para o bucket, clicar "Next", "Next", "Next" e por fim em "Create bucket".
+Clicar no botão azul "Create bucket", entrar com um nome para o bucket (que será usado no passo 10.1.), clicar "Next", "Next", "Next" e por fim em "Create bucket".
 
 ### 9. Configurar o CodeDeploy
 Em "Find Services" no AWS Management Console, procurar por "CodeDeploy" e então clicar no botão laranja "Create application". 
@@ -219,15 +225,101 @@ Em "Load balancer" deselecione "Enable load balancing" e clique no botão laranj
 Por enquanto terminamos com as configurações no AWS Management Console (ufa). Faltou configurar o security group da instância (para que ela possa ser exposta para o mundo) e criar mais instâncias para usarmos no nosso Swarm, mas faremos isso futuramente. (Passo X.X e X.X)
 
 ### 10. Configurar o projeto
+Vamos configurar dois arquivos, .travis.yml e appspec.yml, na raiz do projeto para que tudo funcione corretamente.
 
-#### 10.1 travis.yml
+#### 10.1. .travis.yml
+Considerando que os services, language e outros já estejam configurados no .travis.yml, acrescentar essas linhas trocando o "NOMEPASTA",  "NOMEBRANCH", "NOMEBUCKET", "REGIAODOBUCKET", "NOMEAPLICACAOCODEDEPLOY", "NOMEDEPLOYMENTGROUP" e "REGIAO":
 ```
+deploy:
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: NOMEPASTA
+  skip_cleanup: true
+  on:
+    branch: NOMEBRANCH
+  bucket: NOMEBUCKET
+  region: REGIAODOBUCKET
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: NOMEBUCKET
+  key: latest.zip
+  bundle_type: zip
+  application: NOMEAPLICACAOCODEDEPLOY
+  deployment_group: NOMEDEPLOYMENTGROUP
+  region: REGIAO
+  on:
+    branch: NOMEBRANCH
+script:
+  - zip -r latest *
+  - mkdir -p NOMEPASTA
+  - mv latest.zip NOMEPASTA/latest.zip
 ```
-#### 10.2 appspec.yml
+$AWS_ACCESS_KEY e $AWS_SECRET_KEY permanecem assim e não devem ser trocadas. Foram geradas no passo 4 e serão configuradas no passo 11.
+
+"NOMEPASTA" deve ser trocado por um nome a sua escolha.
+"NOMEBRANCH" deve ser trocado pelo nome de uma branch do seu repositório para que seja feito o deploy nela.
+"NOMEBUCKET" deve ser o nome do bucket criado no passo 8.
+"REGIAODOBUCKET" pode ser encontrado no dashboard do S3. Utilizar o código da região como feito no passo 3.2.2.
+
+![](./images/devops/devops_tutorial_10-1.png)
+
+"NOMEAPLICACAOCODEDEPLOY" deve ser trocado pelo nome dado no passo 3.2.2.
+"NOMEDEPLOYMENTGROUP" deve ser trocado pelo "Deployment group name" escolhido no passo 9.
+E "REGIAO" deve ser trocado pelo código da região como feito no passo 3.2.2.
+
+
+#### 10.2. appspec.yml
+Criar um arquivo na raiz do projeto com o "appspec.yml" e digitar o seguinte conteúdo:
 ```
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ubuntu/ALGUMAPASTA
 ```
+Trocar "ALGUMAPASTA" por um nome de pasta que será criado na instância EC2.
+
 ### 11. Configurar as credenciais de usuário no Travis
+Acesse [travis-ci.com](https://travis-ci.com), procure por seu repositório e clique nele, vá em "More options" e clique em "Settings". Vá até "Environment Variables" e adicione uma variável com o nome "AWS_ACCESS_KEY" com o valor gerado no passo 4 e clique em "Add", e adicione uma variável com o nome "AWS_SECRET_KEY" com o valor também gerado no passo 4 e clique em "Add".
 
 ### 12. Configurar o CodeDeploy Agent
+Para que o CodeDeploy possa funcionar corretamente, ele deve estar em execução na instância EC2 criada no passo 7.
+As instruções a seguir podem ser encontradas [aqui](
+https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ubuntu.html).
+
+Conectar-se na sua instância EC2 executar os seguites comandos:
+```
+sudo apt-get update
+
+sudo apt-get install python-pip
+
+sudo apt-get install ruby2.0
+
+sudo apt-get install wget
+
+cd /home/ubuntu
+```
+Aqui, trocar "REGIAO", pelo código da região como no passo 3.2.2.:
+```
+wget https://aws-codedeploy-REGIAO.s3.amazonaws.com/latest/install
+```
+Instalar:
+```
+chmod +x ./install
+
+sudo ./install auto
+```
+Para verificar se o CodeDeploy Agent está em execução:
+```
+sudo service codedeploy-agent status
+```
+
 
 ## Referências
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+https://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html
+https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-codedeploy.html
+https://docs.travis-ci.com/user/deployment/codedeploy/
+https://medium.com/@itsdavidthai/comprehensive-aws-ec2-deployment-with-travisci-guide-7cafa9c754fc
