@@ -113,6 +113,8 @@
 
 - Facebook Eventos
 
+![](https://github.com/fga-eps-mds/2019.1-PretEvent/blob/docs/docs/images/facebook.png?raw=true)
+
 ## 3.6 Referência Visual
 
 - Bilheteria Digital
