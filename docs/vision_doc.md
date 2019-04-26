@@ -119,6 +119,8 @@
 
 - Bilheteria Digital
 
+![](https://github.com/fga-eps-mds/2019.1-PretEvent/blob/docs/docs/images/bilheteria_digital.png?raw=true)
+
 # 4. Visão Geral do Produto
 
 
