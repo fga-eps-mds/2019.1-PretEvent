@@ -2,7 +2,7 @@
 
 ## Work Flow
 
-<!-- imagem -->
+![](./images/devops/devops_workflow.png)
 
 1. Merge Pull Request na master
 
@@ -33,23 +33,28 @@
 
 ### 1. Criar contas
 
-+ Criar conta no Travis CI
++ Criar conta no [Travis CI](https://travis-ci.com/)
 
-+ Criar conta na AWS
++ Criar conta na [AWS](https://portal.aws.amazon.com/billing/signup)
 
 ### 2. Política para a instância EC2
-Esse passo e os seguintes são executados no AWS Management Console (encontrado em "My Account" no canto superior direito do (https://aws.amazon.com/)[https://aws.amazon.com/].
-<!-- imagem -->
+Esse passo e os seguintes são executados no AWS Management Console (encontrado em "My Account" no canto superior direito em [aws.amazon.com](https://aws.amazon.com/)).
+
+![](./images/devops/devops_tutorial_2-1.png)
 
 #### 2.1. Objetivo
 Criar uma política no AWS Management Console para que a a instância EC2 tenha permissão para "pegar" qualquer arquivo de um serviço S3. Depois, essa política será atrelada a um "Role" para a instância EC2.
 
-#### 2.2. Execução
+#### 2.2. Criar política
 Em "Find Services", procurar por IAM.
-<!-- imagem -->
+
+![](./images/devops/devops_tutorial_2-2.png)
+
 Em IAM, clicar em "Policies".
-<!-- imagem -->
-Depois clicar no botão azul "Create policy" e na aba "JSON", substituir o conteúdo pelo abaixo:
+
+![](./images/devops/devops_tutorial_2-3.png)
+
+Depois clicar no botão azul "Create policy" e na aba "JSON" substituir o conteúdo pelo abaixo:
 ```
 {
     "Version": "2012-10-17",
@@ -67,16 +72,20 @@ Depois clicar no botão azul "Create policy" e na aba "JSON", substituir o conte
 ```
 Clicar em "Review policy" e então dar um nome para ela como "CodeDeploy-EC2-Permissions" e clicar em "Create policy".
 
-Para ver suas políticas criadas, em IAM "Policies", clicar em "Filter policies e selecionar "Customer managed".
+Para ver suas políticas criadas, em IAM, "Policies", clicar em "Filter policies" e selecionar "Customer managed".
+
+![](./images/devops/devops_tutorial_2-4.png)
 
 ### 3. Políticas para o Travis CI
 
 #### 3.1. Objetivo
 Criar duas políticas no AWS Management Console para que o Travis possa enviar arquivos para o Bucket S3 e outra para que o Travis possa "avisar" o CodeDeploy para a instância EC2 "pegar" os arquivos no Bucket. Depois, essas políticas serão atreladas a um "Role" para o Travis.
 
-#### 3.2. Execução
+#### 3.2. Criar políticas
 
 ##### 3.2.1. Upload para o S3 Bucket
+Em IAM, "Policies", clicar no botão azul "Create policy" e na aba "JSON" substituir o conteúdo pelo abaixo:
+
 ```
 {
     "Version": "2012-10-17",
@@ -93,10 +102,47 @@ Criar duas políticas no AWS Management Console para que o Travis possa enviar a
     ]
 }
 ```
+Clicar em "Review policy" e então dar um nome para ela como "Travis-Deploy-To-S3" e clicar em "Create policy". Essa polítiva permite o Travis fazer o upload de arquivos para o serviço AWS S3.
 
 ##### 3.2.2. Deploy para a instância EC2
-
+Em IAM, "Policies", clicar no botão azul "Create policy" e na aba "JSON" substituir o conteúdo pelo abaixo trocando "REGIAO" pela região onde a estância está hospedada, "ACCID" pelo seu AccId e "NOMEAPLICACAOCODEDEPLOY" para um nome a sua escolha:
 ```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codedeploy:RegisterApplicationRevision",
+                "codedeploy:GetApplicationRevision"
+            ],
+            "Resource": [
+                "arn:aws:codedeploy:REGIAO:ACCID:application:NOMEAPLICACAOCODEDEPLOY"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codedeploy:CreateDeployment",
+                "codedeploy:GetDeployment"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codedeploy:GetDeploymentConfig"
+            ],
+            "Resource": [
+                "arn:aws:codedeploy:REGIAO:ACCID:deploymentconfig:CodeDeployDefault.OneAtATime",
+                "arn:aws:codedeploy:REGIAO:ACCID:deploymentconfig:CodeDeployDefault.HalfAtATime",
+                "arn:aws:codedeploy:REGIAO:ACCID:deploymentconfig:CodeDeployDefault.AllAtOnce"
+            ]
+        }
+    ]
+}
 ```
 
 ### 4. Criar usuário para o Travis User no AWS IAM
