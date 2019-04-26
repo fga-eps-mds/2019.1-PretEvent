@@ -16,6 +16,7 @@
   * [3.3 Ambiente de Usuário](#_33-ambiente-de-usuário)
   * [3.4 Partes Envolvidas](#_34-partes-envolvidas)
   * [3.5 Alternativas e Concorrência](#_35-alternativas-e-concorrência)
+  * [3.6 Referência Visual](#_36-referência-visual)
 * [4. Visão Geral do Produto](#_4-visão-geral-do-produto)
   * [4.1 Propósito do Produto](#_41-propósito-do-produto)
   * [4.2 Recursos do Produto](#_42-recursos-do-produto)
@@ -63,9 +64,9 @@
 
 |Tipo| Descrição |
 | :------:| :-----------: |
-|*O Problema é* | a falta de divulgação e participação de eventos universitários |
-| *Afeta* | os eventos pouco divulgados |
-| *Impacto é* | baixo aproveitamento de eventos universitários |
+|*O Problema é* | A falta de divulgação e participação de eventos universitários |
+| *Afeta* | Os eventos pouco divulgados |
+| *Impacto é* | Baixo aproveitamento de eventos universitários |
 | *Solução* | Pret Event seria uma ótima plataforma para atrair o interesse dos alunos através de recompensas |
 
 
@@ -110,6 +111,11 @@
 
 ## 3.5 Alternativas e Concorrência
 
+- Facebook Eventos
+
+## 3.6 Referência Visual
+
+- Bilheteria Digital
 
 # 4. Visão Geral do Produto
 
