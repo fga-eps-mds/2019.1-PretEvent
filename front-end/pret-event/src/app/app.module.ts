@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './screens/home/home.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { SignModalComponent } from './common/sign-modal/sign-modal.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SignModalComponent } from './common/sign-modal/sign-modal.component';
     HomeComponent,
     NavbarComponent,
     SignModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
