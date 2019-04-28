@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
+import { HomeComponent } from './screens/home/home.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 
 const routes: Routes = [
-  { path: 'registro', component: PlayerRegistrationComponent },
+  { path: '', component: HomeComponent },
   { path: 'perfil', component: PlayerProfileComponent}
-];
+];  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

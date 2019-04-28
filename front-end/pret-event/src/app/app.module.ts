@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 //Firebase imports
 import { AngularFireModule } from '@angular/fire';
@@ -13,13 +13,24 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 
-
+//Bootstrap modules imports
+import { HomeComponent } from './screens/home/home.component';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { SignModalComponent } from './common/sign-modal/sign-modal.component';
+import { FooterComponent } from './footer/footer.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerRegistrationComponent,
-    PlayerProfileComponent
+    PlayerProfileComponent,
+    HomeComponent,
+    NavbarComponent,
+    SignModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +45,14 @@ import { PlayerProfileComponent } from './player-profile/player-profile.componen
       storageBucket: "playerphotoapi.appspot.com",
       messagingSenderId: "806478969886"
     }),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientJsonpModule,
+    HttpClientModule,
+    CarouselModule.forRoot(),
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

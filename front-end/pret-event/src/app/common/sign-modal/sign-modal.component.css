@@ -1,0 +1,40 @@
+.bg-modal {
+  background-color: #2A2A2A;
+  border-radius: 3px;
+}
+
+.bg-bt {
+  background-color: #111818;
+  min-width: 30%;
+  border-width: 0;
+}
+
+.bt-right {
+  margin-left: 15%;
+  background-color: #006400;
+}
+
+.bg-bt:hover {
+  border: solid 0.5px #f0f0f0;
+}
+
+.content-modal {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #f0f0f0;
+}
+
+.border-modal {
+  border-bottom: 1px solid #ea030f;
+  color: #ea030f;
+}
+
+.input-st {
+  width: 90%;
+}
+
+.close-bt {
+  color: #ea030f;
+}

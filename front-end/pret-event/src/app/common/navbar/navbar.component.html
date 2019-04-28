@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark nav-bg">
+  <a class="navbar-brand nav-title" href="#">
+    PretEvent
+  </a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav">
+      <li class="nav-item nav-bt" *ngIf="logged">
+        <a class="nav-link" href="#">Meus Eventos</a>
+      </li>
+      <li class="nav-item nav-bt" *ngIf="logged">
+        <a class="nav-link" href="#">Ranking</a>
+      </li>
+      <li class="nav-item nav-bt">
+        <a class="nav-link" href="#"
+          (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }}</a>
+      </li>
+    </ul>
+  </div>
+  <ng-template #template>
+    <app-sign-modal
+      [login]="login"
+      [hideModal]="hideModal"
+    ></app-sign-modal>
+  </ng-template>
+</nav>

@@ -1,0 +1,31 @@
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 5px 5px 5px 0;
+}
+
+.nav-bg {
+  background-color: #2A2A2A;
+  border-top: solid 2px #E60D1E;
+}
+
+.nav-title {
+  color: #ea030f;
+  font-weight: 700;
+}
+
+.nav-bt:hover {
+  color: #111818;
+}
+
+.nav-bt:active {
+  color: #191818;
+}
+
+.item-color {
+  color: #191818;
+}
+
+.bg-color {
+  border-top: 1px solid #191818;
+}

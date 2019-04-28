@@ -1,14 +1,15 @@
-# Estagio 1 - Será responsavel em construir nossa aplicação
-FROM node:9.11.2-slim as node
-WORKDIR /app
-COPY package.json /app/
+FROM node:9.11.2-slim
+
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+COPY package.json /usr/src/app/package.json
+
 RUN npm i npm@latest -g
 RUN npm install
-COPY ./ /app/
-ARG env=prod
-RUN npm run build
 
-# Estagio 2 - Será responsavel por expor a aplicação
-FROM nginx:1.13
-COPY --from=node /app/dist/pret-event /usr/share/nginx/html
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+COPY . /usr/src/app
+
+CMD ng serve --host 0.0.0.0

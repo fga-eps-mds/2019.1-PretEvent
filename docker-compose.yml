@@ -9,14 +9,13 @@ services:
     ports:
       - 5000:5432
   app:
-    build: ./front-end/pret-event/
+    build: ./front-end/pret-event
     image: pretevent/pretevent:app
     volumes:
-      - ./:/src/app/
+      - ./front-end/pret-event:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
-      - "8080:80"
-    depends_on:
-      - db
+      - "4500:4200"
   web1:
     build: ./service/mc1/
     image: pretevent/pretevent:web1
