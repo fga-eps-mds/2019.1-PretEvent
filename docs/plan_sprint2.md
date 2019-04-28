@@ -7,7 +7,7 @@
 
 **Duração**: Uma semana
 
-**Pontos Planejados**: 18
+**Pontos Planejados**: 26
 
 -------
 
@@ -45,7 +45,7 @@
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
 | T10 - Criar Protótipo de Alta Fidelidade | 2 | Divida|
-| F02 - Criar Tela para Registro de Player | 5 | Planejado |
+| F02 - Criar Tela para Registro de Player | 5 | Divida |
 | F01 - Criar Crud de usuário | 5 | Divida|
 | T16 - Configurar Heroku | 3 | Divida|
 | F05 - Criar Crud de eventos | 3 | Planejado|
