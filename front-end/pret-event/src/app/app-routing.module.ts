@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
-
 import { HomeComponent } from './screens/home/home.component';
+import { PlayerProfileComponent } from './player-profile/player-profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: '**', component: HomeComponent }
-];
+  { path: '', component: HomeComponent },
+  { path: 'perfil', component: PlayerProfileComponent}
+];  
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
