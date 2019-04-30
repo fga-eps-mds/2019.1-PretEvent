@@ -1,0 +1,29 @@
+<body>
+  <br><br>
+  <div class="formbox title-formbox">
+    <h3>
+      Nova Recompensa
+    </h3>
+    <br>
+  </div>
+  <div class="formbox body-formbox">
+    <div class="form-group">
+      <form [formGroup]="rewardForm" class="formReward">
+        <label><strong>Nome:</strong></label>
+        <input formControlName="name" class="form-control">
+        <br>
+        <label><strong>Descrição:</strong></label>
+        <input formControlName="description" class="form-control">
+        <br>
+        <label><strong>Pontos:</strong></label>
+        <input type="number" formControlName="points" class="form-control">
+        <br>
+        <label><strong>Badge:</strong></label>
+        <input type="file" (change)="detectFiles($event)" accept=".png,.jpg" class="form-control-file" />
+        <br>
+        <button *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="registerReward()">Criar Recompensa</button>
+        <div *ngIf="clicked" class="loader"></div>
+      </form>
+    </div>
+  </div>
+<body>

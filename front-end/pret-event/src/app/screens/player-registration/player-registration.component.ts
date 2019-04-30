@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Player } from '../models/player';
-import { PlayerService } from '../services/player.service';
+import { Player } from '../../models/player';
+import { PlayerService } from '../../services/player.service';
 
 @Component({
   selector: 'app-player-registration',

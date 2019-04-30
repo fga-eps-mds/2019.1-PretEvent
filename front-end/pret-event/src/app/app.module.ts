@@ -22,6 +22,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NewRewardComponent } from './screens/new-reward/new-reward.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     NavbarComponent,
     SignModalComponent,
     FooterComponent,
-    NewEventComponent
+    NewEventComponent,
+    NewRewardComponent
   ],
   imports: [
     BrowserModule,
