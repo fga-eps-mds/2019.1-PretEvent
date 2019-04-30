@@ -19,25 +19,47 @@ export class SignModalComponent implements OnInit {
   playerForm: FormGroup;
   selectedFiles: FileList;
   file: any;
+  clicked = false;
 
   constructor(private formBuilder: FormBuilder, private service: PlayerService) { }
 
   registerPlayer() {
+    this.clicked = true;
     const player: Player = new Player(
       this.playerForm.get('name').value,
       this.playerForm.get('universityId').value,
-      0
+      0,
+      this.playerForm.get('password').value,
     );
 
-    this.service.registerPlayer(player, this.file).then(x => console.log(x));
+    this.service.registerPlayer(player, this.file)
+      .then(x => {
+        console.log(x);
+        this.hideModal();
+        this.clicked = false;
+      })
+      .catch(x => {
+        console.log(x);
+        this.clicked = false;
+      });
   }
 
   loginPlayer() {
+    this.clicked = true;
     const user: User = new User(
       this.playerForm.get('name').value,
       this.playerForm.get('password').value,
     );
-    this.service.loginPlayer(user).then(x => console.log(x));
+    this.service.loginPlayer(user)
+      .then(x => {
+        console.log(x);
+        this.hideModal();
+        this.clicked = false;
+      })
+      .catch(x => {
+        console.log(x);
+        this.clicked = false;
+      });
   }
 
   detectFiles(event) {
