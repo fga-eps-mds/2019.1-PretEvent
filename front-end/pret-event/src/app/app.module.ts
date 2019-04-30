@@ -10,7 +10,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 //Component's imports
-import { PlayerRegistrationComponent } from './screens/player-registration/player-registration.component';
 import { PlayerProfileComponent } from './screens/player-profile/player-profile.component';
 import { NewEventComponent } from './screens/new-event/new-event.component';
 
@@ -28,7 +27,6 @@ import { NewRewardComponent } from './screens/new-reward/new-reward.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerRegistrationComponent,
     PlayerProfileComponent,
     HomeComponent,
     NavbarComponent,
