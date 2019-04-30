@@ -12,6 +12,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 //Component's imports
 import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
+import { NewEventComponent } from './new-event/new-event.component';
 
 //Bootstrap modules imports
 import { HomeComponent } from './screens/home/home.component';
@@ -22,6 +23,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     HomeComponent,
     NavbarComponent,
     SignModalComponent,
-    FooterComponent
+    FooterComponent,
+    NewEventComponent
   ],
   imports: [
     BrowserModule,
