@@ -4,7 +4,7 @@ from rest_framework import serializers
 class EventoCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ('id', 'title','date','points','description','url_image')
+        fields = ('id', 'title','date','points','description','url_image','reward_id')
 
     def create(self, validated_data):
         evento = Evento(
@@ -12,7 +12,8 @@ class EventoCreateSerializer(serializers.ModelSerializer):
             date = validated_data['date'],
             points = validated_data['points'],
             description = validated_data['description'],
-            url_image = validated_data['url_image']
+            url_image = validated_data['url_image'],
+            reward_id = validated_data['reward_id']
         )
         evento.save()
         return evento
@@ -20,7 +21,7 @@ class EventoCreateSerializer(serializers.ModelSerializer):
 class EventoUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ('id', 'title','date','points','description','url_image')
+        fields = ('id', 'title','date','points','description','url_image','reward_id')
 
     def update(self, instance, validated_data):
         instance.title =  validated_data.get('title', instance.title)
@@ -28,6 +29,7 @@ class EventoUpdateSerializer(serializers.ModelSerializer):
         instance.points = validated_data.get('points', instance.points)
         instance.description = validated_data.get('description', instance.description)
         instance.url_image = validated_data.get('url_image', instance.url_image)
+        instance.reward_id = validated_data.get('reward_id', instance.reward_id)
 
         instance.save()
         return instance
@@ -35,4 +37,4 @@ class EventoUpdateSerializer(serializers.ModelSerializer):
 class EventoDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ('id', 'title','date','points','description','url_image')
+        fields = ('id', 'title','date','points','description','url_image','reward_id')
