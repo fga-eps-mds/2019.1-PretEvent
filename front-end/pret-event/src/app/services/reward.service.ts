@@ -1,49 +1,49 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Player } from '../models/player';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { finalize } from 'rxjs/operators';
+import { Reward } from '../models/reward';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PlayerService {
+export class RewardService {
 
   ref: any;
   task: any;
   downloadURL: any;
-  url = '/api/players/';
+  url = '/api/rewards/';
 
   constructor(private http: HttpClient, private afStorage: AngularFireStorage) { }
 
-  loginPlayer = player =>
-    new Promise(resolve =>
-      this.http.post('/rest-auth/login/', player)
+  getRewards = () =>
+    new Promise((resolve, reject) =>
+      this.http.get<Reward[]>(this.url)
         .subscribe(
           data => resolve(data),
-          error => resolve(error),
+          error => reject(error),
         )
     )
 
-  postPlayer = (player: Player) =>
-    new Promise(resolve =>
-      this.http.post(this.url, player)
+  postReward = (reward: Reward) =>
+    new Promise((resolve, reject) =>
+      this.http.post(this.url, reward)
         .subscribe(
           data => resolve(data),
-          error => resolve(error),
+          error => reject(error),
         )
     )
 
-  registerPlayer = (player: Player, file: any) =>
+  registerReward = (reward: Reward, file: any) =>
     new Promise(resolve => {
-      this.ref = this.afStorage.ref(player.university_id.toString());
+      this.ref = this.afStorage.ref(reward.title.toString());
       this.task = this.ref.put(file);
       this.task.snapshotChanges().pipe(
         finalize(() => {
           this.ref.getDownloadURL().subscribe(ref => {
             this.downloadURL = ref;
-            player.photo_url = this.downloadURL;
-            resolve(this.postPlayer(player));
+            reward.badge_url = this.downloadURL;
+            resolve(this.postReward(reward));
           });
         })
       ).subscribe();

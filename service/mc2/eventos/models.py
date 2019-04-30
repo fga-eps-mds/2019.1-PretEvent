@@ -6,3 +6,4 @@ class Evento(models.Model):
     points = models.IntegerField()
     description = models.TextField()
     url_image = models.CharField(max_length=255)
+    reward_id = models.IntegerField(max_length=255)
