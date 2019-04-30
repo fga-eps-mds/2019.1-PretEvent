@@ -1,8 +1,26 @@
 {
-    "/api/*": {
-      "target": "http://localhost:8000",
-      "secure": false,
-      "logLevel": "debug",
-      "changeOrigin": true
-    }
+  "/rest-auth/login": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/players": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/eventos": {
+    "target": "http://localhost:8001",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/rewards": {
+    "target": "http://localhost:8002",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
   }
+}
