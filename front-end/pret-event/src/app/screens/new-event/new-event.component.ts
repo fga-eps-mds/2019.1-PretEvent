@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Event } from '../models/event';
-import { EventService } from '../services/event.service';
+import { Event } from '../../models/event';
+import { EventService } from '../../services/event.service';
 
 
 @Component({

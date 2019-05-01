@@ -17,20 +17,20 @@ export class PlayerService {
   constructor(private http: HttpClient, private afStorage: AngularFireStorage) { }
 
   loginPlayer = player =>
-    new Promise(resolve =>
+    new Promise((resolve, reject) =>
       this.http.post('/rest-auth/login/', player)
         .subscribe(
           data => resolve(data),
-          error => resolve(error),
+          error => reject(error),
         )
     )
 
   postPlayer = (player: Player) =>
-    new Promise(resolve =>
+    new Promise((resolve, reject) =>
       this.http.post(this.url, player)
         .subscribe(
           data => resolve(data),
-          error => resolve(error),
+          error => reject(error),
         )
     )
 

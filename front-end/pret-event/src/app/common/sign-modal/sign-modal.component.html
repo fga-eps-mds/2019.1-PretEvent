@@ -10,24 +10,30 @@
       <div>
         <form [formGroup]="playerForm">
           <div *ngIf="signup">
-            <br>Matrícula<br><input formControlName="universityId" class="input-st" type="number" name="registration" value=""><br>
+            <br>Matrícula<br><input formControlName="universityId" class="input-st" type="number" name="registration"
+              value=""><br>
             <br>Foto<br><input type="file" (change)="detectFiles($event)" accept=".png,.jpg"
               class="form-control-file" /><br>
           </div>
-          <br>Nome de usuário<br><input formControlName="name" class="input-st" type="text" name="name" value=""><br><br>
-          Senha<br><input formControlName="password" class="input-st" type="{{ typePassword ? 'text' : 'password' }}" name="password" value=""><br>
+          <br>Nome de usuário<br><input formControlName="name" class="input-st" type="text" name="name"
+            value=""><br><br>
+          Senha<br><input formControlName="password" class="input-st" type="{{ typePassword ? 'text' : 'password' }}"
+            name="password" value=""><br>
           <div *ngIf="signup">
             <br>Confirmação de senha<br><input class="input-st" type="{{ typePassword ? 'text' : 'password' }}"
               name="password" value=""><br>
           </div>
           <br><input type="checkbox" (click)="showPassword()"> Mostrar Senha<br><br>
           <div *ngIf="!signup">
-            <button class="button bg-bt" (click)="typeSign();">Me Cadastrar</button>
-            <button class="button bg-bt bt-right" (click)="modalClose();loginClick();loginPlayer()">Entrar</button>
+            <div *ngIf="clicked" class="loader"></div>
+            <button *ngIf="!clicked" class="button bg-bt" (click)="typeSign();">Me Cadastrar</button>
+            <button *ngIf="!clicked" class="button bg-bt bt-right" (click)="loginClick();loginPlayer()">Entrar</button>
           </div>
           <div *ngIf="signup">
-            <button class="button bg-bt" (click)="typeSign();">Voltar</button>
-            <button class="button bg-bt bt-right" (click)="modalClose();registerPlayer();">Cadastrar</button>
+            <div *ngIf="clicked" class="loader"></div>
+            <button *ngIf="!clicked" class="button bg-bt" (click)="typeSign();">Voltar</button>
+            <button *ngIf="!clicked" class="button bg-bt bt-right"
+              (click)="registerPlayer();">Cadastrar</button>
           </div>
         </form>
       </div>

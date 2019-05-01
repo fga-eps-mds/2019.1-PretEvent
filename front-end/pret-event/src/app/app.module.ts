@@ -10,15 +10,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 //Component's imports
-import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
-import { PlayerProfileComponent } from './player-profile/player-profile.component';
-import { NewEventComponent } from './new-event/new-event.component';
+import { PlayerProfileComponent } from './screens/player-profile/player-profile.component';
+import { NewEventComponent } from './screens/new-event/new-event.component';
 
 //Bootstrap modules imports
 import { HomeComponent } from './screens/home/home.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { SignModalComponent } from './common/sign-modal/sign-modal.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './common/footer/footer.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -28,7 +27,6 @@ import { NewRewardComponent } from './screens/new-reward/new-reward.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerRegistrationComponent,
     PlayerProfileComponent,
     HomeComponent,
     NavbarComponent,
