@@ -8,32 +8,40 @@
 
 | Tarefas | Pontos | Status |
 |:-------:|:------:|:------:|
+|F03 - Criar página de perfil|5| Concluída |
+|F17 - Autenticação de player/usuário|5| Concluída |
+|F11 - Criação de serviço "reward"|3| Concluída |
+|T12 - Configurar CodeClimate |2| Concluída |
+|T20 - Mudar o deploy do heroku pro AWS |5| Concluída |
+|T24 - Criar roadmap do produto |3| Concluída |
+|T25 - Criar folha de estilo |2| Concluída |
+|T26 - Criar backlog do produto |2| Concluída |
 
 
 ### 1.2 Retrospectiva
 
-<!-- |Membro|Pontos Positivos|Pontos Negativos|Sugestões de melhoria| Pontuação das histórias |
+|Membro|Pontos Positivos|Pontos Negativos|Sugestões de melhoria| Pontuação das histórias |
 |---|------|-----|---|---|
-|Djorkaeff Alexandre| Autonomia de MDS para conseguir entregar tarefas do back-end| Não criei issues para as minhas atividades| Mais entregas no meio da semana, organização das issues. |Boa|
-|Rodrigo Dadamos| Consegui fazer integração continua até o deploy, estudos renderam| Falta de tempo para implementar pipeline para aws | Fechar mais issues de forma constante |Boa |
-|Gustavo Carvalho| MDS teve proatividade para a resolulção de problemas| Organização das tarefas e fechamento das issues. MDS não está comentando as issues | Ser mais ágil |Boa |
-|André Bargas| Muitas issues feitas, galera de MDS está evoluindo, Comecçamos a codificar | Não estamo full-stack ainda.| Equipe de desenvolvimento trabalhar no front também. |Boa |
-|Ian Rocha| Documento de manual de identidade ficou muito bem feito| O CRUD não foi 100%. | O CRUD de players |  Boa |
-|Felipe Agustini| Galera fez bom trabalho com CRUD.| Perdi metade da semana doente | A entrega continua| Boa
-|Murilo Loiola| Issues foram bem defindas, oque ajudou no trabalho.| Outras matérias estão apertadas e estou sem tempo.| Distribuição de responsabilidades. |Boa |
-|André Goretti| Bom trabalho em equipe.| Tive problemas com instalação com ubuntu.| Densempenho da equipe. |Boa
-|Breno Bezerra| Consegui aprender Angular|Tive problemas com a internet| - | Boa | -->
+|Djorkaeff Alexandre|Eu consegui entregar tudo que planejado e ainda mais| A dedicação dos mds a fechar as issues do front|Organização da galera pra entregar oq foi pedido|Boa|
+|Rodrigo Dadamos| Tarefas mais bem definidas com responsabilidades claras| Tempo de trabalho da equipe reduzido por causa do feriado|Comprometimento e dedicação da equipe|Boa |
+|Gustavo Carvalho|O back-end já está todo encaminhado, sem nenhum impecilho e todo funcional|Reunião presenciais não foram tão frequentes| Ser mais ágil |Boa |
+|Ian Rocha| Aprendi bastante sobre desenvolvimento backend, principalmente na autenticaçao|O pessoal de MDS que estava responsavel pelo front, deixou a desejar bastante|Comprometimento do pessoal de MDS|  Boa |
+|Felipe Agustini| Terminei tudo e o pessoal parece estar avançando bastante|ainda não tive oportunidade de botar a mão no código| Eu gostaria de Codar mais| Boa |
+|Murilo Loiola| O pareamento ajudou no fechamento das issues.| Pouco desenvolvimento do front por parte de MDS.| Maior foco no desenvolvimento do front.|Boa |
+|André Goretti| Aprendi muita coisa de angular, html e css. pessoal de EPS ajudaram muito.| Minha comunicação para pedir ajuda para o grupo|Organizaçao do meu tempo de trabalho que foi ruim nessa sprint.|Boa|
+|Breno Bezerra| O comprometimento do grupo|Minha falta de internet|Meu acesso à internet| Boa |
 
 
 ### 1.3 Quadro de Conhecimento
 
-![](./images/con_sprint2.png)
+![](./images/con_sprint3.png)
 
 ### 1.4 Justificativas Dívidas
+
+T21 - A mesma não foi completada devido a falta de tempo do nosso devops e a especifidade requerida das descrições do passo-a-passo do tutorial. 
 
 
 ## 2. Análise do _Scrum Master_
 
-<!-- <p align="justify">Houve um uma melhora significativa no conhecimento de MDS, e isto resultou no fechamento de features que estavam como débito da sprint passada.</p>
-<p align="justify">A falta de planejamento da sprint fez com que todas as atividades propostas fossem finalizadas somente no último dia da sprint, com isso o burndown teve uma queda repentina.</p>
-<p align="justify"> Um risco foi adcionado no projeto, uma vez que optamos por usar os serviços da google para armazenamento de nossas imagens. Tivemos que estudar para aplicação de tal, oque causou o atraso da feature "F02 - Formulário de cadastro de player". -->
+<p align="justify">Nessa sprint foi finalizada todos os nossos serviços no back-end. Com isso será possível voltar o foco totalmente ao front-end na próxima sprint.</p>
+<p align="justify">A falta de conhecimento técnico por parte de MDS ainda foi/é um risco alto durante essa sprint.</p>

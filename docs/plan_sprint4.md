@@ -7,7 +7,7 @@
 
 **Duração**: Uma semana
 
-**Pontos Planejados**: 
+**Pontos Planejados**: 22
 
 -------
 
@@ -33,8 +33,7 @@
 
 
 ## 2. Planejamento
-<!-- <p align = "justify"> O maior risco para a presente <i>sprint</i> é que a equipe de MDS não tem conhecimento significativo em Angular, oque poderá resultar em atrasos nas tarefas do front-end </p>
-<p align = "justify"> A tarefas provinientes da <i>sprint 2</i> que não foram feitas, foram planejadas nessa sprint como dívidas.</p> -->
+<p align = "justify"> A prioridade dessa sprint será terminar na parte do front-end, que inclui os formulários de cadastro de eventos e reward. </p>
 
 
 ## 3. Tarefas da _Sprint_
@@ -43,5 +42,15 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
-<!-- |F02 - Criar formulário de player|5| Dívida | -->
+|F07 - Formulário de evento|5| Planejado |
+|F12 - Cadastro de reward|5| Planejado |
+|F16 - Cadastro de reward|5| Planejado |
+|T21 - Terminar tutorial de CI com Travis e AWS |2| Dívida |
+|T31 - Revisão e criação de tópicos do doc de arq|2| Planejado |
+|T33 - Revisão da documentação do Projeto|1|Planejada|
+|T35 - Swarm com monitoramento|2|Planejada|
+|T36 - Documento de Organização da Equipe|1|Planejada|
+|T37 - Bug fix docker angular|2|Planejada|
+
+
 
