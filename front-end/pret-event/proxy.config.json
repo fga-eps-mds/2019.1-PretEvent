@@ -1,0 +1,26 @@
+{
+  "/rest-auth/login": {
+    "target": "http://web1:8000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/players": {
+    "target": "http://web1:8000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/eventos": {
+    "target": "http://web2:8000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/rewards": {
+    "target": "http://web3:8000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
