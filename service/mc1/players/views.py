@@ -39,6 +39,7 @@ class PlayerList(APIView):
 
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
+
 @permission_classes((permissions.IsAuthenticatedOrReadOnly, ))
 class PlayerDetail(APIView):
 
