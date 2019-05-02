@@ -16,9 +16,9 @@
 | T08 | Concluída |
 | T05 | Concluída |
 | T09 | Concluída |
-| F01 | Dívida |
-| T16 | Dívida |
-| T10 | Dívida |
+| F01 | **Dívida** |
+| T16 | **Dívida** |
+| T10 | **Dívida** |
 
 ### 1.2 Retrospectiva
 

@@ -42,15 +42,15 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
-|F07 - Formulário de evento|5| Planejado |
-|F12 - Cadastro de reward|5| Planejado |
-|F16 - Cadastro de reward|5| Planejado |
-|T21 - Terminar tutorial de CI com Travis e AWS |2| Dívida |
-|T31 - Revisão e criação de tópicos do doc de arq|2| Planejado |
+|F07 - Formulário de evento|5|Planejada|
+|F12 - Cadastro de reward|5|Planejada|
+|F16 - Navbar|3|Planejada|
+|T21 - Terminar tutorial de CI com Travis e AWS |2| **Dívida** |
+|T31 - Revisão e criação de tópicos do doc de arq|2|Planejada|
 |T33 - Revisão da documentação do Projeto|1|Planejada|
 |T35 - Swarm com monitoramento|2|Planejada|
-|T36 - Documento de Organização da Equipe|1|Planejada|
 |T37 - Bug fix docker angular|2|Planejada|
+
 
 
 
