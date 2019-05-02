@@ -9,17 +9,15 @@ services:
     ports:
       - 5000:5432
   app:
-    build: ./front-end/pret-event/
-    image: pretevent/pretevent:app
+    build: ./front-end/pret-event
     volumes:
-      - ./:/src/app/
+      - ./front-end/pret-event:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
-      - "8080:80"
-    depends_on:
-      - db
+      - "4500:4200"
   web1:
     build: ./service/mc1/
-    image: pretevent/pretevent:web1
+    image: pretevent/web1
     command: /bin/sh ./boot.sh
     volumes:
       - ./service/mc1/:/code
@@ -29,7 +27,7 @@ services:
       - db
   web2:
     build: ./service/mc2/
-    image: pretevent/pretevent:web2
+    image: pretevent/web2
     command: /bin/sh ./boot.sh
     volumes:
       - ./service/mc2/:/code
@@ -39,7 +37,7 @@ services:
       - db
   web3:
     build: ./service/mc3/
-    image: pretevent/pretevent:web3
+    image: pretevent/web3
     command: /bin/sh ./boot.sh
     volumes:
       - ./service/mc3/:/code

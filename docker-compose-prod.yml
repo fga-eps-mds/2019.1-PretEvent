@@ -9,15 +9,13 @@ services:
     ports:
       - 5000:5432
   app:
-    image: pretevent/pretevent:app
+    image: pretevent/app
     deploy:
       replicas: 2
     ports:
       - "80:80"
-    depends_on:
-      - db
   web1:
-    image: pretevent/pretevent:web1
+    image: pretevent/web1
     deploy:
       replicas: 2
     ports:
@@ -25,7 +23,7 @@ services:
     depends_on:
       - db
   web2:
-    image: pretevent/pretevent:web2
+    image: pretevent/web2
     deploy:
       replicas: 2
     ports:
@@ -33,7 +31,7 @@ services:
     depends_on:
       - db
   web3:
-    image: pretevent/pretevent:web3
+    image: pretevent/web3
     deploy:
       replicas: 2
     ports:
