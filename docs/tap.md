@@ -3,6 +3,7 @@
  **Data** | **Versão** | **Descrição** | **Autor(es)**
 ---|---|---|---
 13/04/2019| 0.1| Criação do Documento | Djorkaeff Alexandre
+25/04/2019| 0.2 | Revisão do Documento | Ian Rocha
 
 # Índice
 
@@ -36,20 +37,21 @@
 
 
 # 1. Descrição do Projeto
-<p align="justify">Gamificação de agenda de eventos, tornará mais divertido participar de eventos! </p>
+<p align="justify">Gamificação de agenda de eventos, tornará mais atrativo e divertido participar de eventos universitários! </p>
 
 # 2. Justificativa do Projeto
-<p align="justify">Aumentar a expectativa em eventos com foco educacional.</p>
+<p align="justify">Percebe-se a falta de interesse dos estudantes em comparecer aos eventos universitários de cunho educacional.</p>
 
 <p align="justify">O PretEvent despertará nos usuários a vontade de ir a eventos!</p>
 
 # 3. Objetivos do Projeto
-<p align="justify">O objetivo do projeto é aumentar a procura por eventos com foco educacional.</p>
+<p align="justify">O objetivo do projeto é aumentar a procura por eventos universitários.</p>
 
 # 4. Requisitos de Alto Nível
 - A aplicação será web;
 - A aplicação deverá ser suportada por todos os navegadores disponíveis;
-- A aplicação deverá mostrar eventos úteis para o usuário;
+- A aplicação deverá ser responsiva;
+- A aplicação deverá mostrar a lista de eventos próximos;
 - A aplicação deverá descrever os eventos;
 
 # 5. Premissas
@@ -62,7 +64,7 @@
 ## Projeto
 - Os integrantes devem trabalhar 8 horas semanais;
 - Conhecimento da equipe em relação à algumas tecnologias;
--  Tempo limitado à duração do semestre;
+- Tempo limitado à duração do semestre;
 
 # 7. Descrição do Projeto em Alto Nível
 <p align="justify">O desenvolvimento do projeto ocorrerá no mesmo período das disciplinas de Métodos de Desenvolvimento de Software (MDS) e Engenharia de Produto de Software (EPS). A metodologia usada para o desenvolvimento é baseada em práticas ágeis, DevOps e XP, além de ser iterativa e incremental visando entrega de valor periódica.</p>
@@ -82,7 +84,7 @@ Defeito de algum equipamento da equipe | Alocar pareamentos com um membro que te
 Falta de conhecimento sobre git por parte da equipe de MDS| Fazer tutorial de git e realizar treinamentos
 MDS não seguir orientações de EPS | Gerenciar com mais firmeza e dialogar mais com a equipe
 Indisponibilidade horária de alguns integrantes de EPS/MDS | Tentar adaptar horários de acordo com essas indisponibilidades
-Baixa produtividade dos integrantes | Monitorar a planilha de horas trabalhadas e quadro de humor e agir em cima das improdutividades da equipe
+Baixa produtividade dos integrantes | Monitorar o fechamento de issues e agir em cima das improdutividades da equipe
 Desentendimentos entre membros da equipe | Tech Leader deve solucionar os desentendimentos   
 Problemas com o ambiente de desenvolvimento | DevOps deve fornecer auxílio
 Falha de comunicação | Mudar de estratégia de comunicação
