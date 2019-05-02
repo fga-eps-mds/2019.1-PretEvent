@@ -21,7 +21,14 @@
         <label><strong>Imagem:</strong></label>
         <input type="file" (change)="detectFiles($event)" accept=".png,.jpg" class="form-control-file" />
         <br>
-        <button type="button" class="btn btn-color btn-lg btn-block" (click)="registerEvent()">Criar Evento</button>
+        <label><strong>Recompensa:</strong></label>
+        <input [(ngModel)]="selected"
+        [typeahead]="rewardsNames"
+        class="form-control"
+        formControlName="reward">
+        <br>
+        <div *ngIf="clicked" class="loader"></div>
+        <button *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="registerEvent()">Criar Evento</button>
       </form>
     </div>
   </div>
