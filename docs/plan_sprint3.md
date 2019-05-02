@@ -1,4 +1,4 @@
-# Planejamento Sprint 0
+# Planejamento Sprint 3
 
 
 **Data de Início**: 13/04/2019
@@ -7,7 +7,7 @@
 
 **Duração**: Uma semana
 
-**Pontos Planejados**: 18
+**Pontos Planejados**: 37
 
 -------
 
@@ -34,6 +34,8 @@
 
 ## 2. Planejamento
 <p align = "justify"> O maior risco para a presente <i>sprint</i> é que a equipe de MDS não tem conhecimento significativo em Angular, oque poderá resultar em atrasos nas tarefas do front-end </p>
+<p align = "justify"> A tarefas provinientes da <i>sprint 2</i> que não foram feitas, foram planejadas nessa sprint como dívidas.</p>
+
 
 ## 3. Tarefas da _Sprint_
 
@@ -41,9 +43,11 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
+|F02 - Criar formulário de player|5| Dívida |
 |F03 - Criar página de perfil|5| Planejada |
 |F17 - Autenticação de player/usuário|5| Planejada |
 |F11 - Criação de serviço "reward"|3| Planejada |
+|F15 - Página home|3|Dívida|
 |T12 - Configurar CodeClimate |2| Planejada |
 |T20 - Mudar o deploy do heroku pro AWS |5| Planejada |
 |T21 - Terminar tutorial de CI com Travis e AWS |2| Planejada |
