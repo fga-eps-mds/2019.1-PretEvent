@@ -9,7 +9,7 @@
 | Tarefas | Pontos | Status |
 |:-------:|:------:|:------:|
 | F01 |5| Concluída(Débito da sprint 1) |
-| F02 |5| Dívida |
+| F02 |5| **Dívida** |
 | F05 |3| Concluída |
 | F15 |3| Concluída |
 | T10 |2| Concluída(Débito da sprint 1) |
@@ -37,9 +37,9 @@
 
 ![](./images/con_sprint2.png)
 
-### 1.4 Justificativas Dívidas
+### 1.4 Justificativas **s
 
-F02 - Houve uam discordância de como seria guardado a foto do usuário no nosso sistema, e isso atrasou a entrega da feature por completo, sendo a mesma classificada como dívida para a próxima sprint.
+F02** - Houve uam discordância de como seria guardado a foto do usuário no nosso sistema, e isso atrasou a entrega da feature por completo, sendo a mesma classificada como dívida para a próxima sprint.
 F15 - Falta de conhecimento atrasou a entrega da mesma.  
 
 ## 2. Análise do _Scrum Master_
