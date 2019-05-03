@@ -5,6 +5,7 @@
 - [Backlog](/backlog.md)
 - [Canvas](/canvas.md)
 - [Roadmap de Produto](/roadmap_prod.md)
+- [Protótipo de alta fidelidade](/prototipo_alta_fidelidade.md)
 - [Documento de Visão](/vision_doc.md)
 - [Documento de Arquitetura](/arq_doc.md)
 - [Roadmap dos Papéis](/roadmap_all.md)
