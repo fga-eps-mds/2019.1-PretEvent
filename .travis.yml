@@ -12,7 +12,7 @@ before_install:
 before_script:
   - cp env.tmpl .env
 script:
-  # - docker-compose up -d
+  - docker-compose up -d
   - cd front-end/pret-event && docker build -f Dockerfile-prod -t pretevent/app . && cd ../..
   - zip -r latest appspec.yml prod-update.sh docker-compose-prod.yml
   - mkdir -p prod_scripts
@@ -41,7 +41,7 @@ deploy:
   local_dir: prod_scripts
   skip_cleanup: true
   on:
-    branch: master
+    branch: development
   bucket: preteventbucket
   region: us-east-2
 - provider: codedeploy
@@ -54,4 +54,4 @@ deploy:
   deployment_group: deploypretevent
   region: us-east-2
   on:
-    branch: master
+    branch: development
