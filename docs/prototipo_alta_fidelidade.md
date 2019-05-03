@@ -19,18 +19,6 @@
 <p>Legenda 5 - Tela de criação de eventos.</p>
 <br>
 
-<img src="images/ProtAltaf-Criação Icone.png"/>
-<p>Legenda 6 - Tela de Criação de icones de evento.</p>
-<br>
-
-<img src="images/ProtAltaf-Perfil.png"/>
-<p>Legenda 7 - Tela de Perfil.</p>
-<br>
-
-<img src="images/ProtAltaf-Ranking.png"/>
-<p>Legenda 8 - Tela de Ranking.</p>
-<br>
-
-<img src="images/ProtAltaf-Selos.png"/>
-<p>Legenda 9 - Tela de Archievments.</p>
+<img src="images/ProtAltaf-Criar reward.jpg"/>
+<p>Legenda 6 - Tela de Criação de recompensas.</p>
 <br>

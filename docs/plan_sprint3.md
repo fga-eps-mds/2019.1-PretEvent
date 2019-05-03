@@ -43,11 +43,11 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
-|F02 - Criar formulário de player|5| Dívida |
+|F02 - Criar formulário de player|5| **Dívida** |
 |F03 - Criar página de perfil|5| Planejada |
 |F17 - Autenticação de player/usuário|5| Planejada |
 |F11 - Criação de serviço "reward"|3| Planejada |
-|F15 - Página home|3|Dívida|
+|F15 - Página home|3|**Dívida**|
 |T12 - Configurar CodeClimate |2| Planejada |
 |T20 - Mudar o deploy do heroku pro AWS |5| Planejada |
 |T21 - Terminar tutorial de CI com Travis e AWS |2| Planejada |
