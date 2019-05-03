@@ -9,6 +9,7 @@ COPY package.json /usr/src/app/package.json
 
 RUN npm i npm@latest -g
 RUN npm install
+RUN npm audit fix
 
 COPY . /usr/src/app
 
