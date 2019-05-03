@@ -34,14 +34,14 @@ deploy:
   script: bash docker-push.sh
   skip_cleanup: true
   on:
-    branch: development
+    branch: master
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   local_dir: prod_scripts
   skip_cleanup: true
   on:
-    branch: development
+    branch: master
   bucket: preteventbucket
   region: us-east-2
 - provider: codedeploy
@@ -54,4 +54,4 @@ deploy:
   deployment_group: deploypretevent
   region: us-east-2
   on:
-    branch: development
+    branch: master
