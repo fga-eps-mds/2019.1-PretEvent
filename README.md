@@ -1,3 +1,5 @@
+![TRAVIS BUILD](https://travis-ci.com/fga-eps-mds/2019.1-PretEvent.svg?branch=master)
+
 # PretEvent
 
 ## Sobre o projeto
