@@ -13,6 +13,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { PlayerProfileComponent } from './screens/player-profile/player-profile.component';
 import { NewEventComponent } from './screens/new-event/new-event.component';
 
+
 //Bootstrap modules imports
 import { HomeComponent } from './screens/home/home.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
@@ -23,6 +24,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NewRewardComponent } from './screens/new-reward/new-reward.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 
 @NgModule({
@@ -59,6 +61,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     BsDropdownModule.forRoot(),
     TypeaheadModule.forRoot(),
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
