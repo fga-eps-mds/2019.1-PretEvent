@@ -1,5 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
+
+import { AlertService } from '../../services/alert.service';
+import { getToken, removeToken } from '../../helpers/token';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +12,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class NavbarComponent implements OnInit {
 
-  logged = false;
-  account = this.logged ? 'Sair' : 'Entrar/Cadastrar';
+  logged = getToken() !== null;
+  account =  this.logged ? 'Sair' : 'Entrar/Cadastrar';
   navbarOpen = false;
 
   modalRef: BsModalRef;
@@ -19,10 +23,17 @@ export class NavbarComponent implements OnInit {
     keyboard: true,
     animated: true,
   };
+  alerts: any[] = [];
 
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService, private data: AlertService) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.data.currentAlert.subscribe(alert => this.alerts.push(alert));
+  }
+
+  onClosed(dismissedAlert: AlertComponent): void {
+    this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
+  }
 
   hideModal = () => {
     this.modalRef.hide();
@@ -37,7 +48,17 @@ export class NavbarComponent implements OnInit {
   }
 
   login = () => {
+    let msg = '';
+    if (this.logged) {
+      removeToken();
+      this.account = 'Entrar/Cadastrar';
+      msg = 'Logout realizado!';
+    }
+    if (!this.logged) {
+      this.account = 'Sair';
+      msg = 'Login realizado!';
+    }
     this.logged = !this.logged;
-    this.account = this.logged ? 'Sair' : 'Entrar/Cadastrar';
+    return false;
   }
 }
