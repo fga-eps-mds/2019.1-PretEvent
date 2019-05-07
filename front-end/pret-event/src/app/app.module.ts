@@ -24,6 +24,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NewRewardComponent } from './screens/new-reward/new-reward.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { EventDetailComponent } from './screens/event-detail/event-detail.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     SignModalComponent,
     FooterComponent,
     NewEventComponent,
-    NewRewardComponent
+    NewRewardComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
