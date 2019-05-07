@@ -19,15 +19,11 @@
             value=""><br><br>
           Senha<br><input formControlName="password" class="input-st" type="{{ typePassword ? 'text' : 'password' }}"
             name="password" value=""><br>
-          <div *ngIf="signup">
-            <br>Confirmação de senha<br><input class="input-st" type="{{ typePassword ? 'text' : 'password' }}"
-              name="password" value=""><br>
-          </div>
           <br><input type="checkbox" (click)="showPassword()"> Mostrar Senha<br><br>
           <div *ngIf="!signup">
             <div *ngIf="clicked" class="loader"></div>
             <button *ngIf="!clicked" class="button bg-bt" (click)="typeSign();">Me Cadastrar</button>
-            <button *ngIf="!clicked" class="button bg-bt bt-right" (click)="loginClick();loginPlayer()">Entrar</button>
+            <button *ngIf="!clicked" class="button bg-bt bt-right" (click)="loginPlayer()">Entrar</button>
           </div>
           <div *ngIf="signup">
             <div *ngIf="clicked" class="loader"></div>

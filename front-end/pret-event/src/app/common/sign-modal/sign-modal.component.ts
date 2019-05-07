@@ -3,6 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Player } from '../../models/player';
 import { User } from '../../models/user';
 import { PlayerService } from '../../services/player.service';
+import { AlertService } from '../../services/alert.service';
+
+import { setToken } from '../../helpers/token';
+import { Alert } from 'src/app/models/alert';
 
 @Component({
   selector: 'app-sign-modal',
@@ -21,7 +25,7 @@ export class SignModalComponent implements OnInit {
   file: any;
   clicked = false;
 
-  constructor(private formBuilder: FormBuilder, private service: PlayerService) { }
+  constructor(private formBuilder: FormBuilder, private service: PlayerService, private data: AlertService) { }
 
   registerPlayer() {
     this.clicked = true;
@@ -31,10 +35,10 @@ export class SignModalComponent implements OnInit {
       0,
       this.playerForm.get('password').value,
     );
-
     this.service.registerPlayer(player, this.file)
       .then(x => {
         console.log(x);
+        this.data.addAlert(new Alert('success', 'Registro realizado!', 3000));
         this.hideModal();
         this.clicked = false;
       })
@@ -51,12 +55,14 @@ export class SignModalComponent implements OnInit {
       this.playerForm.get('password').value,
     );
     this.service.loginPlayer(user)
-      .then(x => {
-        console.log(x);
+      .then((x: { token: string }) => {
+        setToken(x.token);
+        this.data.addAlert(new Alert('success', 'Login realizado!', 3000));
         this.hideModal();
         this.clicked = false;
+        this.login();
       })
-      .catch(x => {
+      .catch((x: { error: {} }) => {
         console.log(x);
         this.clicked = false;
       });
@@ -81,10 +87,6 @@ export class SignModalComponent implements OnInit {
 
   typeSign() {
     this.signup = !this.signup;
-  }
-
-  loginClick() {
-    this.login();
   }
 
   modalClose() {
