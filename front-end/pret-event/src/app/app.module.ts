@@ -16,6 +16,8 @@ import { HomeComponent } from './screens/home/home.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { SignModalComponent } from './common/sign-modal/sign-modal.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { PlayerEditComponent } from './screens/player-edit/player-edit.component';
+
 
 //Bootstrap modules imports
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -35,7 +37,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     SignModalComponent,
     FooterComponent,
     NewEventComponent,
-    NewRewardComponent
+    NewRewardComponent,
+    PlayerEditComponent
   ],
   imports: [
     BrowserModule,
