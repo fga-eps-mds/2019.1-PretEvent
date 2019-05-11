@@ -20,11 +20,14 @@
 }
 
 .body-formbox {
-  height: 200px;
   background: #dedee4e0;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   box-sizing: border-box;
+}
+
+.reward {
+  text-align: center;
 }
 
 .btn-color {

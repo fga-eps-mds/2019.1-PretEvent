@@ -12,30 +12,19 @@
         <label><strong>Recompensa:</strong></label>
         <input [(ngModel)]="selected" [typeahead]="rewardsNames" class="form-control" formControlName="reward">
         <br>
-        <button *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="GetReward()">Ver
+        <button type="button" class="btn btn-color btn-lg btn-block" (click)="GetReward()">Ver
           Recompensa</button>
-        <div *ngIf="clicked" class="loader"></div>
       </form>
+      <div>
+        <div *ngIf="clicked">
+          <br>
+          <div class="reward"><img width="200" heigth="200" src="{{ badge_url }}"></div>
+          <br>
+          <div class="reward">Título: {{ title }}</div>
+          <div class="reward">Descrição: {{ description }}</div>
+          <div class="reward">Pontuação: {{ points }}</div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- <br>
-
-  <div class="formbox title-formbox">
-    <h3>
-      Recompensa
-    </h3>
-    <br>
-  </div>
-  <div class="formbox body-formbox">
-    <div class="form-group">
-      <span class="name">Imagem:</span>
-      <br>
-      <span class="name">Nome:</span>
-      <br>
-      <span class="name">Descrição:</span>
-      <br>
-      <span class="name">Data:</span>
-    </div>
-  </div> -->
 </body>

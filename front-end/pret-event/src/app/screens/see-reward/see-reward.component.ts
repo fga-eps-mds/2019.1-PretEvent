@@ -20,6 +20,9 @@ export class SeeRewardComponent implements OnInit {
   rewardsNames: string[];
   clicked = false;
   title: string;
+  description: string;
+  points: any;
+  badge_url: string;
 
   selected: string;
 
@@ -37,7 +40,11 @@ export class SeeRewardComponent implements OnInit {
     this.clicked = true;
     const reward = this.rewards.find(r => r.title == this.selected);
     if(!reward) { this.clicked = false; return; }
-    
+    this.title = reward.title;
+    this.description = reward.description;
+    this.points = reward.points;
+    this.badge_url = reward.badge_url;
+
   }
 
   detectFiles(event) {
