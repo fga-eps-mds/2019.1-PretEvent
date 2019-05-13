@@ -7,7 +7,7 @@ services:
         POSTGRES_DB: "postgres"
         POSTGRES_USER: "postgres"
     ports:
-      - 5432:5432
+      - 5000:5432
   app:
     build: ./front-end/pret-event
     volumes:
