@@ -10,12 +10,7 @@ import { RewardService } from '../../services/reward.service';
 })
 export class SeeRewardComponent implements OnInit {
 
-  typePassword = false;
-  signup = false;
   rewardForm: FormGroup;
-  selectedFiles: FileList;
-  file: any;
-  valid = true;
   rewards: Array<Reward> = [];
   rewardsNames: string[];
   clicked = false;
@@ -44,12 +39,6 @@ export class SeeRewardComponent implements OnInit {
     this.description = reward.description;
     this.points = reward.points;
     this.badge_url = reward.badge_url;
-
-  }
-
-  detectFiles(event) {
-    this.selectedFiles = event.target.files;
-    this.file = this.selectedFiles[0];
   }
 
   ngOnInit() {
