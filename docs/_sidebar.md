@@ -5,9 +5,13 @@
 - [Backlog](/backlog.md)
 - [Canvas](/canvas.md)
 - [Roadmap de Produto](/roadmap_prod.md)
+- [Protótipo de baixa fidelidade](/prototipo_baixa_fidelidade.md)
 - [Protótipo de alta fidelidade](/prototipo_alta_fidelidade.md)
 - [Documento de Visão](/vision_doc.md)
 - [Documento de Arquitetura](/arq_doc.md)
+- [Documento de DevOps](/devops.md)
+- [Folha de estilo](/folha_de_estilo.md)
+- [Organização](/organization.md)
 - [Roadmap dos Papéis](/roadmap_all.md)
 
 ## Sobre o projeto

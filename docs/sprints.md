@@ -18,9 +18,13 @@
 ## <i>Sprint<./i> 3
 
 - [Planejamento](./plan_sprint3.md)
-- [Resultado](./red_sprint3.md) 
+- [Resultado](./res_sprint3.md) 
 
 ## <i>Sprint<./i> 4
 
 - [Planejamento](./plan_sprint4.md)
-- [Resultado](./red_sprint4.md) 
+- [Resultado](./res_sprint4.md) 
+
+## <i>Sprint<./i> 5
+
+- [Planejamento](./plan_sprint5.md) 
