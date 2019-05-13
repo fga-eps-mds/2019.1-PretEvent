@@ -18,12 +18,10 @@
 
 |Membro|Pontos Positivos|Pontos Negativos|Sugestões de melhoria| Pontuação das histórias |
 |---|------|-----|---|---|
-|Rodrigo Dadamos| Organização da sprint| Poucos pontos entregues gerando muitas dívidas, equipe parece desmotivada mesmo tão perto da R1|Comprometimento da equipe|Boa |
-|Gustavo Carvalho|Pouco foi agregado ao produto|MDS teve que largar o desenvolvimento pra estudar pra muitas provas| Ser mais ágil |Boa |
-|Ian Rocha|A dedicação extra humana de todos do grupo pela proximidade da R1|Meu desempenho por ter outras máterias com datas importantes|O conhecimento da equipe sobre angular.|  Boa |
-|Felipe Agustini| Entregamos muita coisa|Falta desespero no pessoal pra entregar as coisas| Temos que entregar mais coisas mais rápido| Boa |
-|Murilo Loiola|A equipe se reuniu bastante.| Época de provas e entrega de trabalhos, pouco tempo disponível.|Organização dos integrantes.|Boa |
-|André Goretti|Junção da equipe para resolver problemas e a quantidade de aprendizado.|Comunicação|Dedicação, comunicação|Boa|
+|Djorkaeff Alexandre|Acho que o time tá mais motivado depois da release 1.|O time de mds parece ter receio de chamar a galera de eps pra ajudar em algo, isso tá atrasando em muito o fechamento das tarefas, por vezes não estão nem mesmo tentando realizar.|Mds deve fazer mais coisas.|Boa|
+|André Goretti|Esforço pra fazer uma boa apresentação|Nada|Aprender mais algumas coisas de angular|Boa|
+|Felipe Agustini|Terminamos oq pretendíamos pra r1|Ainda falta uma tonelada de coisa|Rever os pontos q as prof cobraram|Boa|
+|Murilo Loiola Dantas|Finalização da release 1.|Produtividade no frontend.|Pareamento presencial .|Boa|
 
 
 ### 1.3 Quadro de Conhecimento
@@ -32,9 +30,7 @@
 
 ### 1.4 Justificativas Dívidas
 
-F17 - MDS teve provas, atrasando assim esta tarefa. Outro ponto foi a falta de habilidade técninca para conclui-la.
-F02 - MDS teve provas, atrasando assim esta tarefa. Outro ponto foi a falta de habilidade técninca para conclui-la.
-T35 - Houve falta de tempo para concluir esta tarefa. 
+T34 - Esta tarefa acabou sendo colocada como prioridade não tem alta, devido a aproximação da finalização da R1 e com isso a preparação para a apresentação da mesma teve preferência nas atividades.
 
 
 ## 2. Análise do _Scrum Master_
