@@ -7,7 +7,7 @@
 
 **Duração**: Uma semana
 
-**Pontos Planejados**: XX
+**Pontos Planejados**: 13
 
 -------
 
@@ -42,10 +42,10 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
-|F07 - Formulário de evento|5|**Dívida**|
-|F12 - Cadastro de reward|5|**Dívida**|
-|T35 - Swarm com monitoramento|2|**Dívida**|
+|F18 - Login de usuário no front|5|Planejado|
 |T34 - Criar validação dos campos de registro|2|Planejado|
+|T36 - Criar serviço de redirecionamento e de alert para sucesso e erros.|2|Planejado|
+|T38 - Linkar recompensa com evento no cliente|3|Planejado|
 |T39 - Consertar vulnerabilidades|1|Planejado|
 
 
