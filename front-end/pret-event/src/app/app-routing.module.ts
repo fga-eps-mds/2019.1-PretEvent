@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'perfil', component: PlayerProfileComponent },
   { path: 'evento/criar', component: NewEventComponent },
   { path: 'recompensa/criar', component: NewRewardComponent },
-  { path: 'evento/detalhe', component: EventDetailComponent}
+  { path: 'evento/detalhe/:id', component: EventDetailComponent}
 ];
 
 @NgModule({

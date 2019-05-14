@@ -13,6 +13,7 @@
       <img src="../../assets/imgs/home/maps.png" class="map" />
       <p class="title">Distrito Federal</p>
     </div>
+    
     <div class="row" *ngFor="let i of rows">
       <div class="column" *ngFor="let j of columns">
         <div class="card" *ngIf="events[j+(i*4)] != null">
@@ -22,7 +23,7 @@
             <div class="date"><span class="day">{{ events[j+(i*4)].formated.day }}</span><br><span
                 class="month">{{ events[j+(i*4)].formated.month }}</span></div>
             <div class="details">
-              <span class="name">{{ events[j+(i*4)].title }}</span>
+              <a [routerLink]="['/evento/detalhe/', events.id]">{{ events[j+(i*4)].title }}</a>
               <br>
               <span class="description">{{ events[j+(i*4)].description }}</span>
             </div>

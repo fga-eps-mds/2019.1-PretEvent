@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import dateFormatter from 'src/helpers/dateFormatter';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from '../../models/event';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { Event } from '../../models/event';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  event: { formated: any; id: number; title: string; date: string; points: number; description: string; url_image: string; reward_id: number; }[];
   events: Array<Event> = [];
   columns = Array(0, 1, 2, 3);
   rows = [];
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.service.getEvents()
       .then((x: Array<Event>) => {
-        this.events = x.map(event => ({ ...event, formated: dateFormatter(event.date) }));
+        this.events = x.map(event => ({ ...event, formated: dateFormatter(event.date,) }));
         this.mainEvents = this.events.slice(0, 3);
         this.rows = this.events.slice(0, (this.events.length / 4) + 1).map((_d, i) => i);
       });

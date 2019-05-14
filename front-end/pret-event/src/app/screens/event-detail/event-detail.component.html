@@ -1,3 +1,70 @@
-<p>
-  event-detail works!
+<p>]
+    title = models.CharField(max_length=255)
+    date = models.DateField()
+    points = models.IntegerField()
+    description = models.TextField()
+    url_image = models.CharField(max_length=255)
+    reward_id = models.IntegerField()
+
+  ### NOME DO CRIADOR DO EVENTO
+  ### falta lista de inscritos;
+  ### botão de inscrever e compartilhar
+
 </p>
+
+
+<div class="col-md-9">
+    <!-- Product Info Starts -->
+      <div class="row product-info">
+      <!-- Left Starts -->
+        <div class="Event img">
+              <img src="imagem" alt="Imagem do evento" class="">
+        </div>
+      <!-- Left Ends -->
+      <!-- Right Starts -->
+        <div class="col-sm-7 product-details">
+        <!-- Product Name Starts -->
+          <h2>Event Name</h2>
+        <!-- Product Name Ends -->
+          <hr>
+        <!-- Manufacturer Starts -->
+          <ul class="list-unstyled manufacturer">
+            <li>
+              <span>Data:</span> event.data
+            </li>
+            <li><span>Reward Points:</span> 300</li>
+            <li>
+              <span>Vagas:</span> <strong class="label label-success">n implementado</strong>
+            </li>
+          </ul>
+        <!-- Manufacturer Ends -->
+          <hr>
+        <!-- Available Options Starts -->
+            <div class="cart-button button-group">
+              <button type="button" class="btn btn-cart">
+                <i class="fa fa-shopping-cart"></i> 
+                Inscreva-se
+              </button>
+              <button type="button" title="Compartilhar" class="btn btn-share">
+                <i class="fa fa-heart"></i>
+              </button>							
+            </div>
+        <!-- Available Options Ends -->
+          <hr>
+        </div>
+      <!-- Right Ends -->
+      </div>
+    <!-- product Info Ends -->
+    <!-- Product Description Starts -->
+      <div class="product-info-box">
+        <h4 class="heading">Description</h4>
+        <div class="content panel-smart">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+      </div>
+    <!-- Product Description Ends -->
