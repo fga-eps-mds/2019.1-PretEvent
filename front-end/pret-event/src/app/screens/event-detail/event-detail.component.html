@@ -1,70 +1,335 @@
-<p>]
-    title = models.CharField(max_length=255)
-    date = models.DateField()
-    points = models.IntegerField()
-    description = models.TextField()
-    url_image = models.CharField(max_length=255)
-    reward_id = models.IntegerField()
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/event-detail.component.css">
+    <title>Pretevent - Cross Cerrado</title>
+  </head>
+  <body>
 
-  ### NOME DO CRIADOR DO EVENTO
-  ### falta lista de inscritos;
-  ### botão de inscrever e compartilhar
-
-</p>
-
-
-<div class="col-md-9">
-    <!-- Product Info Starts -->
-      <div class="row product-info">
-      <!-- Left Starts -->
-        <div class="Event img">
-              <img src="imagem" alt="Imagem do evento" class="">
+    <div class="imageBox mb-5" style="background-image: url('/assets/imgs/evento.jpg');">
+      <div class="container position-relative">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light position-absolute btnImage" data-toggle="modal" data-target="#fullImageModal">
+          Ver imagem
+        </button>
+      </div>
+    </div>
+    <!-- Full image modal -->
+    <div class="modal fade" id="fullImageModal" tabindex="-1" role="dialog" aria-labelledby="Imagem" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content pb-3">
+          <div class="modal-body">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+            <img src="assets/imgs/evento.jpg" class="img-fluid" alt="Cross Cerrado">
+          </div>
+          <button type="button" class="btn btn-secondary m-auto" data-dismiss="modal">Fechar</button>
+          <!-- <div class="modal-footer">
+          </div> -->
         </div>
-      <!-- Left Ends -->
-      <!-- Right Starts -->
-        <div class="col-sm-7 product-details">
-        <!-- Product Name Starts -->
-          <h2>Event Name</h2>
-        <!-- Product Name Ends -->
-          <hr>
-        <!-- Manufacturer Starts -->
-          <ul class="list-unstyled manufacturer">
-            <li>
-              <span>Data:</span> event.data
-            </li>
-            <li><span>Reward Points:</span> 300</li>
-            <li>
-              <span>Vagas:</span> <strong class="label label-success">n implementado</strong>
-            </li>
-          </ul>
-        <!-- Manufacturer Ends -->
-          <hr>
-        <!-- Available Options Starts -->
-            <div class="cart-button button-group">
-              <button type="button" class="btn btn-cart">
-                <i class="fa fa-shopping-cart"></i> 
-                Inscreva-se
-              </button>
-              <button type="button" title="Compartilhar" class="btn btn-share">
-                <i class="fa fa-heart"></i>
-              </button>							
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row d-md-flex flex-md-row-reverse">
+        <div class="col-12 col-md-4 mb-5 mainBox">
+          <div class="card border-primary">
+            <h4 class="card-header text-white bg-primary d-md-none">Cross Cerrado</h4>
+            <div class="card-body">
+              <h5 class="card-title">
+                <span class="mr-2 d-inline-block" data-toggle="tooltip" data-placement="top" title="Data do evento"><i class="fas fa-calendar-alt iconColor"></i> 18/05</span>
+                <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Horário de início"><i class="far fa-clock iconColor"></i> 10:00</span>
+              </h5>
+              <p class="card-text">
+                <span class="text-muted" data-toggle="tooltip" data-placement="top" title="Local do evento">Sábado</span>
+              </p>
+              <p class="card-text">
+                <span data-toggle="tooltip" data-placement="top" title="Local do evento"><i class="fas fa-map iconColor"></i> Estacionamento FGA</span>
+              </p>
+              <p class="card-text">
+                <span class="mr-3" data-toggle="tooltip" data-placement="top" title="Total de Visualizações"><i class="fas fa-eye iconColor"></i> 42</span>
+                <span data-toggle="tooltip" data-placement="top" title="Total de Participantes"><i class="fas fa-users iconColor"></i> 16</span>
+              </p>
+              <p class="card-text">
+                <span class="text-muted d-block">Recompensas:</span>
+                <i class="fas fa-shield-alt fa-5x m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                <i class="fas fa-sticky-note fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Adesivo"></i>
+                <i class="fas fa-certificate fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
+              </p>
+              <a href="#" class="btn btn-primary d-md-block">Participar</a>
+              <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5" data-toggle="tooltip" data-placement="top" title="Excelente">5 stars</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4" data-toggle="tooltip" data-placement="top" title="Bom">4 stars</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3" data-toggle="tooltip" data-placement="top" title="Regular">3 stars</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2" data-toggle="tooltip" data-placement="top" title="Ruim">2 stars</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1" data-toggle="tooltip" data-placement="top" title="Péssimo">1 star</label>
+              </div>
             </div>
-        <!-- Available Options Ends -->
-          <hr>
+          </div>
         </div>
-      <!-- Right Ends -->
-      </div>
-    <!-- product Info Ends -->
-    <!-- Product Description Starts -->
-      <div class="product-info-box">
-        <h4 class="heading">Description</h4>
-        <div class="content panel-smart">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+        <div class="col-12 col-md-8 mb-5">
+          <div class="row mb-3">
+            <div class="col-9 col-lg-10">
+              <h1 class="">Cross Cerrado</h1>
+              <p class="text-muted mb-0"><i class="fas fa-globe iconColor"></i> Brasília / DF</p>
+              <p class="text-right">Criado por:</p>
+            </div>
+            <div class="col-3 col-lg-2">
+              <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-html="true" title="Fulano de Tal" data-content="Eventos criados: 12 <br> Recompensas ganhas: 7">
+                <img src="assets/imgs/perfil.jpg" class="rounded-circle imagePerfil" alt="Criador do evento">
+              </a>
+            </div>
+          </div>
+          <div class="text-justify">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
-    <!-- Product Description Ends -->
+    </div>
+
+    <div class="container mb-5">
+      <div class="row">
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="participantes-tab" data-toggle="tab" href="#participantes" role="tab" aria-controls="participantes" aria-selected="true">Participantes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="recompensas-tab" data-toggle="tab" href="#recompensas" role="tab" aria-controls="recompensas" aria-selected="false">Recompensas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="duvidas-tab" data-toggle="tab" href="#duvidas" role="tab" aria-controls="duvidas" aria-selected="false">Dúvidas</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"></th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Recompensas</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>
+                              <img src="assets/imgs/perfil2.jpg" class="rounded-circle imageParticipante" alt="Participante">
+                            </td>
+                            <td>Ciclana da Silva</td>
+                            <td>2</td>
+                            <td>
+                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                              <i class="fas fa-certificate m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>
+                              <img src="assets/imgs/perfil3.jpg" class="rounded-circle imageParticipante" alt="Participante">
+                            </td>
+                            <td>Beltrano de Tal</td>
+                            <td>1</td>
+                            <td>
+                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>
+                              <img src="assets/imgs/perfil4.jpg" class="rounded-circle imageParticipante" alt="Participante">
+                            </td>
+                            <td>Fulana</td>
+                            <td>1</td>
+                            <td>
+                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>
+                              <img src="assets/imgs/perfil2.jpg" class="rounded-circle imageParticipante" alt="Participante">
+                            </td>
+                            <td>Ciclana da Silva</td>
+                            <td>2</td>
+                            <td>
+                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                              <i class="fas fa-certificate m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>
+                              <img src="assets/imgs/perfil3.jpg" class="rounded-circle imageParticipante" alt="Participante">
+                            </td>
+                            <td>Beltrano de Tal</td>
+                            <td>1</td>
+                            <td>
+                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>
+                              <img src="assets/imgs/perfil4.jpg" class="rounded-circle imageParticipante" alt="Participante">
+                            </td>
+                            <td>Fulana</td>
+                            <td>1</td>
+                            <td>
+                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="recompensas" role="tabpanel" aria-labelledby="recompensas-tab">
+                    <div class="row">
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card mb-3">
+                          <div class="row no-gutters">
+                            <div class="col-md-4">
+                              <i class="fas fa-shield-alt fa-5x iconColor m-3"></i>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">50 pontos de experiência</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card mb-3">
+                          <div class="row no-gutters">
+                            <div class="col-md-4">
+                              <i class="fas fa-shield-alt fa-5x iconColor m-3"></i>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">Adesivo</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card mb-3">
+                          <div class="row no-gutters">
+                            <div class="col-md-4">
+                              <i class="fas fa-sticky-note fa-5x iconColor m-3"></i>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">Certificado de Participação</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade text-justify" id="duvidas" role="tabpanel" aria-labelledby="duvidas-tab">
+                    <div id="accordionDuvidas">
+                      <div class="card">
+                        <div class="card-header" id="question1">
+                          <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#answer1" aria-expanded="true" aria-controls="answer1">
+                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat?
+                            </button>
+                          </h5>
+                        </div>
+
+                        <div id="answer1" class="collapse" aria-labelledby="question1" data-parent="#accordionDuvidas">
+                          <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="question2">
+                          <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#answer2" aria-expanded="false" aria-controls="answer2">
+                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat?
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="answer2" class="collapse" aria-labelledby="question2" data-parent="#accordionDuvidas">
+                          <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="question3">
+                          <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#answer3" aria-expanded="false" aria-controls="answer3">
+                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat?
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="answer3" class="collapse" aria-labelledby="question3" data-parent="#accordionDuvidas">
+                          <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <form class="mt-5">
+                      <div class="form-group">
+                        <label for="question">Alguma dúvida sobre o evento?</label>
+                        <input type="text" class="form-control" id="question" placeholder="Pergunta">
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <p class="text-center">Pretevent &copy; 2019</p>
+      </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="popover"]').popover({
+          trigger: 'focus'
+        })
+      })
+    </script>
+  </body>
+</html>
