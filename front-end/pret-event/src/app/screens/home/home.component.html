@@ -23,7 +23,7 @@
             <div class="date"><span class="day">{{ events[j+(i*4)].formated.day }}</span><br><span
                 class="month">{{ events[j+(i*4)].formated.month }}</span></div>
             <div class="details">
-              <a [routerLink]="['/evento/detalhe/', events.id]">{{ events[j+(i*4)].title }}</a>
+              <a [routerLink]="['/evento/detalhe/', events[j+(i*4)].id]">{{ events[j+(i*4)].title }}</a>
               <br>
               <span class="description">{{ events[j+(i*4)].description }}</span>
             </div>
