@@ -9,7 +9,7 @@ html, body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	background-color: #878e88;
+  background-color: #878e88;
   }
   
   .imageBox .container {
@@ -95,3 +95,8 @@ html, body {
 	top:2px;
 	left:2px;
   }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+}

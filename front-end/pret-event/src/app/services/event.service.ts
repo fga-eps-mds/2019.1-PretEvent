@@ -25,6 +25,15 @@ export class EventService {
         )
     )
 
+  getEventByid = id =>
+    new Promise((resolve, reject) =>
+      this.http.get<Event>(`${this.url}/${id}`)
+        .subscribe(
+         data => resolve(data),
+          error => reject(error),
+        )
+    )
+
   postEvent = (event: Event) =>
     new Promise(resolve =>
       this.http.post(this.url, event)

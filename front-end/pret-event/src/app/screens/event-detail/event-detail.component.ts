@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import dateFormatter from 'src/helpers/dateFormatter';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from '../../models/event';
 import { ActivatedRoute } from '@angular/router';
@@ -11,20 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventDetailComponent implements OnInit, OnDestroy {
 
-  id: number;
   private sub: any;
+  event: Event;
   
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: EventService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.id = +params['id']; // (+) converts string 'id' to a number
+      this.service.getEventByid(params['id'])
+      .then((event: Event) => {
+        console.log(event);
+        this.event = event;
+      })
+      .catch(error => console.log(error));
+      });
 
-       // In a real app: dispatch action to load the details here.
-    });
   }
-
 
 ngOnDestroy() {
   this.sub.unsubscribe();
