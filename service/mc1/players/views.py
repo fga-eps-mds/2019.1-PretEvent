@@ -13,6 +13,7 @@ from django.http import Http404
 
 from players.models import Player
 
+
 @permission_classes((permissions.AllowAny,))
 class PlayerList(APIView):
 
@@ -25,19 +26,27 @@ class PlayerList(APIView):
 
     def get(self, request, format=None):
         players = Player.objects.all()
-        serializer = PlayerCreateSerializer(players, many = True)
+        serializer = PlayerCreateSerializer(players, many=True)
 
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = PlayerCreateSerializer(data = request.data)
+        serializer = PlayerCreateSerializer(data=request.data)
 
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+
+@permission_classes((permissions.AllowAny,))
+class PlayerRanking(APIView):
+
+    def get(self, request, format=None):
+        queryset = Player.objects.all().values('username', 'points', 'photo_url').order_by('-points')
+
+        return Response(queryset)
 
 
 @permission_classes((permissions.IsAuthenticatedOrReadOnly, ))
@@ -65,19 +74,22 @@ class PlayerDetail(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
 
-        return Response(serializer.data, status = status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
         player = self.get_object(pk)
         player.delete()
 
-        return Response(status = status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class CustomObtainAuthToken(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
-        response = super(CustomObtainAuthToken, self).post(request, *args, **kwargs)
+        response = super(CustomObtainAuthToken, self).post(
+            request, *args, **kwargs)
         token = Token.objects.get(key=response.data['token'])
         return Response({'token': token.key, 'id': token.user_id})
+
 
 class CustomAuthToken(ObtainAuthToken):
 
