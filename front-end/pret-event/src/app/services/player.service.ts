@@ -55,6 +55,7 @@ export class PlayerService {
       ).subscribe();
     })
 
+    
   updatePlayer = (player: Player) =>
     new Promise((resolve, reject) =>
       {const url = '${url}/${id}';
@@ -71,4 +72,13 @@ export class PlayerService {
       tap(_ => console.log('deteled player id = ${id}'))
     )
   }
+
+  getPlayerid = id =>
+    new Promise((resolve, reject) =>
+      this.http.get<Player>('${this.url}/${id}')
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
 }

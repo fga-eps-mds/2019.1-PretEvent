@@ -8,10 +8,10 @@ import { PlayerEditComponent } from './screens/player-edit/player-edit.component
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'perfil', component: PlayerProfileComponent },
+  { path: 'perfil/:id', component: PlayerProfileComponent },
   { path: 'evento/criar', component: NewEventComponent },
   { path: 'recompensa/criar', component: NewRewardComponent },
-  { path: 'perfil/editar', component: PlayerEditComponent },
+  { path: 'perfil/editar/:id', component: PlayerEditComponent },
 ];
 
 @NgModule({

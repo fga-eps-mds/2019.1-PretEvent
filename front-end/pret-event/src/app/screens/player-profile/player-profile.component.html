@@ -2,14 +2,14 @@
   <br>
   <div class="Box firstBox">
     <div>
-      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px">
+      <img src={{player.photo_url}} alt="Avatar" style="width:200px">
     </div>
     <div>
-      <h1>Name Surname</h1> <!-- colocar aqui nome-->
+      <h1 class="">{{player.username}}</h1> <!-- colocar aqui nome-->
     </div>
-    <div class="playerName">
+    <div class="">
       <!-- colocar aqui matricula -->
-      16/0001111
+      {{player.university_id}}
     </div>
   </div>
 
@@ -37,7 +37,7 @@
 
       <!-- Reward div -->
       <div style="text-align: center;" class="pointsAndRewardBox pointsBorder">
-        <h2><span class="badge badge-primary">163</span></h2>
+        <h2><span class="badge badge-primary">{{player.points}}</span></h2>
         <h4>
           Pontos
         </h4>
