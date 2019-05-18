@@ -18,7 +18,6 @@ export class PlayerService {
   ref: any;
   task: any;
   downloadURL: any;
-  url = '/api/players/';
 
   constructor(private http: HttpClient, private afStorage: AngularFireStorage) { }
 
@@ -33,7 +32,7 @@ export class PlayerService {
 
   postPlayer = (player: Player) =>
     new Promise((resolve, reject) =>
-      this.http.post(this.url, player)
+      this.http.post('/api/players', player)
         .subscribe(
           data => resolve(data),
           error => reject(error),
@@ -55,27 +54,16 @@ export class PlayerService {
       ).subscribe();
     })
 
-    
-  updatePlayer = (player: Player) =>
-    new Promise((resolve, reject) =>
-      {const url = '${url}/${id}';
-        return this.http.put(url, player, httpOptions).pipe(
-          tap(_ => console.log('updated player id = ${id}')),
-        )
-      }
-  )
 
-  deletePlayer (id): Observable<Player>{
-    const url = '${url}/${id}';
-
-    return this.http.delete<Player>(url, httpOptions).pipe(
-      tap(_ => console.log('deteled player id = ${id}'))
-    )
+  updatePlayer(id, player): Observable<any> {
+    return this.http.put(`/api/players/${id}`, player).pipe(
+      tap(_ => console.log(`atualiza o player com id=${id}`)),
+    );
   }
 
   getPlayerid = id =>
     new Promise((resolve, reject) =>
-      this.http.get<Player>('${this.url}/${id}')
+      this.http.get<Player>(`/api/players/${id}`)
         .subscribe(
           data => resolve(data),
           error => reject(error),

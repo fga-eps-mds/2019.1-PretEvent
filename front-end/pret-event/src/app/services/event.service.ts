@@ -17,11 +17,11 @@ export class EventService {
   constructor(private http: HttpClient, private afStorage: AngularFireStorage) { }
 
   getEvents = () =>
-    new Promise(resolve =>
+    new Promise((resolve, reject) =>
       this.http.get<Event[]>(this.url)
         .subscribe(
           data => resolve(data),
-          error => resolve(error),
+          error => reject(error),
         )
     )
 
