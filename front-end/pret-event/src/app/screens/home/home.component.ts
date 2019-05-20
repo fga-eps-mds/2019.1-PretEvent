@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
       .then((x: Array<Event>) => {
         this.events = x.map(event => ({ ...event, formated: dateFormatter(event.date) }));
         this.mainEvents = this.events.slice(0, 3);
-        this.rows = this.events.slice(0, (this.events.length / 4) + 1).map((_d, i) => i);
       });
   }
 }

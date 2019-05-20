@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
-  testVariable = 'Just messing with typescript';
-
   constructor() { }
 }
