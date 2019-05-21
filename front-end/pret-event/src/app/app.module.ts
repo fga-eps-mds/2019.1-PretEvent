@@ -24,6 +24,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NewRewardComponent } from './screens/new-reward/new-reward.component';
+import { SeeRewardComponent } from './screens/see-reward/see-reward.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { AlertModule } from 'ngx-bootstrap/alert';
 
