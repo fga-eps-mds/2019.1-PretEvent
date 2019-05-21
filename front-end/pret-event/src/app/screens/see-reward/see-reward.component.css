@@ -1,0 +1,40 @@
+.formbox {
+  width: 70%;
+  max-width: 500px;
+  min-width: 255px;
+  float: center;
+  margin: 0 auto;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.title-formbox {
+  height: 75px;
+  font-size: 55px;
+  background: #2a2a2b;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+}
+
+.body-formbox {
+  background: #dedee4e0;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-sizing: border-box;
+}
+
+.reward {
+  text-align: center;
+}
+
+.btn-color {
+  background-color: #006400;
+  color: #fff;
+}
+
+.formReward {
+  position: relative;
+}
