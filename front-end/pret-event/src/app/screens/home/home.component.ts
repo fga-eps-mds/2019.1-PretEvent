@@ -9,7 +9,7 @@ import { Event } from '../../models/event';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  event: { formated: any; id: number; title: string; date: string; points: number; description: string; url_image: string; reward_id: number; }[];
+  event: Event;
   events: Array<Event> = [];
   columns = Array(0, 1, 2, 3);
   rows = [];
