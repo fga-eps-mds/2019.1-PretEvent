@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import dateFormatter from 'src/helpers/dateFormatter';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from '../../models/event';
-import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.service.getEvents()
       .then((x: Array<Event>) => {
-        this.events = x.map(event => ({ ...event, formated: dateFormatter(event.date,) }));
+        this.events = x.map(event => ({ ...event, formated: dateFormatter(event.date) }));
         this.mainEvents = this.events.slice(0, 3);
         this.rows = this.events.slice(0, (this.events.length / 4) + 1).map((_d, i) => i);
       });

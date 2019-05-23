@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'perfil', component: PlayerProfileComponent },
   { path: 'evento/criar', component: NewEventComponent },
   { path: 'recompensa/criar', component: NewRewardComponent },
-  { path: 'evento/detalhe/:id', component: EventDetailComponent},
+  { path: 'evento/:id', component: EventDetailComponent},
   { path: 'recompensa/visualizar', component: SeeRewardComponent },
 ];
 

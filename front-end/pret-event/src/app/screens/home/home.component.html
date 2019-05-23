@@ -17,17 +17,19 @@
     <div class="row" *ngFor="let i of rows">
       <div class="column" *ngFor="let j of columns">
         <div class="card" *ngIf="events[j+(i*4)] != null">
+          <a [routerLink]="['/evento/', events[j+(i*4)].id]">
           <div class="banner" [ngStyle]="{ 'background-image': 'url(' + events[j+(i*4)].url_image + ')'}">
           </div>
           <div class="data">
             <div class="date"><span class="day">{{ events[j+(i*4)].formated.day }}</span><br><span
                 class="month">{{ events[j+(i*4)].formated.month }}</span></div>
             <div class="details">
-              <a [routerLink]="['/evento/detalhe/', events[j+(i*4)].id]">{{ events[j+(i*4)].title }}</a>
+              <p>{{ events[j+(i*4)].title }}</p>
               <br>
               <span class="description">{{ events[j+(i*4)].description }}</span>
             </div>
           </div>
+          </a>
         </div>
       </div>
     </div>

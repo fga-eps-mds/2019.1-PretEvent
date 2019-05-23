@@ -24,11 +24,8 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       })
       .catch(error => console.log(error));
       });
-
-      
-
   }
-
+  
 ngOnDestroy() {
   this.sub.unsubscribe();
   }
