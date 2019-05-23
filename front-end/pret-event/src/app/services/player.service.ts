@@ -34,6 +34,15 @@ export class PlayerService {
         )
     )
 
+  getPlayers = () =>
+    new Promise((resolve, reject) =>
+      this.http.get<Player[]>(`${this.url}ranking`)
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
+
   registerPlayer = (player: Player, file: any) =>
     new Promise(resolve => {
       this.ref = this.afStorage.ref(player.university_id.toString());
