@@ -7,7 +7,7 @@
 
 **Duração**: Uma semana
 
-**Pontos Planejados**:  
+**Pontos Planejados**: 25
 
 -------
 
@@ -33,8 +33,7 @@
 
 
 ## 2. Planejamento
-<p align = "justify"> O objetivo desta sprint será continuar o termino dos serviços essenciais para agregar valor ao produto, e corrigir os erros encontrados durante a finalização da R1.</p> 
-
+<p align = "justify"> Esta sprint tentará resolver todos os probelmas no design da plataforma, assim como também a criação de alguns links de contato com a API.</p>
 
 ## 3. Tarefas da _Sprint_
 
@@ -42,7 +41,13 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|--:|
-||||
+|F04 - Edição de dados do player |8|**Dívida**|
+|F08 - Página de visualização de evento|5|**Dívida**|
+|F14 - Ranking de players|5|Planejada|
+|T41 - Busca de evento por parâmetro|2|Planejada|
+|T42 - Refatorar navbar|1|Planejada|
+|T43 - Refatorar Home|3|Planejada|
+|T44 - Refatorar Footer|1|Planejada|
 
 
 

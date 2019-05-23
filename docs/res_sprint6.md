@@ -14,13 +14,12 @@
 
 ### 1.2 Retrospectiva
 
-|Membro|Pontos Positivos|Pontos Negativos|Sugestões de melhoria| Pontuação das histórias |
+|Membro|Pontos Positivos|Pontos Negativos|Sugestões de melhoria|
 |---|------|-----|---|---|
-||||||
-||||||
-||||||
-||||||
-||||||
+|André Goretti|Melhor comunicação|-|Afastar problemas pessoais do trabalho|
+|Breno|Deu para estudar bastante|Não consegui terminar a issue|A entrega das issues|
+|Ian Rocha|-|Meu desempenho próprio|Minha vontade de voltar a codar o maximo que der|
+|Gustavo Carvalho|A comunicação com o time melhorou bastante nessa sprint|Produtividade|Planejamento nos finais das sprints|
 
 
 ### 1.3 Quadro de Conhecimento
