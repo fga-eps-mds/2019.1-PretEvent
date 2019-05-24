@@ -17,17 +17,20 @@ class EventList(APIView):
         return []
 
     def get(self, request, format=None):
-        eventos = Evento.objects.all()
+        queryParam = request.GET.get('title')
+        eventos = Evento.objects.all() if queryParam == None else Evento.objects.filter(
+            title__icontains=queryParam)
         serializer = EventoCreateSerializer(eventos, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = EventoCreateSerializer(data = request.data)
+        serializer = EventoCreateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class EventDetail(APIView):
 
@@ -57,4 +60,4 @@ class EventDetail(APIView):
     def delete(self, request, pk, format=None):
         evento = self.get_object(pk)
         evento.delete()
-        return Response(status = status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
