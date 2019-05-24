@@ -8,7 +8,8 @@ import { SeeRewardComponent } from './screens/see-reward/see-reward.component';
 import { RankingComponent } from './screens/ranking/ranking.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'perfil', component: PlayerProfileComponent },
   { path: 'evento/criar', component: NewEventComponent },
   { path: 'recompensa/criar', component: NewRewardComponent },

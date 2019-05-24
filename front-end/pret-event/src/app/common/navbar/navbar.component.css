@@ -5,29 +5,29 @@
 }
 
 .nav-bg {
-  background-color: #2A2A2A;
-  border-top: solid 2px #E60D1E;
+  background-color: #20a4f3;
+  border-top: solid 2px #f9c80e;
 }
 
 .nav-title {
-  color: #ea030f;
+  color: #f9c80e;
   font-weight: 700;
 }
 
 .nav-bt:hover {
-  color: #111818;
+  color: #20a4f3;
 }
 
 .nav-bt:active {
-  color: #191818;
+  color: #20a4f3;
 }
 
 .item-color {
-  color: #191818;
+  color: #20a4f3;
 }
 
 .bg-color {
-  border-top: 1px solid #191818;
+  border-top: 1px solid #20a4f3;
 }
 
 .alert-view {
