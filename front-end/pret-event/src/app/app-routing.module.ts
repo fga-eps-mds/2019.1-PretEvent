@@ -5,6 +5,7 @@ import { PlayerProfileComponent } from './screens/player-profile/player-profile.
 import { NewEventComponent } from './screens/new-event/new-event.component';
 import { NewRewardComponent } from './screens/new-reward/new-reward.component';
 import { SeeRewardComponent } from './screens/see-reward/see-reward.component';
+import { RankingComponent } from './screens/ranking/ranking.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'evento/criar', component: NewEventComponent },
   { path: 'recompensa/criar', component: NewRewardComponent },
   { path: 'recompensa/visualizar', component: SeeRewardComponent },
+  { path: 'ranking', component: RankingComponent },
 ];
 
 @NgModule({
