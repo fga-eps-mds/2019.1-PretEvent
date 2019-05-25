@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from '../../models/event';
 import { ActivatedRoute } from '@angular/router';
-import { stringify } from '@angular/core/src/util';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-event-detail',
@@ -16,22 +17,19 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   date: string = '1234';
   title: string;
   description: string;
-  url: string;
+  image: SafeStyle;
   
-  constructor(private route: ActivatedRoute, private service: EventService) { }
+  constructor(private route: ActivatedRoute, private service: EventService, private sanitization:DomSanitizer) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.service.getEventByid(params['id'])
       .then((event: Event) => {
-        console.log(event);
         this.event = event;
-        console.log(event.date)
         this.date = this.event.date;
-        this.title = this.event.title
-        this.description = this.event.description
-        this.url = this.event.url_image;
-        console.log(this.date)
+        this.title = this.event.title;
+        this.description = this.event.description;
+        this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.event.url_image})`);
       })
       .catch(error => console.log(error));
       });
