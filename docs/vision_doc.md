@@ -179,7 +179,7 @@ Para solucionar as dificuldades mencionadas adotamos a metodologia de gamificaç
   - Perda e evasão (8).
 
 ##### 4.3.3 Idealização e Design
-
+![](./images/design_gamificacao.png)
 ##### 4.3.4 Avaliação e Monitoramento
 
 Os resultados e avaliações da gamificação podem ser observados por:
