@@ -1,13 +1,12 @@
 # Planejamento Sprint 6
 
-
 **Data de Início**: 04/05/2019
 
 **Data de Término**: 11/05/2019
 
-**Duração**: Uma semana
+**Duração**: 7 dias
 
-**Pontos Planejados**: 21 
+**Pontos Planejados**: 21
 
 -------
 
@@ -17,7 +16,7 @@
 
 [3. Tarefas da _Sprint_](#_3-tarefas-da-sprint)  
 
-  * [3.1. Planejadas](#_31-planejadas)
+* [3.1. Planejadas](#_31-planejadas)
 
 -------
 
@@ -31,25 +30,17 @@
 
 **Arquiteto de Software**: André Bargas
 
-
 ## 2. Planejamento
-<p align = "justify"> O objetivo desta sprint será continuar o termino dos serviços essenciais para agregar valor ao produto, e corrigir os erros encontrados durante a finalização da R1.</p> 
 
+<p style="text-align:justify">&emsp;&emsp;O objetivo desta sprint será continuar o término dos serviços essenciais para agregar valor ao produto e corrigir os erros encontrados durante a finalização da R1.</p>
 
 ## 3. Tarefas da _Sprint_
 
 ### 3.1. Planejadas
 
 |Tarefas|Pontos|Tipos|
-|--|:--:|--:|
+|--|:--:|:--:|
 |F04 - Edição de dados do player |8|Planejado|
 |F08 - Página de visualização de evento|5|Planejado|
 |F13 - Página de visualização de reward|5|Planejado|
 |T40 - Consertar banco dos serviços|3|Planejado|
-
-
-
-
-
-
-

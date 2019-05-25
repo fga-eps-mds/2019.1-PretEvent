@@ -1,11 +1,10 @@
 # Planejamento Sprint 1
 
-
 **Data de Início**: 30/03/2019
 
 **Data de Término**: 06/04/2019
 
-**Duração**: Uma semana
+**Duração**: 7 dias
 
 **Pontos Planejados**: 18
 
@@ -17,7 +16,7 @@
 
 [3. Tarefas da _Sprint_](#_3-tarefas-da-sprint)  
 
-  * [3.1. Planejadas](#_31-planejadas)
+* [3.1. Planejadas](#_31-planejadas)
 
 -------
 
@@ -31,12 +30,11 @@
 
 **Arquiteto de Software**: Gustavo Carvalho
 
-
 ## 2. Planejamento
 
-<p align = "justify"> Todas as tarefas criadas foram alocadas para a sprint 0 para que fosse possível medir um burndown da equipe de melhor forma.</p>
+<p style="text-align:justify">&emsp;&emsp;Todas as tarefas criadas foram alocadas para a sprint 0 para que fosse possível medir um burndown da equipe de melhor forma.</p>
 
-<p align = "justify"> Os maiores riscos para a presente <i>sprint</i> se devem ao pouco conhecimento da equipe de MDS sobre as práticas ágeis e seus rituais, bem como o risco de uma inicial desorganização devido ao ínicio um pouco tumultuado do projeto.</p>
+<p style="text-align:justify">&emsp;&emsp;Os maiores riscos para a presente <i>sprint</i> se devem ao pouco conhecimento da equipe de MDS sobre as práticas ágeis e seus rituais, bem como o risco de uma inicial desorganização devido ao ínicio um pouco tumultuado do projeto.</p>
 
 ## 3. Tarefas da _Sprint_
 
