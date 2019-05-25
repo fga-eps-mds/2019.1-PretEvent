@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Event } from '../models/event';
-import { AngularFireStorage } from 'angularfire2/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 
 @Injectable({
@@ -22,6 +22,15 @@ export class EventService {
         .subscribe(
           data => resolve(data),
           error => resolve(error),
+        )
+    )
+
+  getEventByid = id =>
+    new Promise((resolve, reject) =>
+      this.http.get<Event>(`${this.url}/${id}`)
+        .subscribe(
+         data => resolve(data),
+          error => reject(error),
         )
     )
 
