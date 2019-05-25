@@ -1,11 +1,10 @@
 # Planejamento Sprint 7
 
-
 **Data de Início**: 11/05/2019
 
 **Data de Término**: 18/05/2019
 
-**Duração**: Uma semana
+**Duração**: 7 dias
 
 **Pontos Planejados**: 25
 
@@ -17,7 +16,7 @@
 
 [3. Tarefas da _Sprint_](#_3-tarefas-da-sprint)  
 
-  * [3.1. Planejadas](#_31-planejadas)
+* [3.1. Planejadas](#_31-planejadas)
 
 -------
 
@@ -31,16 +30,16 @@
 
 **Arquiteto de Software**: André Bargas
 
-
 ## 2. Planejamento
-<p align = "justify"> Esta sprint tentará resolver todos os probelmas no design da plataforma, assim como também a criação de alguns links de contato com a API.</p>
+
+<p style="text-align:justify">&emsp;&emsp;Esta sprint tentará resolver todos os probelmas no design da plataforma, assim como a criação de alguns links de contato com a API.</p>
 
 ## 3. Tarefas da _Sprint_
 
 ### 3.1. Planejadas
 
 |Tarefas|Pontos|Tipos|
-|--|:--:|--:|
+|--|:--:|:--:|
 |F04 - Edição de dados do player |8|**Dívida**|
 |F08 - Página de visualização de evento|5|**Dívida**|
 |F14 - Ranking de players|5|Planejada|
@@ -48,10 +47,3 @@
 |T42 - Refatorar navbar|1|Planejada|
 |T43 - Refatorar Home|3|Planejada|
 |T44 - Refatorar Footer|1|Planejada|
-
-
-
-
-
-
-
