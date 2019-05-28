@@ -54,12 +54,14 @@ export class PlayerService {
       ).subscribe();
     })
 
-
-  updatePlayer(id, player): Observable<any> {
-    return this.http.put(`/api/players/${id}`, player).pipe(
-      tap(_ => console.log(`atualiza o player com id=${id}`)),
-    );
-  }
+    updatePlayer = (player: { id: number, username: string, university_id: number }) =>
+    new Promise((resolve, reject) =>
+      this.http.put(`/api/players/${player.id}`, player)
+      .subscribe(
+        data => resolve(data),
+        error => reject(error),
+      )
+  )
 
   getPlayerid = id =>
     new Promise((resolve, reject) =>

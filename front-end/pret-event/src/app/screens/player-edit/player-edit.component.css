@@ -1,4 +1,4 @@
-.Box {
+.formbox {
     width: 70%;
     max-width: 500px;
     min-width: 255px;
@@ -6,101 +6,50 @@
     margin: 0 auto;
     padding: 25px;
     box-sizing: border-box;
-}
-
-/* This is where the player's name and university id is in */
-
-.firstBox {
-    height: 350px;
+  }
+  
+  .title-formbox {
+    height: 75px;
     font-size: 55px;
-    background: white;
+    background: #2a2a2b;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
-    color: black;
-    text-align: center;
-    padding: 13px 20px 20px 20px;
-}
-
-/* This is where the player's level and points is in */
-
-.secondBox {
-    height: 500px;
-    background: #ffffffc7;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-/* Black box with level information */
-
-.levelBox {
-    width: 100%;
-    height: 70px;
-    background: black;
-    border-radius: 10px;
-    padding: 13px 20px 20px 20px;
-}
-
-.pointsAndRewardBox {
-    display: inline-block;
-    width: 50%;
-    height: 100px;
-    background: black;
-    border-radius: 10px;
-}
-
-.pointsBorder {
-    border-right-style: solid;
-    border-color: #ffffffe7;
-    border-width: 10px;
-}
-
-.rewardBorder {
-    border-left-style: solid;
-    border-color: #ffffffe7;
-    border-width: 10px;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 500px) {
-    .pointsAndRewardBox {
-        width: 100%;
-    }
-    .pointsBorder {
-        border-width: 0px;
-    }
-    .rewardBorder {
-        border-width: 0px;
-        margin-top: 20px;
-    }
-}
-
-.playerName {
-    font-size: 22px;
-    color: grey;
-}
-
-body {
-    height: auto;
-    background-color: #727272;
-    /* For browsers that do not support gradients */
-    /* background-image: linear-gradient(-90deg, #ca9898,#a3a2a5); Standard syntax (must be last) */
-}
-
-img {
-    border-radius: 50%;
-    border-style: solid;
-    border-color: grey;
-    border-width: 8px;
-}
-
-h4 {
+    box-sizing: border-box;
     color: white;
     text-align: center;
-    font-weight: bold;
-    padding: 5px 0px 0px 0px;
-}
-
-h2 {
-    padding: 10px 0px 0px 0px;
-}
+  }
+  
+  .body-formbox {
+    height: 500px;
+    background: #dedee4e0;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-sizing: border-box;
+  }
+  
+  .btn-color {
+    background-color: #006400;
+    color: #fff;
+  }
+  
+  .formPlayer {
+    position: relative;
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #006400;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Player } from '../../models/player';
 import { PlayerService } from 'src/app/services/player.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { FormControl, FormGroupDirective, FormGroup, FormBuilder, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-player-edit',
@@ -14,46 +14,44 @@ export class PlayerEditComponent implements OnInit {
   private sub: any;
   player: Player;
 
-  id: String = '';
   playerForm: FormGroup;
-  username: String = '';
-  photo_url: String = '';
-  points: Number = 0;
   isLoadingResults = false;
+  clicked = false;
+  id = 0;
 
   constructor(
-    private router: Router,
+    private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private service: PlayerService,
     ) { }
 
   ngOnInit() {
-    this.getPlayerid(this.router.snapshot.params['id']);
     this.playerForm = this.formBuilder.group({
-   'username' : [null],
-   'photo_url' : [null],
-   'points' : [null]
- });
-  }
-
-  getPlayerid(id) {
-    this.player.getPlayerid(id).subscribe(data => {
-      this.id = data.id;
-      this.playerForm.setValue({
-        username: data.username,
-        photo_url: data.photo_url,
-        points: data.points
-      });
+      username: '',
+      university_id: 0
+    })
+    this.sub = this.route.params.subscribe(params => {
+      this.service.getPlayerid(params['id'])
+      .then((player: Player) => {
+        this.playerForm.setValue({
+          username: player.username,
+          university_id: player.university_id,
+        });
+        this.id = player.id;
+      })
+      .catch(error => console.log(error));
     });
   }
 
   updatePlayer(form: NgForm) {
     this.isLoadingResults = true;
-    this.player.updatePlayer(this.id, form)
-      .subscribe(red => {
-        this.isLoadingResults = false;
-        this.router.navigate(['/perfil/' + this.id]);
+    this.service.updatePlayer({
+      username: this.playerForm.get('username').value,
+      university_id: this.playerForm.get('university_id').value,
+      id: this.id
+    })
+      .then(red => {
+        console.log(red)
       });
   }
-
 }
