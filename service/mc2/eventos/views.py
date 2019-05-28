@@ -18,7 +18,7 @@ class EventList(APIView):
 
     def get(self, request, format=None):
         queryParam = request.GET.get('title')
-        eventos = Evento.objects.all() if queryParam == None else Evento.objects.filter(
+        eventos = Evento.objects.all().order_by('date') if queryParam == None else Evento.objects.filter(
             title__icontains=queryParam)
         serializer = EventoCreateSerializer(eventos, many=True)
         return Response(serializer.data)
