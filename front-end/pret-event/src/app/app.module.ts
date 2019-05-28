@@ -27,6 +27,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { EventDetailComponent } from './screens/event-detail/event-detail.component';
 import { RankingComponent } from './screens/ranking/ranking.component';
+import { ListEventComponent } from './screens/list-event/list-event.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { RankingComponent } from './screens/ranking/ranking.component';
     EventDetailComponent,
     SeeRewardComponent,
     RankingComponent,
+    ListEventComponent,
   ],
   imports: [
     BrowserModule,
