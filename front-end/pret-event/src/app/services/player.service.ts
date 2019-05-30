@@ -32,7 +32,7 @@ export class PlayerService {
 
   postPlayer = (player: Player) =>
     new Promise((resolve, reject) =>
-      this.http.post('/api/players', player)
+      this.http.post('/api/players/', player)
         .subscribe(
           data => resolve(data),
           error => reject(error),
