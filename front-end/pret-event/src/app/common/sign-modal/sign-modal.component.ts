@@ -7,6 +7,7 @@ import { AlertService } from '../../services/alert.service';
 
 import { setToken } from '../../helpers/token';
 import { Alert } from 'src/app/models/alert';
+import { setId } from 'src/app/helpers/id';
 
 @Component({
   selector: 'app-sign-modal',

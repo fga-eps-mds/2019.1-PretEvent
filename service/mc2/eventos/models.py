@@ -7,6 +7,7 @@ class Evento(models.Model):
     description = models.TextField()
     url_image = models.CharField(max_length=255)
     reward_id = models.IntegerField()
+    creator_id = models.IntegerField()
 
 class Evento_Player(models.Model):
     evento_id = models.IntegerField()
