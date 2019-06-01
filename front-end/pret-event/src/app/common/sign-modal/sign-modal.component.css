@@ -1,10 +1,10 @@
 .bg-modal {
-  background-color: #2A2A2A;
+  background-color: #20a4f3;
   border-radius: 3px;
 }
 
 .bg-bt {
-  background-color: #111818;
+  background-color: #171b17;
   min-width: 30%;
   border-width: 0;
 }
@@ -27,8 +27,8 @@
 }
 
 .border-modal {
-  border-bottom: 1px solid #ea030f;
-  color: #ea030f;
+  border-bottom: 1px solid #f9c80e;
+  color: #f9c80e;
 }
 
 .input-st {
@@ -36,7 +36,7 @@
 }
 
 .close-bt {
-  color: #ea030f;
+  color: #f9c80e;
 }
 
 .loader {

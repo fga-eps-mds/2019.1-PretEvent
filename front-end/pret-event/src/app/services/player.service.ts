@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Player } from '../models/player';
-import { AngularFireStorage } from 'angularfire2/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Observable, of, throwError } from 'rxjs';
@@ -33,6 +33,15 @@ export class PlayerService {
   postPlayer = (player: Player) =>
     new Promise((resolve, reject) =>
       this.http.post('/api/players/', player)
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
+
+  getPlayers = () =>
+    new Promise((resolve, reject) =>
+      this.http.get<Player[]>(`${this.url}ranking`)
         .subscribe(
           data => resolve(data),
           error => reject(error),

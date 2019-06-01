@@ -1,33 +1,48 @@
+<!-- CAROUSEL -->
 <div class="all">
   <div class="top">
     <div class="carousel-div">
       <carousel>
-        <slide class="slide-height" *ngFor="let event of mainEvents">
-          <div class="bg-slide" [ngStyle]="{ 'background-image': 'url(' + event.url_image + ')'}"></div>
+        <slide class="slide-height" *ngFor="let mainEvent of mainEvents">
+          <div class="bg-slide" [ngStyle]="{ 'background-image': 'url(' + mainEvent.url_image + ')'}"></div>
         </slide>
       </carousel>
     </div>
   </div>
-  <div class="content">
-    <div class="header">
-      <img src="../../assets/imgs/home/maps.png" class="map" />
-      <p class="title">Distrito Federal</p>
+
+  <!-- CARD DE EVENTOS -->
+  <!-- <div class="container py-5 bg-faded">
+    <div class="card-columns">
+      <div *ngFor="let event of events" class="card">
+        <img class="card-img-top" src={{event.url_image}} alt="Card image cap">
+        <div class="card-body">
+          <a class="btn btn-primary" style="color:white"><strong>{{event.formated.day}}</strong></a>
+          <a class="btn btn-warning"
+            style="color:white; text-transform:uppercase;"><strong>{{event.formated.month}}</strong></a>
+          <hr>
+          <h4 class="card-title">{{event.title}}</h4>
+          <p class="card-text overflow-auto">{{event.description}}</p>
+        </div>
+      </div>
     </div>
-    <div class="row" *ngFor="let i of rows">
-      <div class="column" *ngFor="let j of columns">
-        <div class="card" *ngIf="events[j+(i*4)] != null">
-          <div class="banner" [ngStyle]="{ 'background-image': 'url(' + events[j+(i*4)].url_image + ')'}">
-          </div>
-          <div class="data">
-            <div class="date"><span class="day">{{ events[j+(i*4)].formated.day }}</span><br><span
-                class="month">{{ events[j+(i*4)].formated.month }}</span></div>
-            <div class="details">
-              <span class="name">{{ events[j+(i*4)].title }}</span>
-              <br>
-              <span class="description">{{ events[j+(i*4)].description }}</span>
+  </div>
+</div> -->
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let event of events" class="col-sm-6 col-lg-4">
+        <a [routerLink]="['/evento/', event.id]"> 
+          <div class="card">
+            <img class="card-img-top" src={{event.url_image}} alt="Card image cap">
+            <div class="card-body">
+              <a  class="btn btn-primary" style="color:white"><strong>{{event.formated.day}}</strong></a>
+              <a class="btn btn-warning"
+                style="color:white; text-transform:uppercase;"><strong>{{event.formated.month}}</strong></a>
+              <hr>
+              <h4 class="card-title">{{event.title}}</h4>
+              <p class="card-text overflow-auto">{{event.description}}</p>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>

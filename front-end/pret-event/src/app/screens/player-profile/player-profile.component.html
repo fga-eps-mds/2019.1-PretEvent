@@ -11,24 +11,22 @@
       <!-- colocar aqui matricula -->
       {{university_id}}
     </div>
+    <h4>
+      Level 1
+    </h4>
+
   </div>
+  <br>
 
-  <div class="Box secondBox">
+  <!-- Points Board and Reward div -->
+  <div>
 
-    <!-- Level div -->
-    <div class="levelBox">
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
-          aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-          <!-- colocar aqui valor para alterar posição da barra -->
-          50%
-          <!-- colocar aqui valor da porcentagem da barra -->
-        </div>
-      </div>
+    <!-- Reward div -->
+    <div style="text-align: center;" class="pointsAndRewardBox pointsBorder">
+      <h2><span class="badge badge-primary">163</span></h2>
       <h4>
-        Level 1
+        Pontos
       </h4>
-
     </div>
     <br>
 
@@ -43,21 +41,20 @@
         </h4>
       </div>
 
-      <!-- Points div -->
-      <div style="text-align: center;" class="pointsAndRewardBox rewardBorder">
-        <h2><span class="badge badge-primary">2</span></h2>
-        <h4>
-          Premios
-        </h4>
-      </div>
+    <!-- Points div -->
+    <div style="text-align: center;" class="pointsAndRewardBox rewardBorder">
+      <h2><span class="badge badge-primary">2</span></h2>
+      <h4>
+        Premios
+      </h4>
     </div>
+  </div>
 
     <button type="button"  class="btn btn-light position-absolute btnImage" data-toggle="modal" data-target="#fullImageModal"
     [routerLink]="['/perfil/editar', id]">
       Editar Dados
     </button>
 
-  </div>
+</div>
 
-  <body>
-    <br>
+<br>

@@ -20,7 +20,7 @@ from eventos import views
 from django.urls import path
 
 router = routers.DefaultRouter()
-router.register(r'eventos', views.EventList)
+router.register(r'^eventos/$', views.EventList)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,0 +1,25 @@
+<div class="all">
+  <div class="content">
+    <div class="table-responsive">
+      <h2 class="text-center">Eventos</h2>
+      <table class="table table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="col">Evento</th>
+            <th scope="col">Data</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let event of events">
+          <tr>
+            <td>
+              <a [routerLink]="['/evento/', event.id]">
+                {{ event.title }}
+              </a>
+            </td>
+            <td>{{ event.date | date : "dd/MM/y" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
