@@ -2,14 +2,14 @@
   <br>
   <div class="Box firstBox">
     <div>
-      <img src="{{ player.photo_url }}" alt="Avatar" style="width:200px">
+      <img src="{{ photo_url }}" alt="Avatar" style="width:200px">
     </div>
     <div>
-      <h1 class="">{{player.username}}</h1> <!-- colocar aqui nome-->
+      <h1 class="">{{username}}</h1> <!-- colocar aqui nome-->
     </div>
     <div class="">
       <!-- colocar aqui matricula -->
-      {{player.university_id}}
+      {{university_id}}
     </div>
   </div>
 
@@ -37,7 +37,7 @@
 
       <!-- Reward div -->
       <div style="text-align: center;" class="pointsAndRewardBox pointsBorder">
-        <h2><span class="badge badge-primary">{{player.points}}</span></h2>
+        <h2><span class="badge badge-primary">{{points}}</span></h2>
         <h4>
           Pontos
         </h4>
@@ -53,7 +53,7 @@
     </div>
 
     <button type="button"  class="btn btn-light position-absolute btnImage" data-toggle="modal" data-target="#fullImageModal"
-    [routerLink]="['/perfil/editar', player.id]">
+    [routerLink]="['/perfil/editar', id]">
       Editar Dados
     </button>
 

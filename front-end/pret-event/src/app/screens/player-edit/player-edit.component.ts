@@ -23,23 +23,29 @@ export class PlayerEditComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private service: PlayerService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.playerForm = this.formBuilder.group({
       username: '',
-      university_id: 0
+      university_id: 0,
+      points: 0,
+      password: '',
+      photo_url: '',
     })
     this.sub = this.route.params.subscribe(params => {
       this.service.getPlayerid(params['id'])
-      .then((player: Player) => {
-        this.playerForm.setValue({
-          username: player.username,
-          university_id: player.university_id,
-        });
-        this.id = player.id;
-      })
-      .catch(error => console.log(error));
+        .then((player: Player) => {
+          this.playerForm.setValue({
+            username: player.username,
+            university_id: player.university_id,
+            points: player.points,
+            password: player.password,
+            photo_url: player.photo_url
+          });
+          this.id = player.id;
+        })
+        .catch(error => console.log(error));
     });
   }
 
@@ -48,6 +54,9 @@ export class PlayerEditComponent implements OnInit {
     this.service.updatePlayer({
       username: this.playerForm.get('username').value,
       university_id: this.playerForm.get('university_id').value,
+      points: this.playerForm.get('points').value,
+      password: this.playerForm.get('password').value,
+      photo_url: this.playerForm.get('photo_url').value,
       id: this.id
     })
       .then(red => {

@@ -4,10 +4,10 @@ import { Player } from '../models/player';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { finalize } from 'rxjs/operators';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Observable, of, throwError } from 'rxjs'
+import { Observable, of, throwError } from 'rxjs';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -54,14 +54,17 @@ export class PlayerService {
       ).subscribe();
     })
 
-    updatePlayer = (player: { id: number, username: string, university_id: number }) =>
+  updatePlayer = (player: {
+    id: number, username: string, university_id: number,
+    points: number, password: string, photo_url: string
+  }) =>
     new Promise((resolve, reject) =>
       this.http.put(`/api/players/${player.id}`, player)
-      .subscribe(
-        data => resolve(data),
-        error => reject(error),
-      )
-  )
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
 
   getPlayerid = id =>
     new Promise((resolve, reject) =>

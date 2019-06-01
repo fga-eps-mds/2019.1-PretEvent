@@ -16,21 +16,28 @@ export class PlayerProfileComponent implements OnInit {
   player: Player;
   username: string;
   points: any;
-  photo_url: SafeStyle;
+  university_id: any;
+  photo_url: any;
+  id: any;
 
-  constructor(private route : ActivatedRoute, private service: PlayerService, private sanitization: DomSanitizer) { }
-
-  ngOnInit() {
+  constructor(private route : ActivatedRoute, private service: PlayerService, private sanitization: DomSanitizer) {
     this.sub = this.route.params.subscribe(params => {
       this.service.getPlayerid(params['id'])
       .then((player: Player) => {
         this.player = player;
+        this.id = this.player.id;
         this.username = this.player.username;
         this.points = this.player.points;
-        this.photo_url = this.sanitization.bypassSecurityTrustStyle(`url(${this.player.photo_url})`);
+        this.university_id = this.player.university_id;
+        this.photo_url = this.player.photo_url;
       })
       .catch(error => console.log(error));
     });
-  }
+   }
 
+  ngOnInit() {
+    
+
+
+  }
 }

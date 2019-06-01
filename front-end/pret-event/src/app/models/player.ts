@@ -7,7 +7,7 @@ export class Player {
     // tslint:disable-next-line: variable-name
     photo_url: string;
     password: string;
-  
+
     constructor(name: string, universityId: number, points: number, password: string, photoUrl?: string) {
         this.username = name;
         this.university_id = universityId;
@@ -15,4 +15,4 @@ export class Player {
         this.photo_url = photoUrl;
         this.password = password;
     }
-  }
+}
