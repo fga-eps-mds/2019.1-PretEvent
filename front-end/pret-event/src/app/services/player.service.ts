@@ -41,7 +41,7 @@ export class PlayerService {
 
   getPlayers = () =>
     new Promise((resolve, reject) =>
-      this.http.get<Player[]>(`${this.url}ranking`)
+      this.http.get<Player[]>(`api/player/ranking`)
         .subscribe(
           data => resolve(data),
           error => reject(error),
