@@ -1,3 +1,4 @@
+     <p>{{currentId}} {{creatorId}}</p>
      <div class="imageBox mb-5" [style.background-image]="image">
       <div class="container position-relative">
         <!-- <button type="button" class="btn btn-light position-absolute btnImage" data-toggle="modal" data-target="#fullImageModal">
@@ -15,7 +16,6 @@
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="row d-md-flex flex-md-row-reverse">
         <div class="col-12 col-md-4 mb-5 mainBox">
@@ -42,7 +42,9 @@
                 <i class="fas fa-sticky-note fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Adesivo"></i>
                 <i class="fas fa-certificate fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
               </p>
-              <a href="#" class="btn btn-primary d-md-block">Participar</a>
+              <div *ngIf="currentId !== creatorId">
+              <a href="#" class="btn btn-primary d-md-block" *ngIf="logged">Participar</a>
+              </div>
               <div class="rating">
                 <input type="radio" id="star5" name="rating" value="5"><label for="star5" data-toggle="tooltip" data-placement="top" title="Excelente">5 stars</label>
                 <input type="radio" id="star4" name="rating" value="4"><label for="star4" data-toggle="tooltip" data-placement="top" title="Bom">4 stars</label>

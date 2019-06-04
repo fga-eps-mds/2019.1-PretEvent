@@ -3,6 +3,8 @@ import { EventService } from 'src/app/services/event.service';
 import { Event } from '../../models/event';
 import { ActivatedRoute } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
+import { getId } from 'src/app/helpers/id';
+import { getToken } from 'src/app/helpers/token';
 
 
 @Component({
@@ -18,6 +20,11 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   title: string;
   description: string;
   image: SafeStyle;
+  currentId = +getId();
+  logged = getToken() !== null;
+  creatorId: number;
+  checkCreator: boolean;
+
   
   constructor(private route: ActivatedRoute, private service: EventService, private sanitization:DomSanitizer) { }
 
@@ -30,9 +37,13 @@ export class EventDetailComponent implements OnInit, OnDestroy {
         this.title = this.event.title;
         this.description = this.event.description;
         this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.event.url_image})`);
+        this.creatorId = this.event.creator_id
       })
+     
       .catch(error => console.log(error));
       });
+      console.log(this.event);
+      console.log(this.currentId);
   }
 
   setValues(){

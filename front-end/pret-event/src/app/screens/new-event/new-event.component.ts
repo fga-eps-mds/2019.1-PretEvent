@@ -29,7 +29,7 @@ export class NewEventComponent implements OnInit {
   rewardsNames: string[];
   clicked = false;
   player: Player;
-  currentId = getId();
+  currentId = +getId();
 
   selected: string;
 
@@ -57,7 +57,7 @@ export class NewEventComponent implements OnInit {
       0,
       this.eventForm.get('description').value,
       reward.id,
-      this.player.id,
+      this.currentId
     );
     this.service.registerEvent(event, this.file).then(x => {
       console.log(x);
