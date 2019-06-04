@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { getId } from 'src/app/helpers/id';
 import { getToken } from 'src/app/helpers/token';
+import { currentId } from 'async_hooks';
 
 
 @Component({
@@ -44,6 +45,9 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       });
       console.log(this.event);
       console.log(this.currentId);
+      if (this.currentId != this.creatorId) {
+        
+      }
   }
 
   setValues(){
