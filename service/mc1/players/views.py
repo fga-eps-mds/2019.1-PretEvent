@@ -49,7 +49,7 @@ class PlayerRanking(APIView):
         return Response(queryset)
 
 
-@permission_classes((permissions.IsAuthenticatedOrReadOnly, ))
+@permission_classes((permissions.AllowAny, ))
 class PlayerDetail(APIView):
 
     serializer_class = PlayerCreateSerializer
