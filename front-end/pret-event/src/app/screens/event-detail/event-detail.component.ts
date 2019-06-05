@@ -60,6 +60,13 @@ export class EventDetailComponent implements OnInit, OnDestroy {
     console.log(event_player);
   }
 
+  // Deletar(){
+  //   this.service.removePartipation()
+  //   .then(x => {
+  //     console.log(x);
+  //   })
+  // }
+
 ngOnDestroy() {
   this.sub.unsubscribe();
   }

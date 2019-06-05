@@ -4,6 +4,7 @@ import { Event } from '../models/event';
 import { Event_Player } from '../models/event_player';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import { resolve } from 'url';
 
 @Injectable({
   providedIn: 'root'
@@ -67,4 +68,13 @@ export class EventService {
         error => resolve(error),
         )
     )
+
+  removePartipation = id =>
+        new Promise((resolve, reject) =>
+          this.http.delete(`/api/eventos_player/${id}`)
+          .subscribe(
+            data => resolve(data),
+            error => reject(error),
+          )
+        )
 }
