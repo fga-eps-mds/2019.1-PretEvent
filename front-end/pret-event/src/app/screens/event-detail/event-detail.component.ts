@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { getId } from 'src/app/helpers/id';
 import { getToken } from 'src/app/helpers/token';
-import { currentId } from 'async_hooks';
 
 
 @Component({
@@ -24,7 +23,6 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   currentId = +getId();
   logged = getToken() !== null;
   creatorId: number;
-  checkCreator: boolean;
 
   
   constructor(private route: ActivatedRoute, private service: EventService, private sanitization:DomSanitizer) { }
@@ -50,7 +48,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       }
   }
 
-  setValues(){
+  Participar(){
 
   }
 

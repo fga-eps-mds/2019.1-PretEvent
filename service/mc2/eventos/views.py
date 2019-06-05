@@ -68,6 +68,13 @@ class Evento_Player(APIView):
 
     serializer_class = Evento_PlayerCreateSerializer
 
+    def get_object(self, pk):
+        try:
+            return Evento_Player.objects.get(pk=pk)
+        except Evento_Player.DoesNotExist:
+            raise Http404
+    
+    
     def post(self, request, format=None):
         serializer = Evento_PlayerCreateSerializer(data=request.data)
         if serializer.is_valid():
@@ -75,3 +82,8 @@ class Evento_Player(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        evento_player = self.get_object(pk)
+        evento_player.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
