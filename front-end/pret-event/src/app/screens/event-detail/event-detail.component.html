@@ -43,7 +43,8 @@
                 <i class="fas fa-certificate fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
               </p>
               <div *ngIf="currentId !== creatorId">
-              <a href="." class="btn btn-primary d-md-block" *ngIf="logged" (click)="Participar()">Participar</a>
+              <a href="#" class="btn btn-primary d-md-block" *ngIf="logged && !participate" (click)="Participar()">Participar</a>
+              <a href="#" class="btn btn-primary d-md-block" *ngIf="participate" (click)="Deletar()">Sair do evento</a>
               </div>
               <div class="rating">
                 <input type="radio" id="star5" name="rating" value="5"><label for="star5" data-toggle="tooltip" data-placement="top" title="Excelente">5 stars</label>
