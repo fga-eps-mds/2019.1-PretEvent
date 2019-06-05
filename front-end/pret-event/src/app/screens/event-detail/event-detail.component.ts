@@ -27,6 +27,9 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   event_player: Event_Player;
   evento_id: number;
   player_id: number;
+  participations: Array<Event_Player> = [];
+  global_id: number;
+  participate: boolean = false;
 
   
   constructor(private route: ActivatedRoute, private service: EventService, private sanitization:DomSanitizer) { }
@@ -46,6 +49,14 @@ export class EventDetailComponent implements OnInit, OnDestroy {
      
       .catch(error => console.log(error));
       });
+
+    this.service.getParticipations()
+    .then((x: Array<Event_Player>) => {
+      this.participations = x.map(event_player => ({...event_player}))
+    }
+    )
+
+    this.global_id = this.FindingId()
   }
 
   Participar(){
@@ -60,12 +71,22 @@ export class EventDetailComponent implements OnInit, OnDestroy {
     console.log(event_player);
   }
 
-  // Deletar(){
-  //   this.service.removePartipation()
-  //   .then(x => {
-  //     console.log(x);
-  //   })
-  // }
+  Deletar(){
+    this.service.removeParticipation(this.global_id)
+    .then(x => {
+      console.log(x);
+    })
+  }
+
+  FindingId(){
+    for(var i = 0; this.participations.length; i++){
+      if(this.participations[i].player_id === this.currentId &&
+         this.participations[i].evento_id === this.evento_id){
+           this.participate = true;
+          return this.participations[i].id
+        }
+    }
+  }
 
 ngOnDestroy() {
   this.sub.unsubscribe();

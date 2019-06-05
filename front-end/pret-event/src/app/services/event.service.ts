@@ -69,12 +69,21 @@ export class EventService {
         )
     )
 
-  removePartipation = id =>
+  removeParticipation = id =>
         new Promise((resolve, reject) =>
           this.http.delete(`/api/eventos_player/${id}`)
           .subscribe(
             data => resolve(data),
-            error => reject(error),
+            error => resolve(error),
           )
         )
+
+  getParticipations = () =>
+    new Promise(resolve =>
+      this.http.get<Event_Player[]>('/api/eventos_player/')
+      .subscribe(
+        data => resolve(data),
+        error => resolve(error),
+      )
+    )
 }
