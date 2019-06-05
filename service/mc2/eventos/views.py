@@ -1,4 +1,5 @@
 from eventos.models import Evento
+from eventos.models import Evento_Player
 from rest_framework import viewsets
 from rest_framework import status
 from rest_framework.views import APIView
@@ -64,16 +65,17 @@ class EventDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class Evento_Player(APIView):
+class Evento_PlayerList(APIView):
 
     serializer_class = Evento_PlayerCreateSerializer
+    queryset = Evento_Player.objects.all()
 
-    def get_object(self, pk):
-        try:
-            return Evento_Player.objects.get(pk=pk)
-        except Evento_Player.DoesNotExist:
-            raise Http404
-    
+    def get(self, request, format=None):
+        queryParam = request.GET.get('evento_id')
+        eventos_players = Evento_Player.objects.all() if queryParam == None else Evento_Player.objects.filter(
+            title__icontains=queryParam)
+        serializer = Evento_PlayerCreateSerializer(eventos_players, many=True)
+        return Response(serializer.data)
     
     def post(self, request, format=None):
         serializer = Evento_PlayerCreateSerializer(data=request.data)
@@ -82,6 +84,21 @@ class Evento_Player(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class Evento_PlayerDetail(APIView):
+
+    serializer_class = Evento_PlayerCreateSerializer
+
+    def get_object(self, pk):
+        try:
+            return Evento_Player.objects.get(pk=pk)
+        except Evento_Player.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        evento_player = self.get_object(pk)
+        serializer = Evento_PlayerCreateSerializer(evento_player)
+        return Response(serializer.data)
 
     def delete(self, request, pk, format=None):
         evento_player = self.get_object(pk)

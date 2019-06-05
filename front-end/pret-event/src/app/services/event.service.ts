@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Event } from '../models/event';
+import { Event_Player } from '../models/event_player';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 
@@ -57,4 +58,13 @@ export class EventService {
         })
       ).subscribe();
     })
+
+  participateEvent = (event_player: Event_Player) =>
+    new Promise(resolve =>
+    this.http.post('/api/eventos_player/', event_player)
+      .subscribe(
+        data => resolve(data),
+        error => resolve(error),
+        )
+    )
 }
