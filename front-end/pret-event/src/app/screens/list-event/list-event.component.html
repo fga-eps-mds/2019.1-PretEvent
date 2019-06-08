@@ -6,7 +6,8 @@
         <thead>
           <tr>
             <th scope="col">Evento</th>
-            <th scope="col">Data</th>
+            <th scope="col">Dia do Evento</th>
+            <th scope="col">Horário Inicial</th>
           </tr>
         </thead>
         <tbody *ngFor="let event of events">
@@ -17,6 +18,7 @@
               </a>
             </td>
             <td>{{ event.date | date : "dd/MM/y" }}</td>
+            <td>{{ event.date | date : "HH:mm" }}</td>
           </tr>
         </tbody>
       </table>
