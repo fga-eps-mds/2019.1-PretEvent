@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.service.getEvents()
-      .then((x: Array<Event>) => {
-        this.events = x.map(event => ({ ...event, formated: dateFormatter(event.date) }));
+      .then((data: Array<Event>) => {
+        this.events = data;
         this.mainEvents = this.events.slice(0, 3);
       });
   }
