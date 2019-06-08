@@ -15,7 +15,7 @@
         <label><strong>Matricula:</strong></label>
         <input formControlName="university_id" class="form-control">
         <br>
-        <button *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="updatePlayer()">Salvar</button>
+        <button [routerLink]="['/perfil', id]" *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="updatePlayer()">Salvar</button>
         <div *ngIf="clicked" class="loader"></div>
       </form>
     </div>
