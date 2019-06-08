@@ -16,7 +16,7 @@ body {
   padding: 0;
 }
 
-html, 
+html,
 body {
   height: 100%;
 }
@@ -44,4 +44,18 @@ input {
   background-color: #191818;
   color: #f0f0f0;
   border-width: 0;
+}
+
+/* sticky footer */
+.myWrapper {
+  min-height: 100%;
+  margin-bottom: -60px; /* altura do footer */
+}
+
+.push {
+  height: 60px; /* altura do footer */
+}
+
+.footer {
+	height: 60px;
 }
