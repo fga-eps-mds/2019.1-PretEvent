@@ -14,7 +14,8 @@ export class EventDetailComponent implements OnInit, OnDestroy {
 
   private sub: any;
   event: Event;
-  date: string = '1234';
+  date: string;
+  time: string;
   title: string;
   description: string;
   image: SafeStyle;
