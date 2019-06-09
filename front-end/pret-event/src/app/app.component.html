@@ -1,3 +1,6 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="myWrapper">
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+  <div class="push"></div>
+</div>
 <app-footer *ngIf="router.url != '/home'"></app-footer>
