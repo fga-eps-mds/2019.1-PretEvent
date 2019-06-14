@@ -29,7 +29,7 @@ export class PlayerProfileComponent implements OnInit {
         this.username = this.player.username;
         this.points = this.player.points;
         this.university_id = this.player.university_id;
-        this.photo_url = this.photo_url;
+        this.photo_url = this.player.photo_url;
       })
       .catch(error => console.log(error));
     });
