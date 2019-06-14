@@ -18,6 +18,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   private sub: any;
   event: Event;
   date: string;
+  place: string;
   time: string;
   title: string;
   description: string;
@@ -41,6 +42,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       .then((event: Event) => {
         this.event = event;
         this.date = this.event.date;
+        this.place = this.event.place;
         this.title = this.event.title;
         this.description = this.event.description;
         this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.event.url_image})`);
