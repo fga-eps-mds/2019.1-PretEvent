@@ -1,6 +1,3 @@
-<div *ngFor = "let player of player_participating">
-  <p>{{player.username}}</p>
-</div>
 <div class="imageBox mb-5" [style.background-image]="image">
       <div class="container position-relative">
         <!-- <button type="button" class="btn btn-light position-absolute btnImage" data-toggle="modal" data-target="#fullImageModal">
@@ -82,216 +79,32 @@
       <div class="row">
           <div class="col">
             <div class="card text-center">
-              <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="participantes-tab" data-toggle="tab" href="#participantes" role="tab" aria-controls="participantes" aria-selected="true">Participantes</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="recompensas-tab" data-toggle="tab" href="#recompensas" role="tab" aria-controls="recompensas" aria-selected="false">Recompensas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="duvidas-tab" data-toggle="tab" href="#duvidas" role="tab" aria-controls="duvidas" aria-selected="false">Dúvidas</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
-                    <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col"></th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Level</th>
-                            <th scope="col">Recompensas</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>
-                              <img src="assets/imgs/perfil2.jpg" class="rounded-circle imageParticipante" alt="Participante">
-                            </td>
-                            <td>Ciclana da Silva</td>
-                            <td>2</td>
-                            <td>
-                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                              <i class="fas fa-certificate m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>
-                              <img src="assets/imgs/perfil3.jpg" class="rounded-circle imageParticipante" alt="Participante">
-                            </td>
-                            <td>Beltrano de Tal</td>
-                            <td>1</td>
-                            <td>
-                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>
-                              <img src="assets/imgs/perfil4.jpg" class="rounded-circle imageParticipante" alt="Participante">
-                            </td>
-                            <td>Fulana</td>
-                            <td>1</td>
-                            <td>
-                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">4</th>
-                            <td>
-                              <img src="assets/imgs/perfil2.jpg" class="rounded-circle imageParticipante" alt="Participante">
-                            </td>
-                            <td>Ciclana da Silva</td>
-                            <td>2</td>
-                            <td>
-                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                              <i class="fas fa-certificate m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">5</th>
-                            <td>
-                              <img src="assets/imgs/perfil3.jpg" class="rounded-circle imageParticipante" alt="Participante">
-                            </td>
-                            <td>Beltrano de Tal</td>
-                            <td>1</td>
-                            <td>
-                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">6</th>
-                            <td>
-                              <img src="assets/imgs/perfil4.jpg" class="rounded-circle imageParticipante" alt="Participante">
-                            </td>
-                            <td>Fulana</td>
-                            <td>1</td>
-                            <td>
-                              <i class="fas fa-shield-alt m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="recompensas" role="tabpanel" aria-labelledby="recompensas-tab">
-                    <div class="row">
-                      <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card mb-3">
-                          <div class="row no-gutters">
-                            <div class="col-md-4">
-                              <i class="fas fa-shield-alt fa-5x iconColor m-3"></i>
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">50 pontos de experiência</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card mb-3">
-                          <div class="row no-gutters">
-                            <div class="col-md-4">
-                              <i class="fas fa-shield-alt fa-5x iconColor m-3"></i>
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">Adesivo</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card mb-3">
-                          <div class="row no-gutters">
-                            <div class="col-md-4">
-                              <i class="fas fa-sticky-note fa-5x iconColor m-3"></i>
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">Certificado de Participação</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade text-justify" id="duvidas" role="tabpanel" aria-labelledby="duvidas-tab">
-                    <div id="accordionDuvidas">
-                      <div class="card">
-                        <div class="card-header" id="question1">
-                          <h5 class="mb-0">
-                            <button class="btn collapsed" data-toggle="collapse" data-target="#answer1" aria-expanded="true" aria-controls="answer1">
-                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat?
-                            </button>
-                          </h5>
-                        </div>
-
-                        <div id="answer1" class="collapse" aria-labelledby="question1" data-parent="#accordionDuvidas">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div class="card-header" id="question2">
-                          <h5 class="mb-0">
-                            <button class="btn collapsed" data-toggle="collapse" data-target="#answer2" aria-expanded="false" aria-controls="answer2">
-                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat?
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="answer2" class="collapse" aria-labelledby="question2" data-parent="#accordionDuvidas">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div class="card-header" id="question3">
-                          <h5 class="mb-0">
-                            <button class="btn collapsed" data-toggle="collapse" data-target="#answer3" aria-expanded="false" aria-controls="answer3">
-                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat?
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="answer3" class="collapse" aria-labelledby="question3" data-parent="#accordionDuvidas">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <form class="mt-5">
-                      <div class="form-group">
-                        <label for="question">Alguma dúvida sobre o evento?</label>
-                        <input type="text" class="form-control" id="question" placeholder="Pergunta">
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-                      </div>
-                    </form>
+              <div class="all">
+                <div class="content">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Avatar</th>
+                          <th scope="col">Nome</th>
+                          <!-- <th scope="col">Recompensas</th> -->
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let player of player_participating; let i = index">
+                        <tr>
+                          <th scope="row">{{ i + 1 }}</th>
+                          <td>
+                            <img src="{{ player.photo_url }}" class="rounded-circle imageParticipante" alt="Participante">
+                          </td>
+                          <td>{{ player.username }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
+             
           </div>
         </div>
       </div>
