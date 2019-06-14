@@ -1,17 +1,17 @@
 from eventos.models import Evento, Evento_Player
 from rest_framework import serializers
 
-
 class EventoCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ('id', 'title', 'date', 'points',
+        fields = ('id', 'title', 'date', 'place', 'points',
                   'description', 'url_image', 'reward_id', 'creator_id')
 
     def create(self, validated_data):
         evento = Evento(
             title=validated_data['title'],
             date=validated_data['date'],
+            place=validated_data['place'],
             points=validated_data['points'],
             description=validated_data['description'],
             url_image=validated_data['url_image'],
@@ -39,12 +39,13 @@ class Evento_PlayerCreateSerializer(serializers.ModelSerializer):
 class EventoUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ('id', 'title', 'date', 'points',
+        fields = ('id', 'title', 'date', 'place', 'points',
                   'description', 'url_image', 'reward_id', 'creator_id')
 
     def update(self, instance, validated_data):
         instance.title = validated_data.get('title', instance.title)
         instance.date = validated_data.get('date', instance.date)
+        instance.place = validated_data.get('place', instance.place)
         instance.points = validated_data.get('points', instance.points)
         instance.description = validated_data.get(
             'description', instance.description)
@@ -62,5 +63,5 @@ class EventoUpdateSerializer(serializers.ModelSerializer):
 class EventoDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ('id', 'title', 'date', 'points',
+        fields = ('id', 'title', 'date', 'place', 'points',
                   'description', 'url_image', 'reward_id', 'creator_id')
