@@ -1,4 +1,3 @@
-     <!-- <p>{{currentId}} {{creatorId}}</p> -->
      <div class="imageBox mb-5" [style.background-image]="image">
       <div class="container position-relative">
         <!-- <button type="button" class="btn btn-light position-absolute btnImage" data-toggle="modal" data-target="#fullImageModal">
@@ -23,8 +22,8 @@
             <h4 class="card-header text-white bg-primary d-md-none">Cross Cerrado</h4>
             <div class="card-body">
               <h5  class="card-title">
-                <span class="mr-2 d-inline-block" data-toggle="tooltip" data-placement="top" title="Data do evento" ><i class="fas fa-calendar-alt iconColor" ></i> {{date}}</span>
-                <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Horário de início"><i class="far fa-clock iconColor"></i> 10:00</span>
+                <span class="mr-2 d-inline-block" data-toggle="tooltip" data-placement="top" title="Data do evento" ><i class="fas fa-calendar-alt iconColor" ></i> {{date | date: "dd/MM/y"}}</span>
+                <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Horário de início"><i class="far fa-clock iconColor"></i> {{ date | date: "HH:mm" }}</span>
               </h5>
               <p class="card-text">
                 <span class="text-muted" data-toggle="tooltip" data-placement="top" title="Local do evento">Sábado</span>

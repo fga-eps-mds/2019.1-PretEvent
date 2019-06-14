@@ -19,9 +19,8 @@ class EventList(APIView):
         return []
 
     def get(self, request, format=None):
-        queryParam = request.GET.get('title')
-        eventos = Evento.objects.all() if queryParam == None else Evento.objects.filter(
-            title__icontains=queryParam)
+        # queryParam = request.GET.get('title')
+        eventos = Evento.objects.all().order_by('date')
         serializer = EventoCreateSerializer(eventos, many=True)
         return Response(serializer.data)
 
@@ -76,7 +75,7 @@ class Evento_PlayerList(APIView):
             title__icontains=queryParam)
         serializer = Evento_PlayerCreateSerializer(eventos_players, many=True)
         return Response(serializer.data)
-    
+
     def post(self, request, format=None):
         serializer = Evento_PlayerCreateSerializer(data=request.data)
         if serializer.is_valid():

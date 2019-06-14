@@ -17,7 +17,8 @@ export class EventDetailComponent implements OnInit, OnDestroy {
 
   private sub: any;
   event: Event;
-  date: string = '1234';
+  date: string;
+  time: string;
   title: string;
   description: string;
   image: SafeStyle;
@@ -50,8 +51,8 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       });
     this.service.getParticipations()
     .then((x: Array<Event_Player>) => {
-      this.participations = x.map(event_player => ({...event_player}))
-      for(var i = 0; this.participations.length; i++){
+      this.participations = x
+      for(var i = 0; i < this.participations.length; i++){
         if(this.participations[i].player_id === this.currentId &&
            this.participations[i].evento_id === this.event.id){
              this.participate = true;
