@@ -10,7 +10,7 @@ import { RewardService } from '../../services/reward.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { PlayerService } from '../../services/player.service';
 import { getId } from 'src/app/helpers/id';
-
+import { validateEvent } from '../../../helpers/validators';
 
 @Component({
   selector: 'app-new-event',
@@ -38,8 +38,7 @@ export class NewEventComponent implements OnInit {
     private service: EventService,
     private rewardService: RewardService,
     private router: Router,
-    private data: AlertService,
-    private playerService: PlayerService
+    private data: AlertService
   ) {
     this.rewardService.getRewards().then((rewards: Reward[]) => {
       this.rewards = rewards;
@@ -50,7 +49,16 @@ export class NewEventComponent implements OnInit {
   registerEvent() {
     this.clicked = true;
     const reward = this.rewards.find(r => r.title === this.selected);
-    if (!reward) { this.clicked = false; return; }
+    if (!reward) {
+      this.data.addAlert(new Alert('danger', 'Recompensa inválida!', 3000));
+      this.clicked = false;
+      return;
+    }
+    if (this.eventForm.get('time').value === '') {
+      this.data.addAlert(new Alert('danger', 'Hora inválida!', 3000));
+      this.clicked = false;
+      return;
+    }
     const event: Event = new Event(
       this.eventForm.get('name').value,
       this.eventForm.get('date').value,
@@ -60,6 +68,14 @@ export class NewEventComponent implements OnInit {
       this.currentId,
       reward.id,
     );
+
+    const valid = validateEvent(event, this.file);
+    if (valid) {
+      this.data.addAlert(new Alert('danger', valid, 3000));
+      this.clicked = false;
+      return;
+    }
+
     this.service.registerEvent(event, this.file).then(x => {
       console.log(x);
       this.data.addAlert(new Alert('success', 'Evento cadastrado!', 3000));
@@ -84,7 +100,6 @@ export class NewEventComponent implements OnInit {
       time: '',
       reward: '',
     });
-    console.log(this.currentId);
   }
 
 }
