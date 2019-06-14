@@ -7,6 +7,7 @@ import { AlertService } from '../../services/alert.service';
 
 import { setToken } from '../../helpers/token';
 import { Alert } from 'src/app/models/alert';
+import { setId } from 'src/app/helpers/id';
 
 @Component({
   selector: 'app-sign-modal',
@@ -55,8 +56,9 @@ export class SignModalComponent implements OnInit {
       this.playerForm.get('password').value,
     );
     this.service.loginPlayer(user)
-      .then((x: { token: string }) => {
-        setToken(x.token);
+      .then((user: { token: string, user: { pk: number } }) => {
+        setToken(user.token);
+        setId(user.user.pk);
         this.data.addAlert(new Alert('success', 'Login realizado!', 3000));
         this.hideModal();
         this.clicked = false;
