@@ -31,7 +31,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   global_id: number;
   participate: boolean = false;
 
-  
+
   constructor(private route: ActivatedRoute, private service: EventService, private sanitization:DomSanitizer) { }
 
   ngOnInit() {
@@ -66,7 +66,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       }
     })
     // this.global_id = this.FindingId()
-    
+
   }
 
   Participar(){
@@ -89,7 +89,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   }
 
   // FindingId(){
-    
+
   // }
 
 ngOnDestroy() {
