@@ -22,6 +22,8 @@
 |:---:|:------:|:-----:|:---:|:---:|
 |Felipe Agustini|Tive oportunidade de codar|Testes|Aprender e fazer testes|
 |André Goretti|Ajuda da galera do eps|-|Definir mais cedo as issues|
+|Ian Rocha|Pessoal de EPS se mostrou dedicado a sanar nossas dúvidas|Fui largado numa issue sozinho|Deixar menos dividas técnicas|
+|Murilo Loiola|Estavamos bem direcionados|Tive muitos trabalhos de outras matérias|Melhorar pareamento|
 |Gustavo Carvalho|Issues relacionadas ao design foram fechadas|-|Começar a realização de testes no sistema|
 
 ### 1.3 Quadro de Conhecimento

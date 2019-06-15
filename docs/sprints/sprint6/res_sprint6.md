@@ -1,4 +1,4 @@
-# Resultado Sprint 6
+    # Resultado Sprint 6
 
 ## 1. Indicadores de Qualidade do Processo
 
@@ -19,6 +19,7 @@
 |Breno|Deu para estudar bastante.|Não consegui terminar a issue.|A entrega das issues.|
 |Ian Rocha|-|Meu desempenho próprio.|Minha vontade de voltar a codar o máximo que der.|
 |Gustavo Carvalho|A comunicação com o time melhorou bastante nessa sprint.|Produtividade.|Planejamento nos finais das sprints.|
+|Felipe Agustini|A comunicação está melhor|Meu desempenho.|Planejamento podia sair mais rapido|Boa|
 |Murilo Loiola| Comunicação está surtindo efeito nas issues. | Fechar mais issues. | Produtividade geral. |
 
 ### 1.3 Quadro de Conhecimento

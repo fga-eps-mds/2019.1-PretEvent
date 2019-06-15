@@ -19,6 +19,7 @@
 |:---:|:------:|:-----:|:---:|:---:|
 |Djorkaeff Alexandre|Acho que o time tá mais motivado depois da release 1.|O time de MDS parece ter receio de chamar a galera de EPS pra ajudar em algo e isso tá atrasando em muito o fechamento das tarefas. Por vezes não estão nem mesmo tentando realizar.|MDS deve fazer mais coisas.|Boa|
 |André Goretti|Esforço pra fazer uma boa apresentação.|Nada.|Aprender mais algumas coisas de Angular.|Boa|
+|Ian Rocha|Saimos com uma mentalidade positiva e motivados após a R1|Recebemos mais criticas que esperavamos, e um dos membros desistiu|Amadurecer mais a mentalidade do grupo|Boa|
 |Felipe Agustini|Terminamos o que pretendíamos pra R1.|Ainda falta uma tonelada de coisa.|Rever os pontos que as professoras cobraram.|Boa|
 |Murilo Loiola Dantas|Finalização da release 1.|Produtividade no frontend.|Pareamento presencial.|Boa|
 
