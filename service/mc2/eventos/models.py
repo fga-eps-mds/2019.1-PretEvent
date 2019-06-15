@@ -4,6 +4,7 @@ from datetime import datetime
 class Evento(models.Model):
     title = models.CharField(max_length=255)
     date = models.DateTimeField()
+    place = models.CharField(default = 'unspecified', max_length = 255)
     points = models.IntegerField()
     description = models.TextField()
     url_image = models.CharField(max_length=255)
