@@ -4,6 +4,7 @@ import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
 
 import { AlertService } from '../../services/alert.service';
 import { getToken, removeToken } from '../../helpers/token';
+import { removeId } from 'src/app/helpers/id';
 
 @Component({
   selector: 'app-navbar',
@@ -51,6 +52,7 @@ export class NavbarComponent implements OnInit {
     let msg = '';
     if (this.logged) {
       removeToken();
+      removeId();
       this.account = 'Entrar/Cadastrar';
       msg = 'Logout realizado!';
     }

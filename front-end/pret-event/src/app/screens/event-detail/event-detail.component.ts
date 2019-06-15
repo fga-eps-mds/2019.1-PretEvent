@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from '../../models/event';
 import { Event_Player } from '../../models/event_player';
+import { PlayerService } from '../../services/player.service';
+import { Player } from '../../models/player';
 import { ActivatedRoute } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { getId } from 'src/app/helpers/id';
@@ -32,9 +34,13 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   participations: Array<Event_Player> = [];
   global_id: number;
   participate: boolean = false;
+  player: Player;
+  username: string;
+  photo_url: string;
+  player_participating: Array<Player> = [];
 
 
-  constructor(private route: ActivatedRoute, private service: EventService, private sanitization:DomSanitizer) { }
+  constructor(private route: ActivatedRoute, private service: EventService, private playerservice: PlayerService, private sanitization:DomSanitizer) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -51,6 +57,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       })
       .catch(error => console.log(error));
       });
+
     this.service.getParticipations()
     .then((x: Array<Event_Player>) => {
       this.participations = x
@@ -59,16 +66,21 @@ export class EventDetailComponent implements OnInit, OnDestroy {
            this.participations[i].evento_id === this.event.id){
              this.participate = true;
             this.global_id = this.participations[i].id
-            // console.log(this.participations[i])
           }
-          // console.log(this.participations[i])
-          // console.log(this.participations[i].player_id)
-          // console.log(this.participations[i].evento_id)
-          // console.log(this.event.id)
 
       }
+
+        var m = 0;
+        for(var z = 0; z < this.participations.length; z++){
+          if(this.participations[z].evento_id === this.event.id){
+            this.playerservice.getPlayerid(this.participations[z].player_id)
+            .then((x: Player) => {
+              this.player_participating[m] = x; 
+              m++;
+          })
+        }
+      }
     })
-    // this.global_id = this.FindingId()
 
   }
 
@@ -90,10 +102,6 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       console.log(x);
     })
   }
-
-  // FindingId(){
-
-  // }
 
 ngOnDestroy() {
   this.sub.unsubscribe();
