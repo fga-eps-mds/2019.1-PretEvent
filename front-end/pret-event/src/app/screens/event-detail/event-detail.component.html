@@ -26,7 +26,7 @@
                 <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Horário de início"><i class="far fa-clock iconColor"></i> {{ date | date: "HH:mm" }}</span>
               </h5>
               <p class="card-text">
-                <span class="text-muted" data-toggle="tooltip" data-placement="top" title="Local do evento">Sábado</span>
+                <span class="text-muted" data-toggle="tooltip" data-placement="top" title="Dia da semana">{{ date | date: "EEEE" }}</span>
               </p>
               <p class="card-text">
                 <span data-toggle="tooltip" data-placement="top" title="Local do evento"><i class="fas fa-map iconColor"></i>   {{place}}</span>
