@@ -57,4 +57,13 @@ export class PlayerService {
         })
       ).subscribe();
     })
+    
+    getPlayerid = id =>
+    new Promise((resolve, reject) =>
+      this.http.get<Player>(`/api/players/${id}`)
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
 }
