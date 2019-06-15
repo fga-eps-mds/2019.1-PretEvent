@@ -54,6 +54,7 @@ export class NewEventComponent implements OnInit {
     const event: Event = new Event(
       this.eventForm.get('name').value,
       this.eventForm.get('date').value,
+      this.eventForm.get('place').value,
       this.eventForm.get('time').value,
       0,
       this.eventForm.get('description').value,
@@ -81,6 +82,7 @@ export class NewEventComponent implements OnInit {
       name: '',
       description: '',
       date: '',
+      place: '',
       time: '',
       reward: '',
     });
