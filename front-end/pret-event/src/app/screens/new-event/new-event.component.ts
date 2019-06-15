@@ -58,8 +58,8 @@ export class NewEventComponent implements OnInit {
       this.eventForm.get('time').value,
       0,
       this.eventForm.get('description').value,
-      this.currentId,
       reward.id,
+      this.currentId
     );
     this.service.registerEvent(event, this.file).then(x => {
       console.log(x);
