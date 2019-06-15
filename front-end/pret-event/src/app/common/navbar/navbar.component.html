@@ -11,13 +11,13 @@
         <a class="nav-link" href="#">Meus Eventos</a>
       </li>
       <li class="nav-item nav-bt" *ngIf="logged">
-        <a class="nav-link" href="#">Ranking</a>
+        <a class="nav-link" href="/ranking">Ranking</a>
       </li>
       <li class="nav-item nav-bt">
-        <a class="nav-link" href="/recompensa/criar">Criar Recompensa</a>
+        <a class="nav-link" href="/recompensa/criar" *ngIf="logged">Criar Recompensa</a>
       </li>
       <li class="nav-item nav-bt">
-        <a class="nav-link" href="/evento/criar">Criar Evento</a>
+        <a class="nav-link" href="/evento/criar" *ngIf="logged">Criar Evento</a>
       </li>
       <li class="nav-item nav-bt">
         <a class="nav-link"

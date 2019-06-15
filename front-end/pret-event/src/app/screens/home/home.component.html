@@ -9,25 +9,10 @@
       </carousel>
     </div>
   </div>
-
-  <!-- CARD DE EVENTOS -->
-  <!-- <div class="container py-5 bg-faded">
-    <div class="card-columns">
-      <div *ngFor="let event of events" class="card">
-        <img class="card-img-top" src={{event.url_image}} alt="Card image cap">
-        <div class="card-body">
-          <a class="btn btn-primary" style="color:white"><strong>{{event.formated.day}}</strong></a>
-          <a class="btn btn-warning"
-            style="color:white; text-transform:uppercase;"><strong>{{event.formated.month}}</strong></a>
-          <hr>
-          <h4 class="card-title">{{event.title}}</h4>
-          <p class="card-text overflow-auto">{{event.description}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
   <div class="container">
+    <form [formGroup]="searchForm">
+      <input formControlName="search" class="form-control" placeholder="Pesquisar...">
+    </form>
     <div class="row">
       <div *ngFor="let event of events" class="col-sm-6 col-lg-4">
         <a [routerLink]="['/evento/', event.id]"> 
@@ -37,6 +22,7 @@
               <a class="btn btn-primary" style="color:white"><strong>Dia {{event.date | date: "dd"}} </strong></a>
               <a class="btn btn-warning" style="color:white; text-transform:uppercase;"><strong>{{event.date | date: "MMM"}}</strong></a>
               <a><strong>{{event.date | date: "HH:mm"}}</strong></a>
+              <h6 class="card-text overflow-auto"><i class="fas fa-map-marker-alt iconColor"></i>  {{event.place}}</h6>
               <hr>
               <h4 class="card-title">{{event.title}}</h4>
               <p class="card-text overflow-auto">{{event.description}}</p>
@@ -47,3 +33,5 @@
     </div>
   </div>
 </div>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">

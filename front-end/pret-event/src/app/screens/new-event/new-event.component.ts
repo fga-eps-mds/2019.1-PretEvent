@@ -3,10 +3,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Event } from '../../models/event';
 import { Reward } from '../../models/reward';
+import { Player } from '../../models/player';
 import { Alert } from '../../models/alert';
 import { EventService } from '../../services/event.service';
 import { RewardService } from '../../services/reward.service';
 import { AlertService } from 'src/app/services/alert.service';
+import { PlayerService } from '../../services/player.service';
+import { getId } from 'src/app/helpers/id';
 
 
 @Component({
@@ -25,6 +28,8 @@ export class NewEventComponent implements OnInit {
   rewards: Array<Reward> = [];
   rewardsNames: string[];
   clicked = false;
+  player: Player;
+  currentId = +getId();
 
   selected: string;
 
@@ -33,7 +38,8 @@ export class NewEventComponent implements OnInit {
     private service: EventService,
     private rewardService: RewardService,
     private router: Router,
-    private data: AlertService
+    private data: AlertService,
+    private playerService: PlayerService
   ) {
     this.rewardService.getRewards().then((rewards: Reward[]) => {
       this.rewards = rewards;
@@ -48,9 +54,11 @@ export class NewEventComponent implements OnInit {
     const event: Event = new Event(
       this.eventForm.get('name').value,
       this.eventForm.get('date').value,
+      this.eventForm.get('place').value,
       this.eventForm.get('time').value,
       0,
       this.eventForm.get('description').value,
+      this.currentId,
       reward.id,
     );
     this.service.registerEvent(event, this.file).then(x => {
@@ -74,9 +82,11 @@ export class NewEventComponent implements OnInit {
       name: '',
       description: '',
       date: '',
+      place: '',
       time: '',
       reward: '',
     });
+    console.log(this.currentId);
   }
 
 }
