@@ -36,6 +36,18 @@ export class SignModalComponent implements OnInit {
       0,
       this.playerForm.get('password').value,
     );
+
+    if (
+      this.playerForm.get('name').value === '' ||
+      this.playerForm.get('universityId').value === '' ||
+      this.playerForm.get('password').value === '' ||
+      !this.file
+    ) {
+      this.data.addAlert(new Alert('danger', 'Todos os campos são obrigatórios!', 3000));
+      this.clicked = false;
+      return;
+    }
+
     this.service.registerPlayer(player, this.file)
       .then(x => {
         console.log(x);
@@ -55,6 +67,14 @@ export class SignModalComponent implements OnInit {
       this.playerForm.get('name').value,
       this.playerForm.get('password').value,
     );
+    if (
+      this.playerForm.get('name').value === '' ||
+      this.playerForm.get('password').value === ''
+    ) {
+      this.data.addAlert(new Alert('danger', 'Todos os campos são obrigatórios!', 3000));
+      this.clicked = false;
+      return;
+    }
     this.service.loginPlayer(user)
       .then((user: { token: string, user: { pk: number } }) => {
         setToken(user.token);
