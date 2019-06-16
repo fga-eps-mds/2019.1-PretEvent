@@ -1,4 +1,6 @@
-language: generic
+language: python
+python:
+  - "3.4"
 sudo: required
 services:
   - docker
@@ -11,12 +13,25 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 before_script:
   - cp env.tmpl .env
+  - pip3 install coveralls
 script:
   - docker-compose up -d
+  - docker-compose run web1 coverage run --omit="*/migrations/*,manage.py" manage.py test players
+  - docker-compose run web1 coverage report
+  - docker-compose run web2 coverage run --omit="*/migrations/*,manage.py" manage.py test eventos
+  - docker-compose run web2 coverage report
+  - docker-compose run web3 coverage run --omit="*/migrations/*,manage.py" manage.py test rewards
+  - docker-compose run web3 coverage report
   - cd front-end/pret-event && docker build -f Dockerfile-prod -t pretevent/app . && cd ../..
   - zip -r latest appspec.yml prod-update.sh docker-compose-prod.yml
   - mkdir -p prod_scripts
   - mv latest.zip prod_scripts/latest.zip
+after_script:
+  - coverage combine --append --rcfile=.coveragerc-mc1 service/mc1/.coverage
+  - coverage combine --append --rcfile=.coveragerc-mc2 service/mc2/.coverage
+  - coverage combine --append --rcfile=.coveragerc-mc3 service/mc3/.coverage
+  - coverage report
+  - coveralls
 notifications:
   email:
     recipients:

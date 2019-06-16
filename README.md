@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/fga-eps-mds/2019.1-PretEvent/badge.svg)](https://coveralls.io/github/fga-eps-mds/2019.1-PretEvent)
+
 # PretEvent
 
 ## Sobre o projeto
@@ -43,7 +45,7 @@ A aplicação estará disponível em localhost:4500
 | Gustavo Carvahlo      | Tech Lider| gustavocarvalho1002@gmail.com |
 | Rodrigo Dadamos   | DevOps | rodrigodadamos@gmail.com |
 | Djorkaeff Alexandre | Product Owner |djorkaeff.unb@gmail.com|
-| André Bargas| Arquiteto | andrebargas@gmail.com| 
+| André Bargas| Arquiteto | andrebargas@gmail.com|
 | Ian Rocha | Desenvolvedor| ianrocha.df@gmail.com|
 | Murilo Loiola | Desenvolvedor | messhman.dmc@gmail.com |
 | André Goretti| Desenvolvedor | andremotta96@gmail.com |
@@ -54,6 +56,3 @@ A aplicação estará disponível em localhost:4500
 ## Documentação
 
 Todos os documentos podem ser encontrados na pagina:  https://fga-eps-mds.github.io/2019.1-PretEvent/
-
-
-
