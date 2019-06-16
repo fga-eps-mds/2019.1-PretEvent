@@ -66,8 +66,8 @@ export class NewEventComponent implements OnInit {
       this.eventForm.get('time').value,
       0,
       this.eventForm.get('description').value,
-      this.currentId,
       reward.id,
+      this.currentId
     );
 
     const valid = validateEvent(event, this.file);
