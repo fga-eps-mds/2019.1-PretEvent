@@ -25,6 +25,15 @@ export class PlayerService {
         )
     )
 
+  logoutPlayer = () =>
+    new Promise((resolve, reject) =>
+      this.http.get('/rest-auth/logout/')
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
+
   postPlayer = (player: Player) =>
     new Promise((resolve, reject) =>
       this.http.post(this.url, player)
@@ -57,7 +66,7 @@ export class PlayerService {
         })
       ).subscribe();
     })
-    
+
     getPlayerid = id =>
     new Promise((resolve, reject) =>
       this.http.get<Player>(`/api/players/${id}`)
