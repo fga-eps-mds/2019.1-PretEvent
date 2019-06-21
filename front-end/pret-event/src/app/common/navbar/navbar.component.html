@@ -19,6 +19,9 @@
       <li class="nav-item nav-bt">
         <a class="nav-link" href="/evento/criar" *ngIf="logged">Criar Evento</a>
       </li>
+      <li *ngIf="logged" class="">
+        <p class="nav-link">Olá, {{name}} | </p>
+      </li>
       <li class="nav-item nav-bt">
         <a class="nav-link"
           (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }}</a>
