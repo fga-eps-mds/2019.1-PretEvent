@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Reward } from '../models/reward';
+import { resolve, reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,15 @@ export class RewardService {
           error => reject(error),
         )
     )
+
+  getRewardById = id =>
+          new Promise((resolve, reject) =>
+          this.http.get<Reward>(`${this.url}${id}`)
+            .subscribe(
+              data => resolve(data),
+              error => reject(error),
+            )
+          )
 
   registerReward = (reward: Reward, file: any) =>
     new Promise(resolve => {
