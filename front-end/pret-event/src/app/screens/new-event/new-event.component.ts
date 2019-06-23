@@ -8,9 +8,9 @@ import { Alert } from '../../models/alert';
 import { EventService } from '../../services/event.service';
 import { RewardService } from '../../services/reward.service';
 import { AlertService } from 'src/app/services/alert.service';
-import { PlayerService } from '../../services/player.service';
 import { getId } from 'src/app/helpers/id';
 import { validateEvent } from '../../../helpers/validators';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-new-event',
@@ -49,12 +49,28 @@ export class NewEventComponent implements OnInit {
   registerEvent() {
     this.clicked = true;
     const reward = this.rewards.find(r => r.title === this.selected);
+    console.log(formatDate(Date.now(), 'HH:mm', 'en-US'));
     if (!reward) {
       this.data.addAlert(new Alert('danger', 'Recompensa inválida!', 3000));
       this.clicked = false;
       return;
     }
     if (this.eventForm.get('time').value === '') {
+      this.data.addAlert(new Alert('danger', 'Hora inválida!', 3000));
+      this.clicked = false;
+      return;
+    }
+    if (this.eventForm.get('date').value == '') {
+      this.data.addAlert(new Alert('danger', 'Data inválida!', 3000));
+      this.clicked = false;
+      return;
+    }
+    else if (this.eventForm.get('date').value < formatDate(Date.now(), 'yyyy-MM-dd', 'en-US')) {
+      this.data.addAlert(new Alert('danger', 'Data inválida!', 3000));
+      this.clicked = false;
+      return;
+    }
+    else if (this.eventForm.get('date').value == formatDate(Date.now(), 'yyyy-MM-dd', 'en-US') && this.eventForm.get('time').value < formatDate(Date.now(), 'HH:mm', 'en-US')) {
       this.data.addAlert(new Alert('danger', 'Hora inválida!', 3000));
       this.clicked = false;
       return;

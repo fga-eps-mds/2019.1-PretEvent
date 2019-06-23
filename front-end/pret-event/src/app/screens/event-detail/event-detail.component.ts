@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { getId } from 'src/app/helpers/id';
 import { getToken } from 'src/app/helpers/token';
+import { Reward } from '../../models/reward';
+import { RewardService } from '../../services/reward.service';
 
 
 @Component({
@@ -18,6 +20,10 @@ import { getToken } from 'src/app/helpers/token';
 export class EventDetailComponent implements OnInit, OnDestroy {
 
   private sub: any;
+  rwrd_id: number;
+  rwrd_img: string;
+  rwrd_name: string;
+  reward: Reward;
   event: Event;
   date: string;
   place: string;
@@ -40,7 +46,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   player_participating: Array<Player> = [];
 
 
-  constructor(private route: ActivatedRoute, private service: EventService, private playerservice: PlayerService, private sanitization:DomSanitizer) { }
+  constructor(private route: ActivatedRoute,private rewardservice: RewardService, private service: EventService, private playerservice: PlayerService, private sanitization:DomSanitizer) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -53,54 +59,61 @@ export class EventDetailComponent implements OnInit, OnDestroy {
         this.description = this.event.description;
         this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.event.url_image})`);
         this.creatorId = this.event.creator_id;
-        this.evento_id = this.event.id
+        this.evento_id = this.event.id;
+        this.rwrd_id = this.event.reward_id;
+        this.rewardservice.getRewardById(this.rwrd_id)
+        .then((reward: Reward) => {
+          this.reward = reward;
+          this.rwrd_name = this.reward.description;
+          this.rwrd_img = this.reward.badge_url;
+        }
+        );
       })
       .catch(error => console.log(error));
-      });
+    });
 
     this.service.getParticipations()
     .then((x: Array<Event_Player>) => {
       this.participations = x
       for(var i = 0; i < this.participations.length; i++){
-        if(this.participations[i].player_id === this.currentId &&
+        if (this.participations[i].player_id === this.currentId &&
            this.participations[i].evento_id === this.event.id){
              this.participate = true;
-            this.global_id = this.participations[i].id
+             this.global_id = this.participations[i].id;
           }
 
       }
-
-        var m = 0;
-        for(var z = 0; z < this.participations.length; z++){
+      var m = 0;
+      for(var z = 0; z < this.participations.length; z++){
           if(this.participations[z].evento_id === this.event.id){
             this.playerservice.getPlayerid(this.participations[z].player_id)
             .then((x: Player) => {
-              this.player_participating[m] = x; 
+              this.player_participating[m] = x;
               m++;
-          })
+          });
         }
       }
-    })
+    });
 
   }
 
-  Participar(){
+  Participar() {
     const event_player: Event_Player = new Event_Player(
       this.evento_id,
       this.currentId,
-    )
+    );
     this.service.participateEvent(event_player)
     .then(x => {
       console.log(x);
-    })
+    });
     console.log(event_player);
   }
 
-  Deletar(){
+  Deletar() {
     this.service.removeParticipation(this.global_id)
     .then(x => {
       console.log(x);
-    })
+    });
   }
 
 ngOnDestroy() {
