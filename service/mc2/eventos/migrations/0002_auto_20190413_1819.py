@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='evento',
             name='date',
-            field=models.IntegerField(),
+            field=models.DateField(),
         ),
     ]
