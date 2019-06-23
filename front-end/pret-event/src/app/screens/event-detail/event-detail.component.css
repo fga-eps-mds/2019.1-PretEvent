@@ -8,6 +8,10 @@
   background-color: #878e88;
   }
   
+.weekDay {
+  text-transform: capitalize;
+}
+
   .imageBox .container {
 	height: 100%;
   }

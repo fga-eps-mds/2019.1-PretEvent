@@ -20,7 +20,7 @@
             <img class="card-img-top" src={{event.url_image}} alt="Card image cap">
             <div class="card-body">
               <a class="btn btn-primary" style="color:white"><strong>Dia {{event.date | date: "dd"}} </strong></a>
-              <a class="btn btn-warning" style="color:white; text-transform:uppercase;"><strong>{{event.date | date: "MMM"}}</strong></a>
+              <a class="btn btn-warning" style="color:white; text-transform:uppercase;"><strong>{{event.date | date: "MMMM"}}</strong></a>
               <a><strong>{{event.date | date: "HH:mm"}}</strong></a>
               <h6 class="card-text overflow-auto"><i class="fas fa-map-marker-alt iconColor"></i>  {{event.place}}</h6>
               <hr>
