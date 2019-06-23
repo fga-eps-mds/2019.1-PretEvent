@@ -8,6 +8,8 @@ import { AlertService } from '../../services/alert.service';
 import { setToken } from '../../helpers/token';
 import { Alert } from 'src/app/models/alert';
 import { setId } from 'src/app/helpers/id';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-modal',
@@ -26,7 +28,8 @@ export class SignModalComponent implements OnInit {
   file: any;
   clicked = false;
 
-  constructor(private formBuilder: FormBuilder, private service: PlayerService, private data: AlertService) { }
+
+  constructor(private formBuilder: FormBuilder, private service: PlayerService, private data: AlertService, private router: Router,) { }
 
   registerPlayer() {
     this.clicked = true;
@@ -83,6 +86,7 @@ export class SignModalComponent implements OnInit {
         this.hideModal();
         this.clicked = false;
         this.login();
+        this.router.navigate(['']);
       })
       .catch((x: { error: {} }) => {
         console.log(x);

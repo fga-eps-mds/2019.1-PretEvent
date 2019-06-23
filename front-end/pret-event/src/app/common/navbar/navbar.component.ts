@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
   alerts: any[] = [];
   player: Player;
   name: string;
-  currentId = +getId();
   account =  this.logged ? 'Sair' : 'Entrar/Cadastrar';
   router: Router;
 
@@ -41,11 +40,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.data.currentAlert.subscribe(alert => this.alerts.push(alert));
-    this.playerservice.getPlayerid(this.currentId)
-    .then((player: Player) => {
-      this.player = player;
-      this.name = this.player.username;
-    })
+    this.getName(+getId());
+  }
+
+  getName(id) {
+    if(id !== 0) 
+      this.playerservice.getPlayerid(id)
+        .then((player: Player) => {
+            this.player = player;
+            this.name = this.player.username;
+        });
   }
 
   onClosed(dismissedAlert: AlertComponent): void {
@@ -75,6 +79,7 @@ export class NavbarComponent implements OnInit {
     if (!this.logged) {
       this.account = 'Sair';
       msg = 'Login realizado!';
+      this.getName(+getId());
     }
     this.logged = !this.logged;
     return false;

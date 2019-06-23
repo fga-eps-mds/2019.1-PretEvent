@@ -50,6 +50,10 @@
   color: #ffffff;
 }
 
+.my-events {
+  border-left-width: 5px;
+}
+
 @media screen and (max-width: 600px) {
   .alert-view {
     max-width: 50%;

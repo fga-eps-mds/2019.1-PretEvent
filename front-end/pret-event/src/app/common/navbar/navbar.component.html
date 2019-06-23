@@ -8,14 +8,14 @@
   <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav">
       <li *ngIf="logged" class="">
-        <p class="nav-link">Olá, {{name}}</p>
+        <p class="nav-link mb-0"> Olá, {{name}}</p>
       </li>
       <li class="nav-item nav-bt">
         <a class="nav-link"
-          (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }} &nbsp; &nbsp;|</a>
+          (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }}</a>
       </li>
-      <li class="nav-item nav-bt" *ngIf="logged">
-        <a class="nav-link" href="#">Meus Eventos</a>
+      <li class="nav-item nav-bt my-events" *ngIf="logged">
+        <a class="nav-link" href="#">|&nbsp; &nbsp; Meus Eventos</a>
       </li>
       <li class="nav-item nav-bt" *ngIf="logged">
         <a class="nav-link" href="/ranking">Ranking</a>
