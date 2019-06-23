@@ -20,15 +20,18 @@
         <a class="nav-link" href="/evento/criar">Criar Evento</a>
       </li>
       <li class="nav-item nav-bt">
-        <a class="nav-link" href="#"
+        <a class="nav-link"
           (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }}</a>
       </li>
     </ul>
   </div>
+  <div class="alert-view">
+    <div *ngFor="let alert of alerts">
+      <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg }}
+      </alert>
+    </div>
+  </div>
   <ng-template #template>
-    <app-sign-modal
-      [login]="login"
-      [hideModal]="hideModal"
-    ></app-sign-modal>
+    <app-sign-modal [login]="login" [hideModal]="hideModal"></app-sign-modal>
   </ng-template>
 </nav>

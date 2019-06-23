@@ -29,3 +29,18 @@
 .bg-color {
   border-top: 1px solid #191818;
 }
+
+.alert-view {
+  position: absolute;
+  right: 0;
+  z-index: 3;
+  max-width: 30%;
+  margin: 15px;
+  top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .alert-view {
+    max-width: 50%;
+  }
+}

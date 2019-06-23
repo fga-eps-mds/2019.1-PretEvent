@@ -20,6 +20,8 @@
 * [4. Visão Geral do Produto](#_4-visão-geral-do-produto)
   * [4.1 Propósito do Produto](#_41-propósito-do-produto)
   * [4.2 Recursos do Produto](#_42-recursos-do-produto)
+  * [4.3 Gamificação do Produto] (#_43-gamificação-do-produto)
+
 * [5. Restrições](#_5-Restrições)
 * [6. Referências](#_6-Referências)
 
@@ -146,6 +148,52 @@ Através da *web*, o usuário poderá:
 - Obter pontos e *badgets* exclusivas.
 - Criar o próprio evento, na categoria que desejar.
 - Ter acesso ao perfil de outros usuários.
+
+### 4.3 Gamificação do Produto
+
+##### 4.3.1 Análise Preliminar
+
+A gamificação do produto foi desenvolvida para compreender o nicho da comunidade acadêmica, visando suprir certas necessidades traduzidas por meio dos seguintes objetivos:
+- Aumentar o interesse na participação de eventos;
+  - Diversos eventos acadêmicos possuem um deficit de participantes.
+- Ampliar a divulgação;
+  - A comunida acadêmica possui dificuldades em ter acesso aos possíveis eventos acadêmicos que ocorrem, por não haver uma plataforma de exposição.
+- Tirar Dúvidas em relação aos eventos.
+  - A falta de transparência na atual forma de exposição de eventos não sana todas as dúvidas dos participantes.
+
+##### 4.3.2 Abordagem de Solução
+
+Para solucionar as dificuldades mencionadas adotamos a metodologia de gamificação para mudar o comportamento da comunidade em relação aos eventos. Utilizamos entao o framework da Octalysis desenvolvido por *Yu-Kai-Chou* e para cada um dos nossos objetivos, desenvolvemos um WHW (What, How and Why):
+
+| O Que | Como | Por que |
+| ----- | ---- | ------- |
+| Aumentar o Interesse | Usar recompensas e conquistas | O acúmulo de riquezas cria um sentimento de pertencimento aumentando o interesse do usuário |
+| Ampliar Divulgação | Proporcionar ao usuário uma fácil usabilidade ao site e permitir o compartilhamento de eventos | Vai de oposição ao sentimento de impaciência aumentando a probabilidade do uso e da divulgação dos eventos|
+| Tirar Dúvidas | Canal de perguntas e respostas| Permite ao usuário um jeito simples e fácil de tirar suas dúvidas com o organizador do evento |
+
+- Core-Drives Trabalhados:
+  - Accomplishment (2);
+  - Empoderamento (3);
+  - Influencia Social (5);
+  - Escassez (6);
+  - Perda e evasão (8).
+
+##### 4.3.3 Idealização e Design
+![](./images/design_gamificacao.png)
+##### 4.3.4 Avaliação e Monitoramento
+
+Os resultados e avaliações da gamificação podem ser observados por:
+- Contador de visualizações do evento.
+- Contador quantas pessoas vão participar.
+- Avaliação dos participantes.
+- Número de visitantes do site.
+- Número de visitantes retornantes. 
+
+Podendo apartir dessas métricas avaliar e balancear a gamificação conforme necessário.
+
+
+
+
 
 
 ## 5. Restrições
