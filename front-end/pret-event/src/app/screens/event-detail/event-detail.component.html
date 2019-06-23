@@ -36,10 +36,8 @@
                 <span data-toggle="tooltip" data-placement="top" title="Total de Participantes"><i class="fas fa-users iconColor"></i> 16</span>
               </p>
               <p class="card-text">
-                <span class="text-muted d-block">Recompensas:</span>
-                <i class="fas fa-shield-alt fa-5x m-2" data-toggle="tooltip" data-placement="top" title="50 pontos de experiência"></i>
-                <i class="fas fa-sticky-note fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Adesivo"></i>
-                <i class="fas fa-certificate fa-5x m-2" data-toggle="tooltip" data-placement="top" title="Certificado de Participação"></i>
+                <span class="text-muted d-block">Recompensa:</span>
+                <img src="{{rwrd_img}}" data-toggle="tooltip" data-placement="top" title={{rwrd_name}}>
               </p>
               <div *ngIf="currentId !== creatorId">
               <a href="#" class="btn btn-primary d-md-block" *ngIf="logged && !participate" (click)="Participar()">Participar</a>
