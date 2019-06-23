@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Reward } from '../../models/reward';
 import { RewardService } from '../../services/reward.service';
+import { AlertService } from '../../services/alert.service';
+
+import { Alert } from 'src/app/models/alert';
 
 @Component({
   selector: 'app-new-reward',
@@ -18,7 +22,12 @@ export class NewRewardComponent implements OnInit {
   valid = true;
   clicked = false;
 
-  constructor(private formBuilder: FormBuilder, private service: RewardService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: RewardService,
+    private data: AlertService,
+    private router: Router,
+  ) { }
 
   registerReward() {
     this.clicked = true;
@@ -30,6 +39,8 @@ export class NewRewardComponent implements OnInit {
     this.service.registerReward(reward, this.file)
       .then(x => {
         console.log(x);
+        this.data.addAlert(new Alert('success', 'Recompensa registrada!', 3000));
+        this.router.navigate(['']);
         this.clicked = false;
       })
       .catch(x => {

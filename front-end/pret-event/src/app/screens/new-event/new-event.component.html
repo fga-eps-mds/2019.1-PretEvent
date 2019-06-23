@@ -1,35 +1,39 @@
-<body>
-  <br><br>
-  <div class="formbox title-formbox">
-    <h3>
-      Novo Evento
-    </h3>
-    <br>
+<br><br>
+<div class="formbox title-formbox">
+  <h3>
+    Novo Evento
+  </h3>
+  <br>
+</div>
+<div class="formbox body-formbox">
+  <div class="form-group">
+    <form [formGroup]="eventForm">
+      <label><strong>Nome:</strong></label>
+      <input formControlName="name" class="form-control">
+      <br>
+      <label><strong>Descrição:</strong></label>
+      <input formControlName="description" class="form-control">
+      <br>
+      <label><strong>Data:</strong></label>
+      <input type="date" formControlName="date" class="form-control">
+      <br>
+      <label><strong>Horário:</strong></label>
+      <input type="time" formControlName="time" class="form-control">
+      <br>
+      <label><strong>Local:</strong></label>
+      <input formControlName="place" class="form-control">
+      <br>
+      <label><strong>Imagem:</strong></label>
+      <input type="file" (change)="detectFiles($event)" accept=".png,.jpg" class="form-control-file" />
+      <br>
+      <label><strong>Recompensa:</strong></label>
+      <input [(ngModel)]="selected" [typeahead]="rewardsNames" class="form-control" formControlName="reward">
+      <br>
+      <div *ngIf="clicked" class="loader"></div>
+      <hr>
+      <button *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="registerEvent()">Criar
+        Evento</button>
+    </form>
   </div>
-  <div class="formbox body-formbox">
-    <div class="form-group">
-      <form [formGroup]="eventForm">
-        <label><strong>Nome:</strong></label>
-        <input formControlName="name" class="form-control">
-        <br>
-        <label><strong>Descrição:</strong></label>
-        <input formControlName="description" class="form-control">
-        <br>
-        <label><strong>Data:</strong></label>
-        <input type="date" formControlName="date" class="form-control">
-        <br>
-        <label><strong>Imagem:</strong></label>
-        <input type="file" (change)="detectFiles($event)" accept=".png,.jpg" class="form-control-file" />
-        <br>
-        <label><strong>Recompensa:</strong></label>
-        <input [(ngModel)]="selected"
-        [typeahead]="rewardsNames"
-        class="form-control"
-        formControlName="reward">
-        <br>
-        <div *ngIf="clicked" class="loader"></div>
-        <button *ngIf="!clicked" type="button" class="btn btn-color btn-lg btn-block" (click)="registerEvent()">Criar Evento</button>
-      </form>
-    </div>
-  </div>
-<body>
+</div>
+<br>

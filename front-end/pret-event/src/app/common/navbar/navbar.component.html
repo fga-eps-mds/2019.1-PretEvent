@@ -7,22 +7,26 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav">
-      <li class="nav-item nav-bt" *ngIf="logged">
-        <a class="nav-link" href="#">Meus Eventos</a>
-      </li>
-      <li class="nav-item nav-bt" *ngIf="logged">
-        <a class="nav-link" href="#">Ranking</a>
-      </li>
-      <li class="nav-item nav-bt">
-        <a class="nav-link" href="/recompensa/criar">Criar Recompensa</a>
-      </li>
-      <li class="nav-item nav-bt">
-        <a class="nav-link" href="/evento/criar">Criar Evento</a>
+      <li *ngIf="logged" class="">
+        <p class="nav-link mb-0"> Olá, {{name}}</p>
       </li>
       <li class="nav-item nav-bt">
         <a class="nav-link"
           (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }}</a>
       </li>
+      <li class="nav-item nav-bt my-events" *ngIf="logged">
+        <a class="nav-link" href="#">|&nbsp; &nbsp; Meus Eventos</a>
+      </li>
+      <li class="nav-item nav-bt" *ngIf="logged">
+        <a class="nav-link" href="/ranking">Ranking</a>
+      </li>
+      <li class="nav-item nav-bt">
+        <a class="nav-link" href="/recompensa/criar" *ngIf="logged">Criar Recompensa </a>
+      </li>
+      <li class="nav-item nav-bt">
+        <a class="nav-link" href="/evento/criar" *ngIf="logged">Criar Evento</a>
+      </li>
+     
     </ul>
   </div>
   <div class="alert-view">

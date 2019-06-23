@@ -7,6 +7,9 @@ import { AlertService } from '../../services/alert.service';
 
 import { setToken } from '../../helpers/token';
 import { Alert } from 'src/app/models/alert';
+import { setId } from 'src/app/helpers/id';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-modal',
@@ -25,7 +28,8 @@ export class SignModalComponent implements OnInit {
   file: any;
   clicked = false;
 
-  constructor(private formBuilder: FormBuilder, private service: PlayerService, private data: AlertService) { }
+
+  constructor(private formBuilder: FormBuilder, private service: PlayerService, private data: AlertService, private router: Router,) { }
 
   registerPlayer() {
     this.clicked = true;
@@ -35,6 +39,18 @@ export class SignModalComponent implements OnInit {
       0,
       this.playerForm.get('password').value,
     );
+
+    if (
+      this.playerForm.get('name').value === '' ||
+      this.playerForm.get('universityId').value === '' ||
+      this.playerForm.get('password').value === '' ||
+      !this.file
+    ) {
+      this.data.addAlert(new Alert('danger', 'Todos os campos são obrigatórios!', 3000));
+      this.clicked = false;
+      return;
+    }
+
     this.service.registerPlayer(player, this.file)
       .then(x => {
         console.log(x);
@@ -54,13 +70,23 @@ export class SignModalComponent implements OnInit {
       this.playerForm.get('name').value,
       this.playerForm.get('password').value,
     );
+    if (
+      this.playerForm.get('name').value === '' ||
+      this.playerForm.get('password').value === ''
+    ) {
+      this.data.addAlert(new Alert('danger', 'Todos os campos são obrigatórios!', 3000));
+      this.clicked = false;
+      return;
+    }
     this.service.loginPlayer(user)
-      .then((x: { token: string }) => {
-        setToken(x.token);
+      .then((user: { token: string, user: { pk: number } }) => {
+        setToken(user.token);
+        setId(user.user.pk);
         this.data.addAlert(new Alert('success', 'Login realizado!', 3000));
         this.hideModal();
         this.clicked = false;
         this.login();
+        this.router.navigate(['']);
       })
       .catch((x: { error: {} }) => {
         console.log(x);

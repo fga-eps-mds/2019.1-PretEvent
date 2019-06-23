@@ -1,0 +1,103 @@
+  .imageBox {
+	min-height: 300px;
+	height: 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+  background-color: #878e88;
+  }
+  
+  .imageBox .container {
+	height: 100%;
+  }
+  
+  .btnImage {
+	bottom: 15px;
+	right: 15px;
+  }
+  
+  .footer {
+	background-color: #20a4f3;
+	color: #f7f7f7;
+  }
+  
+  .iconColor {
+	color: #f9c80e;
+  }
+  
+  .mainBox .card-body {
+	background-color: #f7f7f7;
+  }
+  
+  .imagePerfil {
+	cursor: pointer;
+	width: 100%;
+  }
+  
+  .imagePerfil:hover {
+	box-shadow: 0 0 7px #878e88;
+  }
+  
+  .imageParticipante {
+  max-width: 40px;
+  height: 40px;
+  }
+  
+  
+  /* rating */
+  .rating {
+	float:left;
+  }
+  
+  .rating:not(:checked) > input {
+	position:absolute;
+	top:-9999px;
+	clip:rect(0,0,0,0);
+  }
+  
+  .rating:not(:checked) > label {
+	float:right;
+	width:1em;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+	font-size:300%;
+	color:#ddd;
+  }
+  
+  .rating:not(:checked) > label:before {
+	content: '★ ';
+  }
+  
+  .rating > input:checked ~ label {
+	color: #f9c80e;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+	color: #f9c80e;
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+	color: #f9c80e;
+  }
+  
+  .rating > label:active {
+	position:relative;
+	top:2px;
+	left:2px;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.eventDescription{
+  overflow: hidden;
+}

@@ -1,0 +1,4 @@
+[paths]
+source =
+    service/mc2
+    /code

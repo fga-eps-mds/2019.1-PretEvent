@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Player } from '../models/player';
-import { AngularFireStorage } from 'angularfire2/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 
 @Injectable({
@@ -25,9 +25,27 @@ export class PlayerService {
         )
     )
 
+  logoutPlayer = () =>
+    new Promise((resolve, reject) =>
+      this.http.get('/rest-auth/logout/')
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
+
   postPlayer = (player: Player) =>
     new Promise((resolve, reject) =>
       this.http.post(this.url, player)
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
+
+  getPlayers = () =>
+    new Promise((resolve, reject) =>
+      this.http.get<Player[]>(`${this.url}ranking`)
         .subscribe(
           data => resolve(data),
           error => reject(error),
@@ -48,4 +66,13 @@ export class PlayerService {
         })
       ).subscribe();
     })
+
+    getPlayerid = id =>
+    new Promise((resolve, reject) =>
+      this.http.get<Player>(`/api/players/${id}`)
+        .subscribe(
+          data => resolve(data),
+          error => reject(error),
+        )
+    )
 }

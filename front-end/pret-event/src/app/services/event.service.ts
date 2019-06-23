@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Event } from '../models/event';
-import { AngularFireStorage } from 'angularfire2/storage';
+import { Event_Player } from '../models/event_player';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import { resolve } from 'url';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,15 @@ export class EventService {
         .subscribe(
           data => resolve(data),
           error => resolve(error),
+        )
+    )
+
+  getEventByid = id =>
+    new Promise((resolve, reject) =>
+      this.http.get<Event>(`${this.url}/${id}`)
+        .subscribe(
+         data => resolve(data),
+          error => reject(error),
         )
     )
 
@@ -48,4 +59,31 @@ export class EventService {
         })
       ).subscribe();
     })
+
+  participateEvent = (event_player: Event_Player) =>
+    new Promise(resolve =>
+    this.http.post('/api/eventos_player/', event_player)
+      .subscribe(
+        data => resolve(data),
+        error => resolve(error),
+        )
+    )
+
+  removeParticipation = id =>
+        new Promise((resolve, reject) =>
+          this.http.delete(`/api/eventos_player/${id}`)
+          .subscribe(
+            data => resolve(data),
+            error => resolve(error),
+          )
+        )
+
+  getParticipations = () =>
+    new Promise(resolve =>
+      this.http.get<Event_Player[]>('/api/eventos_player/')
+      .subscribe(
+        data => resolve(data),
+        error => resolve(error),
+      )
+    )
 }
