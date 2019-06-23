@@ -1,15 +1,13 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
-import { Alert } from 'src/app/models/alert';
 import { AlertService } from '../../services/alert.service';
-import { PlayerService } from '../../services/player.service';
+import { Alert } from 'src/app/models/alert';
 import { getToken, removeToken } from '../../helpers/token';
 import { removeId, getId } from 'src/app/helpers/id';
 import { Player } from 'src/app/models/player';
 import { PlayerService } from 'src/app/services/player.service';
 import { Router } from '@angular/router';
-
 
 
 @Component({
@@ -73,13 +71,12 @@ export class NavbarComponent implements OnInit {
   login = () => {
     let msg = '';
     if (this.logged) {
-      this.service.logoutPlayer()
+      this.playerservice.logoutPlayer()
         .then( () => {
           removeToken();
           removeId();
           this.account = 'Entrar/Cadastrar';
           this.data.addAlert(new Alert('success', 'Logout realizado!', 3000));
-          this.logged = !this.logged;
         })
         .catch((x: { error: {} }) => {
           console.log(x);
@@ -87,13 +84,10 @@ export class NavbarComponent implements OnInit {
     }
     if (!this.logged) {
       this.account = 'Sair';
-<<<<<<< HEAD
-      this.logged = !this.logged;
-=======
       msg = 'Login realizado!';
       this.getName(+getId());
->>>>>>> 9a72afe55d2f0f86be4fd6469f216f8652f441e4
     }
+    this.logged = !this.logged;
     return false;
   }
 }
