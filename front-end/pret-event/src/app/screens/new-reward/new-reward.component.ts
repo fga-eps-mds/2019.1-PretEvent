@@ -31,6 +31,21 @@ export class NewRewardComponent implements OnInit {
 
   registerReward() {
     this.clicked = true;
+    if(this.rewardForm.get('name').value == ''){
+      this.data.addAlert(new Alert('danger', 'Nome obrigatório!', 3000));
+      this.clicked = false;
+      return;
+    }
+    else if(this.rewardForm.get('description').value == ''){
+      this.data.addAlert(new Alert('danger', 'Descrição obrigatória!', 3000));
+      this.clicked = false;
+      return;
+    }
+    else if (this.rewardForm.get('points').value < 1 || this.rewardForm.get('points').value > 10) {
+      this.data.addAlert(new Alert('danger', 'Pontuação inválida!', 3000));
+      this.clicked = false;
+      return;
+    }
     const reward: Reward = new Reward(
       this.rewardForm.get('name').value,
       this.rewardForm.get('description').value,
@@ -45,7 +60,9 @@ export class NewRewardComponent implements OnInit {
       })
       .catch(x => {
         console.log(x);
+        this.data.addAlert(new Alert('danger', 'Imagem obrigatória!', 3000));
         this.clicked = false;
+        return;
       });
   }
 
