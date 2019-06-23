@@ -49,7 +49,7 @@ export class NewEventComponent implements OnInit {
   registerEvent() {
     this.clicked = true;
     const reward = this.rewards.find(r => r.title === this.selected);
-    console.log(this.eventForm.get('time').value);
+    console.log(formatDate(Date.now(), 'HH:mm', 'en-US'));
     if (!reward) {
       this.data.addAlert(new Alert('danger', 'Recompensa inválida!', 3000));
       this.clicked = false;
@@ -66,12 +66,12 @@ export class NewEventComponent implements OnInit {
       return;
     }
     else if (this.eventForm.get('date').value < formatDate(Date.now(), 'yyyy-MM-dd', 'en-US')) {
-      this.data.addAlert(new Alert('danger', 'Data passou!', 3000));
+      this.data.addAlert(new Alert('danger', 'Data inválida!', 3000));
       this.clicked = false;
       return;
     }
-    else if (this.eventForm.get('date').value == formatDate(Date.now(), 'yyyy-MM-dd', 'en-US') && this.eventForm.get('time').value < formatDate(Date.now(), 'hh:mm', 'en-US')) {
-      this.data.addAlert(new Alert('danger', 'Hora passou!', 3000));
+    else if (this.eventForm.get('date').value == formatDate(Date.now(), 'yyyy-MM-dd', 'en-US') && this.eventForm.get('time').value < formatDate(Date.now(), 'HH:mm', 'en-US')) {
+      this.data.addAlert(new Alert('danger', 'Hora inválida!', 3000));
       this.clicked = false;
       return;
     }
