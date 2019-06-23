@@ -7,6 +7,13 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav">
+      <li *ngIf="logged" class="">
+        <p class="nav-link">Olá, {{name}}</p>
+      </li>
+      <li class="nav-item nav-bt">
+        <a class="nav-link"
+          (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }} &nbsp; &nbsp;|</a>
+      </li>
       <li class="nav-item nav-bt" *ngIf="logged">
         <a class="nav-link" href="#">Meus Eventos</a>
       </li>
@@ -14,18 +21,12 @@
         <a class="nav-link" href="/ranking">Ranking</a>
       </li>
       <li class="nav-item nav-bt">
-        <a class="nav-link" href="/recompensa/criar" *ngIf="logged">Criar Recompensa</a>
+        <a class="nav-link" href="/recompensa/criar" *ngIf="logged">Criar Recompensa </a>
       </li>
       <li class="nav-item nav-bt">
         <a class="nav-link" href="/evento/criar" *ngIf="logged">Criar Evento</a>
       </li>
-      <li *ngIf="logged" class="">
-        <p class="nav-link">Olá, {{name}} | </p>
-      </li>
-      <li class="nav-item nav-bt">
-        <a class="nav-link"
-          (click)="account === 'Entrar/Cadastrar' ? openModal(template) : login()">{{ account }}</a>
-      </li>
+     
     </ul>
   </div>
   <div class="alert-view">
