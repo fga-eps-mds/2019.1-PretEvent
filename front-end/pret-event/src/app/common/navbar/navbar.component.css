@@ -14,6 +14,13 @@
   font-weight: 700;
 }
 
+.nav-name {
+  color: #ffffff;
+  font-weight: 0;
+  
+
+}
+
 .nav-bt:hover {
   color: #20a4f3;
 }
@@ -37,6 +44,14 @@
   max-width: 30%;
   margin: 15px;
   top: 15px;
+}
+
+.name {
+  color: #ffffff;
+}
+
+.my-events {
+  border-left-width: 5px;
 }
 
 @media screen and (max-width: 600px) {
