@@ -53,13 +53,11 @@ export class NewRewardComponent implements OnInit {
     );
     this.service.registerReward(reward, this.file)
       .then(x => {
-        console.log(x);
         this.data.addAlert(new Alert('success', 'Recompensa registrada!', 3000));
         this.router.navigate(['']);
         this.clicked = false;
       })
       .catch(x => {
-        console.log(x);
         this.data.addAlert(new Alert('danger', 'Imagem obrigatória!', 3000));
         this.clicked = false;
         return;
