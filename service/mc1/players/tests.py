@@ -13,6 +13,18 @@ def post_players(self, url, data):
     response = self.client.post(url, data)
     return response
 
+def put_players(self, url, data):
+    url = url
+    data = data
+    response = self.client.put(url, data)
+    return response
+
+def delete_players(self, url, data):
+    url = url
+    data = data
+    response = self.client.delete(url, data)
+    return response
+
 class PlayersTests(APITestCase):
     def test_create_player(self):
         """
@@ -95,3 +107,89 @@ class PlayersTests(APITestCase):
         response = get_players(self, '/api/players/%d' % Player.objects.get().id)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertContains(response, Player.objects.get().username)
+
+    def test_create_player_error(self):
+        """
+        Ensure error 400 when create player without user name.
+        """
+        data = {
+            'password': 'q1w2e3',
+            'university_id': '123456',
+            'points': '2',
+            'photo_url': 'http://image'
+        }
+        response = post_players(self, '/api/players/', data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(Player.objects.count(), 0)
+
+    def test_get_player_detail_error(self):
+        """
+        Ensure error 400 when try to get player details.
+        """
+        data = {
+            'username': 'UserTest',
+            'password': 'q1w2e3',
+            'university_id': '123456',
+            'points': '2',
+            'photo_url': 'http://image'
+        }
+        post_players(self, '/api/players/', data)
+        response = get_players(self, '/api/players/1000')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_update_player(self):
+        """
+        Ensure we can update a new player.
+        """
+        data = {
+            'username': 'UserTest',
+            'password': 'q1w2e3',
+            'university_id': '123456',
+            'points': '2',
+            'photo_url': 'http://image'
+        }
+        post_players(self, '/api/players/', data)
+        data = {
+            'username': 'UserTest2',
+            'password': 'q1w2e3',
+            'university_id': '123456',
+            'points': '2',
+            'photo_url': 'http://image'
+        }
+        response = put_players(self, '/api/players/%d' % Player.objects.get().id, data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(Player.objects.get().username, 'UserTest2')
+
+    def test_update_player_error(self):
+        """
+        Ensure error 400 when try to update player.
+        """
+        data = {
+            'username': 'UserTest',
+            'password': 'q1w2e3',
+            'university_id': '123456',
+            'points': '2',
+            'photo_url': 'http://image'
+        }
+        post_players(self, '/api/players/', data)
+        data = {
+            'username': 'UserTest2'
+        }
+        response = put_players(self, '/api/players/%d' % Player.objects.get().id, data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_delete_player(self):
+        """
+        Ensure we can delete a new player.
+        """
+        data = {
+            'username': 'UserTest',
+            'password': 'q1w2e3',
+            'university_id': '123456',
+            'points': '2',
+            'photo_url': 'http://image'
+        }
+        post_players(self, '/api/players/', data)
+        response = delete_players(self, '/api/players/%d' % Player.objects.get().id, data)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Player.objects.count(), 0)
