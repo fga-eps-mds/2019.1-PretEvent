@@ -44,6 +44,10 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   username: string;
   photo_url: string;
   player_participating: Array<Player> = [];
+  totalParticipations: number;
+  ownerName: string;
+  ownerImgUrl: string;
+  owner: Player;
 
 
   constructor(private route: ActivatedRoute,private rewardservice: RewardService, private service: EventService, private playerservice: PlayerService, private sanitization:DomSanitizer) { }
@@ -61,6 +65,13 @@ export class EventDetailComponent implements OnInit, OnDestroy {
         this.creatorId = this.event.creator_id;
         this.evento_id = this.event.id;
         this.rwrd_id = this.event.reward_id;
+        this.totalParticipations = this.player_participating.length;
+        this.playerservice.getPlayerid(this.creatorId)
+        .then((owner: Player) =>{
+          this.owner = owner;
+          this.ownerImgUrl = this.owner.photo_url;
+          this.ownerName = this.owner.username;
+        });
         this.rewardservice.getRewardById(this.rwrd_id)
         .then((reward: Reward) => {
           this.reward = reward;
