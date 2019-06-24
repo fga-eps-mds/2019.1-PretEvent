@@ -104,15 +104,13 @@ export class EventDetailComponent implements OnInit, OnDestroy {
     );
     this.service.participateEvent(event_player)
     .then(x => {
-      console.log(x);
     });
-    console.log(event_player);
+    ;
   }
 
   Deletar() {
     this.service.removeParticipation(this.global_id)
     .then(x => {
-      console.log(x);
     });
   }
 

@@ -21,14 +21,14 @@
           <br><input type="checkbox" (click)="showPassword()"> Mostrar Senha<br><br>
           <div *ngIf="!signup">
             <div *ngIf="clicked" class="loader"></div>
-            <button *ngIf="!clicked" class="button bg-bt" (click)="typeSign();">Me Cadastrar</button>
-            <button *ngIf="!clicked" class="button bg-bt bt-right" (click)="loginPlayer()">Entrar</button>
+            <button *ngIf="!clicked" class="button bg-bt " (click)="loginPlayer()">Entrar</button>
+            <button *ngIf="!clicked" class="button bg-bt bt-right" (click)="typeSign();">Me Cadastrar</button>
           </div>
           <div *ngIf="signup">
             <div *ngIf="clicked" class="loader"></div>
-            <button *ngIf="!clicked" class="button bg-bt" (click)="typeSign();">Voltar</button>
-            <button *ngIf="!clicked" class="button bg-bt bt-right"
+            <button *ngIf="!clicked" class="button bg-bt"
               (click)="registerPlayer();">Cadastrar</button>
+              <button *ngIf="!clicked" class="button bg-bt bt-right" (click)="typeSign();">Voltar</button>
           </div>
         </form>
       </div>
