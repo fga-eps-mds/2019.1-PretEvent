@@ -10,8 +10,7 @@
       <div>
         <form [formGroup]="playerForm">
           <div *ngIf="signup">
-            <br>Matrícula<br><input formControlName="universityId" class="input-st" type="number" name="registration"
-              value=""><br>
+            <br>Nome<br><input formControlName="universityId" class="form-control"><br>
             <br>Foto<br><input type="file" (change)="detectFiles($event)" accept=".png,.jpg"
               class="form-control-file" /><br>
           </div>

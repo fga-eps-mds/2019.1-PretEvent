@@ -54,7 +54,7 @@ export class PlayerService {
 
   registerPlayer = (player: Player, file: any) =>
     new Promise(resolve => {
-      this.ref = this.afStorage.ref(player.university_id.toString());
+      this.ref = this.afStorage.ref(player.university_id);
       this.task = this.ref.put(file);
       this.task.snapshotChanges().pipe(
         finalize(() => {
