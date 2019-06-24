@@ -1,6 +1,6 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
-from eventos.models import Evento
+from eventos.models import Evento, Evento_Player
 
 def get_eventos(self, url):
     url = url
@@ -190,3 +190,47 @@ class EventosTests(APITestCase):
         response = delete_eventos(self, '/api/eventos/%d' % Evento.objects.get().id, data)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Evento.objects.count(), 0)
+
+    def test_get_eventos(self):
+        """
+        Ensure we can get eventos_player.
+        """
+        url = '/api/eventos_player/'
+        data = {
+            'evento_id': '1',
+            'player_id': '1'
+        }
+        post_eventos(self, url, data)
+        response = get_eventos(self, url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    # def test_get_evento_player_detail(self):
+    #     """
+    #     Ensure we can get the details of a evento_player.
+    #     """
+    #     data = {
+    #         'evento_id': '1',
+    #         'player_id': '1'
+    #     }
+    #     post_eventos(self, '/api/eventos_player/', data)
+    #     response = get_eventos(self, '/api/eventos_player/%d' % Evento.objects.get().id)
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    #     self.assertContains(response, Evento.objects.get().title)
+
+    # def test_get_evento_detail_error(self):
+    #     """
+    #     Ensure error 400 when try to get evento details.
+    #     """
+    #     data = {
+    #         'title': 'Evento Teste',
+    #         'date': '2019-06-27 13:10:00+00',
+    #         'place': 'FGA',
+    #         'points': '2',
+    #         'description': 'Descricao do evento teste',
+    #         'url_image': 'http://image',
+    #         'reward_id': '1',
+    #         'creator_id': '1'
+    #     }
+    #     post_eventos(self, '/api/eventos/', data)
+    #     response = get_eventos(self, '/api/eventos/1000')
+    #     self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
