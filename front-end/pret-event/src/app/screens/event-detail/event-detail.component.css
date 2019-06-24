@@ -36,7 +36,10 @@
   
   .imagePerfil {
 	cursor: pointer;
-	width: 100%;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  max-height: 200px;
   }
   
   .imagePerfil:hover {
