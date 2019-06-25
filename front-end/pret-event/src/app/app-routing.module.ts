@@ -8,6 +8,7 @@ import { EventDetailComponent } from './screens/event-detail/event-detail.compon
 import { SeeRewardComponent } from './screens/see-reward/see-reward.component';
 import { RankingComponent } from './screens/ranking/ranking.component';
 import { ListEventComponent } from './screens/list-event/list-event.component';
+import { MyEventsComponent } from './screens/my-events/my-events.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'recompensa/visualizar', component: SeeRewardComponent },
   { path: 'ranking', component: RankingComponent },
   { path: 'evento', component: ListEventComponent },
+  { path: 'meuseventos', component: MyEventsComponent},
 ];
 
 @NgModule({

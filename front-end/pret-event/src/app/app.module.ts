@@ -28,6 +28,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { EventDetailComponent } from './screens/event-detail/event-detail.component';
 import { RankingComponent } from './screens/ranking/ranking.component';
 import { ListEventComponent } from './screens/list-event/list-event.component';
+import { MyEventsComponent } from './screens/my-events/my-events.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ListEventComponent } from './screens/list-event/list-event.component';
     SeeRewardComponent,
     RankingComponent,
     ListEventComponent,
+    MyEventsComponent,
   ],
   imports: [
     BrowserModule,
