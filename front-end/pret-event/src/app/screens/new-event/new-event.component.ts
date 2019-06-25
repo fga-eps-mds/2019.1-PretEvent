@@ -49,7 +49,6 @@ export class NewEventComponent implements OnInit {
   registerEvent() {
     this.clicked = true;
     const reward = this.rewards.find(r => r.title === this.selected);
-    console.log(formatDate(Date.now(), 'HH:mm', 'en-US'));
     if (!reward) {
       this.data.addAlert(new Alert('danger', 'Recompensa inválida!', 3000));
       this.clicked = false;
@@ -94,12 +93,10 @@ export class NewEventComponent implements OnInit {
     }
 
     this.service.registerEvent(event, this.file).then(x => {
-      console.log(x);
       this.data.addAlert(new Alert('success', 'Evento cadastrado!', 3000));
       this.clicked = false;
       this.router.navigate(['']);
     }).catch(x => {
-      console.log(x);
       this.clicked = false;
     });
   }

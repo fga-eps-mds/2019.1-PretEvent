@@ -47,7 +47,7 @@ export class NavbarComponent implements OnInit {
       this.playerservice.getPlayerid(id)
         .then((player: Player) => {
             this.player = player;
-            this.name = this.player.username;
+            this.name = this.player.university_id;
         });
   }
 

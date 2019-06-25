@@ -37,14 +37,6 @@
   border-top: 1px solid #20a4f3;
 }
 
-.alert-view {
-  position: absolute;
-  right: 0;
-  z-index: 3;
-  max-width: 30%;
-  margin: 15px;
-  top: 15px;
-}
 
 .name {
   color: #ffffff;

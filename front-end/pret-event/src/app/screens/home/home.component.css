@@ -95,6 +95,10 @@
   margin-bottom: 3rem;
 }
 
+.card a {
+  text-decoration: none;
+}
+
 .row {
   border-radius: 0.3rem;
   padding: 1rem;

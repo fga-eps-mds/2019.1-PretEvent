@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,10 @@ import { EventDetailComponent } from './screens/event-detail/event-detail.compon
 import { RankingComponent } from './screens/ranking/ranking.component';
 import { ListEventComponent } from './screens/list-event/list-event.component';
 
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -70,7 +74,7 @@ import { ListEventComponent } from './screens/list-event/list-event.component';
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     AlertModule.forRoot(),
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
