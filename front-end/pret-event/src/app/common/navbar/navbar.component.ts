@@ -33,10 +33,9 @@ export class NavbarComponent implements OnInit {
   player: Player;
   name: string;
   account =  this.logged ? 'Sair' : 'Entrar/Cadastrar';
-  router: Router;
 
 
-  constructor(private modalService: BsModalService, private data: AlertService, private playerservice: PlayerService) {}
+  constructor(private modalService: BsModalService, private data: AlertService, private playerservice: PlayerService, private router: Router) {}
 
   ngOnInit() {
     this.data.currentAlert.subscribe(alert => this.alerts.push(alert));
@@ -70,11 +69,13 @@ export class NavbarComponent implements OnInit {
 
   login = () => {
     let msg = '';
+    let link = [''];
     if (this.logged) {
       this.playerservice.logoutPlayer()
         .then( () => {
           removeToken();
           removeId();
+          this.router.navigate(link);
           this.account = 'Entrar/Cadastrar';
           this.data.addAlert(new Alert('success', 'Logout realizado!', 3000));
         })
