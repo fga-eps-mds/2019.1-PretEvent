@@ -6,7 +6,7 @@
 
 **Duração**: 7 dias
 
-**Pontos Planejados**: 
+**Pontos Planejados**: 4
 
 -------
 
@@ -31,7 +31,7 @@
 **Arquiteto de Software**: André Bargas
 
 ## 2. Planejamento
-<p style="text-align:justify">&emsp;&emsp;Esta sprint tentará resolver todos os probelmas no design da plataforma, assim como a criação de alguns links de contato com a API.</p>
+<p style="text-align:justify">&emsp;&emsp;Esta sprint está bastante cheia para a maioria dos integrantes do grupo. Poucos pontos serão planejados para esse ciclo de trabalho, justamente para evitar a situações onde há tarefas planejadas mas não tem trabalho. Deste modo, estou redirecionando o grupo para pequenas revisões documentações na nossa branch de docs.</p>
 
 ## 3. Tarefas da _Sprint_
 
@@ -39,4 +39,5 @@
 
 |Tarefas|Pontos|Tipos|
 |--|:--:|:--:|
-||||
+|T47 - Review de documentos de sprint |1|Planejada|
+|T46 - Revisar Documento |3|Planejada|
