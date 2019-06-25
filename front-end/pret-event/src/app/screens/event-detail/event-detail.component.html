@@ -26,29 +26,21 @@
                 <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Horário de início"><i class="far fa-clock iconColor"></i> {{ date | date: "HH:mm" }}</span>
               </h5>
               <p class="card-text">
-                <span class="text-muted" data-toggle="tooltip" data-placement="top" title="Dia da semana">{{ date | date: "EEEE" }}</span>
+                <span class="text-muted weekDay" data-toggle="tooltip" data-placement="top" title="Dia da semana">{{ date | date: "EEEE" }}</span>
               </p>
               <p class="card-text">
                 <span data-toggle="tooltip" data-placement="top" title="Local do evento"><i class="fas fa-map iconColor"></i>   {{place}}</span>
               </p>
               <p class="card-text">
-                <span class="mr-3" data-toggle="tooltip" data-placement="top" title="Total de Visualizações"><i class="fas fa-eye iconColor"></i> 42</span>
-                <span data-toggle="tooltip" data-placement="top" title="Total de Participantes"><i class="fas fa-users iconColor"></i> 16</span>
+                <span data-toggle="tooltip" data-placement="top" title="Total de Participantes"><i class="fas fa-users iconColor"></i> {{player_participating.length}}</span>
               </p>
               <p class="card-text">
                 <span class="text-muted d-block">Recompensa:</span>
-                <img src="{{rwrd_img}}" data-toggle="tooltip" data-placement="top" title={{rwrd_name}}>
+                <img src="{{rwrd_img}}" class="rounded-circle imagerwd" data-toggle="tooltip" data-placement="top" title={{rwrd_name}}>
               </p>
               <div *ngIf="currentId !== creatorId">
-              <a href="#" class="btn btn-primary d-md-block" *ngIf="logged && !participate" (click)="Participar()">Participar</a>
-              <a href="#" class="btn btn-primary d-md-block" *ngIf="participate" (click)="Deletar()">Sair do evento</a>
-              </div>
-              <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5"><label for="star5" data-toggle="tooltip" data-placement="top" title="Excelente">5 stars</label>
-                <input type="radio" id="star4" name="rating" value="4"><label for="star4" data-toggle="tooltip" data-placement="top" title="Bom">4 stars</label>
-                <input type="radio" id="star3" name="rating" value="3"><label for="star3" data-toggle="tooltip" data-placement="top" title="Regular">3 stars</label>
-                <input type="radio" id="star2" name="rating" value="2"><label for="star2" data-toggle="tooltip" data-placement="top" title="Ruim">2 stars</label>
-                <input type="radio" id="star1" name="rating" value="1"><label for="star1" data-toggle="tooltip" data-placement="top" title="Péssimo">1 star</label>
+                <a class="btn btn-primary d-md-block" *ngIf="logged && !participate && !clicked" type="button" (click)="Participar()">Participar</a>
+                <a class="btn btn-primary d-md-block" *ngIf="participate && !clicked" type="button" (click)="Deletar()">Sair do evento</a>
               </div>
             </div>
           </div>
@@ -60,8 +52,8 @@
               <p class="text-right">Criado por:</p>
             </div>
             <div class="col-3 col-lg-2">
-              <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-html="true" title="Fulano de Tal" data-content="Eventos criados: 12 <br> Recompensas ganhas: 7">
-                <img src="assets/imgs/perfil.jpg" class="rounded-circle imagePerfil" alt="Criador do evento">
+              <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-html="true" title="{{ownerName}}" data-content="Eventos criados: 12 <br> Recompensas ganhas: 7">
+                <img src="{{ownerImgUrl}}" class="rounded-circle imagePerfil" alt="Criador do evento">
               </a>
             </div>
           </div>
@@ -99,7 +91,7 @@
                           <td>
                             <img src="{{ player.photo_url }}" class="rounded-circle imageParticipante" alt="Participante">
                           </td>
-                          <td>{{ player.username }}</td>
+                          <td>{{ player.university_id }}</td>
                         </tr>
                       </tbody>
                     </table>

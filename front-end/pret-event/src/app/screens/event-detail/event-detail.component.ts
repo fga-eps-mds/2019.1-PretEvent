@@ -10,7 +10,9 @@ import { getId } from 'src/app/helpers/id';
 import { getToken } from 'src/app/helpers/token';
 import { Reward } from '../../models/reward';
 import { RewardService } from '../../services/reward.service';
-
+import { AlertService } from 'src/app/services/alert.service';
+import { Alert } from 'src/app/models/alert';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-detail',
@@ -44,57 +46,71 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   username: string;
   photo_url: string;
   player_participating: Array<Player> = [];
+  totalParticipations: number = 0;
+  ownerName: string;
+  ownerImgUrl: string;
+  owner: Player;
+  clicked = false;
 
-
-  constructor(private route: ActivatedRoute,private rewardservice: RewardService, private service: EventService, private playerservice: PlayerService, private sanitization:DomSanitizer) { }
+  constructor(private route: ActivatedRoute, private rewardservice: RewardService, private service: EventService, private playerservice: PlayerService, private sanitization: DomSanitizer, private data: AlertService, private router: Router) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init() {
     this.sub = this.route.params.subscribe(params => {
       this.service.getEventByid(params['id'])
-      .then((event: Event) => {
-        this.event = event;
-        this.date = this.event.date;
-        this.place = this.event.place;
-        this.title = this.event.title;
-        this.description = this.event.description;
-        this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.event.url_image})`);
-        this.creatorId = this.event.creator_id;
-        this.evento_id = this.event.id;
-        this.rwrd_id = this.event.reward_id;
-        this.rewardservice.getRewardById(this.rwrd_id)
-        .then((reward: Reward) => {
-          this.reward = reward;
-          this.rwrd_name = this.reward.description;
-          this.rwrd_img = this.reward.badge_url;
-        }
-        );
-      })
-      .catch(error => console.log(error));
+        .then((event: Event) => {
+          this.event = event;
+          this.date = this.event.date;
+          this.place = this.event.place;
+          this.title = this.event.title;
+          this.description = this.event.description;
+          this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.event.url_image})`);
+          this.creatorId = this.event.creator_id;
+          this.evento_id = this.event.id;
+          this.rwrd_id = this.event.reward_id;
+          this.playerservice.getPlayerid(this.creatorId)
+            .then((owner: Player) => {
+              this.owner = owner;
+              this.ownerImgUrl = this.owner.photo_url;
+              this.ownerName = this.owner.username;
+            });
+          this.rewardservice.getRewardById(this.rwrd_id)
+            .then((reward: Reward) => {
+              this.reward = reward;
+              this.rwrd_name = this.reward.description;
+              this.rwrd_img = this.reward.badge_url;
+            }
+            );
+        })
+        .catch(error => console.log(error));
     });
 
     this.service.getParticipations()
-    .then((x: Array<Event_Player>) => {
-      this.participations = x
-      for(var i = 0; i < this.participations.length; i++){
-        if (this.participations[i].player_id === this.currentId &&
-           this.participations[i].evento_id === this.event.id){
-             this.participate = true;
-             this.global_id = this.participations[i].id;
-          }
+      .then((x: Array<Event_Player>) => {
+        this.participations = x;
+        let m = 0;
 
-      }
-      var m = 0;
-      for(var z = 0; z < this.participations.length; z++){
-          if(this.participations[z].evento_id === this.event.id){
-            this.playerservice.getPlayerid(this.participations[z].player_id)
+        const hasParticipation = this.participations.find(participation => {
+          return participation.player_id === +getId() && participation.evento_id === this.event.id;
+        });
+
+        if (hasParticipation) {
+          this.participate = true;
+          this.global_id = hasParticipation.id;
+        }
+
+        const playersParticipation = this.participations.filter(participation => participation.evento_id === this.event.id);
+        (playersParticipation || []).map(participation => {
+          this.playerservice.getPlayerid(participation.player_id)
             .then((x: Player) => {
               this.player_participating[m] = x;
               m++;
-          });
-        }
-      }
-    });
-
+            });
+        });
+      });      
   }
 
   Participar() {
@@ -103,20 +119,22 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       this.currentId,
     );
     this.service.participateEvent(event_player)
-    .then(x => {
-      console.log(x);
-    });
-    console.log(event_player);
+      .then(x => {
+        this.init();
+        this.data.addAlert(new Alert('success', 'Participação confirmada!', 3000));
+      });
   }
 
   Deletar() {
     this.service.removeParticipation(this.global_id)
-    .then(x => {
-      console.log(x);
-    });
+      .then(x => {
+        this.init();
+        this.router.navigate(['']);
+        this.data.addAlert(new Alert('success', 'Participação cancelada!', 3000));
+      });
   }
 
-ngOnDestroy() {
-  this.sub.unsubscribe();
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

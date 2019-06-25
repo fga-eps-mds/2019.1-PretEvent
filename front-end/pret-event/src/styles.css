@@ -59,3 +59,12 @@ input {
 .footer {
 	height: 60px;
 }
+
+.alert-view {
+  position: fixed;
+  right: 0;
+  z-index: 9999;
+  max-width: 30%;
+  margin: 15px;
+  top: 15px;
+}

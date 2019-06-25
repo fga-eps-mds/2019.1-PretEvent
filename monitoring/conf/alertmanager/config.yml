@@ -1,0 +1,10 @@
+route:
+   receiver: 'slack'
+
+receivers:
+   - name: 'slack'
+     slack_configs:
+        - send_resolved: true
+          username: 'Rodrigo Dadamos'
+          channel: '#swarm'
+          api_url: 'https://hooks.slack.com/services/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'
