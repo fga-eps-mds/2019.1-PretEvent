@@ -113,7 +113,7 @@
 <p align="justify">&emsp;&emsp;Nesta seção está descrita descrita a estrutura geral das camadas e Micro Serviços integrados ao software, detalhando e apresentando a interação entre os diversos serviços e sistemas. Os principais componentes e sub-componentes estão descritos nos tópicos a seguir.</p>
 
 #### 6.1 Visão Geral
-![visão arquitetura geral](images/diagrama_visao_arq_geral_2.png)
+![visão arquitetura geral](images/diagrama_visao_arq_geral_3.png)
 
 ### 6.1 Micro Serviços
 <p align="justify">&emsp;&emsp;Os micro serviços presentes no diagrama estão detalhados abaixo, descrevendo suas comunicações, conexões e justificativas para a escolha dos mesmos.</p>
