@@ -1,4 +1,5 @@
-[![Coverage Status](https://coveralls.io/repos/github/fga-eps-mds/2019.1-PretEvent/badge.svg)](https://coveralls.io/github/fga-eps-mds/2019.1-PretEvent)
+![TRAVIS BUILD](https://travis-ci.com/fga-eps-mds/2019.1-PretEvent.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/fga-eps-mds/2019.1-PretEvent/badge.svg?branch=master)](https://coveralls.io/github/fga-eps-mds/2019.1-PretEvent?branch=master)
 
 # PretEvent
 
@@ -21,7 +22,7 @@ git clone https://github.com/fga-eps-mds/2019.1-PretEvent.git
 ```
 Instale o docker
 ```
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+curl -fsSL https://get.docker.com | bash
 ```
 
 Instale o docker-compose
