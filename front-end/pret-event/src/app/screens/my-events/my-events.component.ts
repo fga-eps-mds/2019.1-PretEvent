@@ -26,7 +26,7 @@ export class MyEventsComponent implements OnInit {
         this.event_player = x;
         var aux = 0;
         for (var i = 0; i < this.event_player.length; i++) {
-          if (this.event_player[i].player_id === +getId) {
+          if (this.event_player[i].player_id === +getId()) {
             this.service.getEventByid(this.event_player[i].evento_id)
               .then((event: Event) => {
                 this.p_events[aux] = event;
@@ -41,7 +41,7 @@ export class MyEventsComponent implements OnInit {
         this.events = x;
         var aux = 0;
         for (var i = 0; i < this.events.length; i++) {
-          if (this.events[i].creator_id === +getId) {
+          if (this.events[i].creator_id === +getId()) {
             this.service.getEventByid(this.events[i].id)
               .then((event: Event) => {
                 this.my_events[aux] = event;
@@ -49,6 +49,7 @@ export class MyEventsComponent implements OnInit {
               });
           }
         }
+        
       });
   }
 }
