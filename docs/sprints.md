@@ -44,3 +44,23 @@
 
 - [Planejamento](sprints/sprint8/plan_sprint8.md)
 - [Resultado](sprints/sprint8/res_sprint8.md)
+
+## <i>Sprint</i> 9
+
+- [Planejamento](sprints/sprint9/plan_sprint9.md)
+- [Resultado](sprints/sprint9/res_sprint9.md)
+
+## <i>Sprint</i> 10
+
+- [Planejamento](sprints/sprint10/plan_sprint10.md)
+- [Resultado](sprints/sprint10/res_sprint10.md)
+
+## <i>Sprint</i> 11
+
+- [Planejamento](sprints/sprint11/plan_sprint11.md)
+- [Resultado](sprints/sprint11/res_sprint11.md)
+
+## <i>Sprint</i> 12
+
+- [Planejamento](sprints/sprint12/plan_sprint12.md)
+- [Resultado](sprints/sprint12/res_sprint12.md)
