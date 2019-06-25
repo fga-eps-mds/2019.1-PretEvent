@@ -92,6 +92,7 @@ export class SignModalComponent implements OnInit {
       })
       .catch((x: { error: {} }) => {
         console.log(x);
+        this.data.addAlert(new Alert('danger', 'Usuário ou senha Invalidos!', 3000));
         this.clicked = false;
       });
   }
