@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListEventComponent } from './list-event.component';
 
-describe('RankingComponent', () => {
+describe('ListEventComponent', () => {
   let component: ListEventComponent;
   let fixture: ComponentFixture<ListEventComponent>;
 
