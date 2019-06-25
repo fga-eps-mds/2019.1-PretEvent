@@ -4,7 +4,10 @@
     <div class="carousel-div">
       <carousel>
         <slide class="slide-height" *ngFor="let mainEvent of mainEvents">
-          <div class="bg-slide" [ngStyle]="{ 'background-image': 'url(' + mainEvent.url_image + ')'}"></div>
+          <a [routerLink]="['/evento/', mainEvent.id]">
+            <div class="bg-slide" [ngStyle]="{ 'background-image': 'url(' + mainEvent.url_image + ')'}">
+            </div>
+          </a>
         </slide>
       </carousel>
     </div>
@@ -15,20 +18,20 @@
     </form>
     <div class="row">
       <div *ngFor="let event of events" class="col-sm-6 col-lg-4">
-        <a [routerLink]="['/evento/', event.id]"> 
-          <div class="card">
-            <img class="card-img-top" src={{event.url_image}} alt="Card image cap">
-            <div class="card-body">
-              <a class="btn btn-primary" style="color:white"><strong>Dia {{event.date | date: "dd"}} </strong></a>
-              <a class="btn btn-warning" style="color:white; text-transform:uppercase;"><strong>{{event.date | date: "MMM"}}</strong></a>
-              <a><strong>{{event.date | date: "HH:mm"}}</strong></a>
-              <h6 class="card-text overflow-auto"><i class="fas fa-map-marker-alt iconColor"></i>  {{event.place}}</h6>
-              <hr>
-              <h4 class="card-title">{{event.title}}</h4>
-              <p class="card-text overflow-auto">{{event.description}}</p>
-            </div>
+        <div class="card">
+          <a [routerLink]="['/evento/', event.id]">
+          <img class="card-img-top" src={{event.url_image}} alt="Card image cap">
+          <div class="card-body">
+            <a class="btn btn-primary" style="color:white;"><strong>{{event.date | date: "dd"}} </strong></a>
+            <a class="btn btn-warning ml-2" style="color:white; text-transform:uppercase;"><strong>{{event.date | date: "MMMM"}}</strong></a>
+            <a class="btn btn-primary ml-2" style="color:white; text-transform:uppercase;"><strong>{{event.date | date: "HH:mm"}}</strong></a>
+            <h6 class="card-text overflow-auto mt-2">&nbsp;<i class="fas fa-map-marker-alt iconColor"></i>&nbsp;{{event.place}}</h6>
+            <hr>
+            <h4 class="card-title">{{event.title}}</h4>
+            <p class="card-text overflow-auto">{{event.description}}</p>
           </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>

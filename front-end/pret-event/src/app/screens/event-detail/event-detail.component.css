@@ -8,6 +8,10 @@
   background-color: #878e88;
   }
   
+.weekDay {
+  text-transform: capitalize;
+}
+
   .imageBox .container {
 	height: 100%;
   }
@@ -32,8 +36,20 @@
   
   .imagePerfil {
 	cursor: pointer;
-	width: 100%;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  max-width: 100px;
+  height: 100px;
   }
+
+  .imagerwd {
+    cursor: pointer;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    max-height: 200px;
+    }
   
   .imagePerfil:hover {
 	box-shadow: 0 0 7px #878e88;
