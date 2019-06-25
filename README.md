@@ -1,5 +1,5 @@
 ![TRAVIS BUILD](https://travis-ci.com/fga-eps-mds/2019.1-PretEvent.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/fga-eps-mds/2019.1-PretEvent/badge.svg?branch=master&service=github)](https://coveralls.io/github/fga-eps-mds/2019.1-PretEvent?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/fga-eps-mds/2019.1-PretEvent/badge.svg?branch=development&service=github)](https://coveralls.io/github/fga-eps-mds/2019.1-PretEvent?branch=development)
 
 # PretEvent
 
