@@ -9,6 +9,7 @@ import { setToken } from '../../helpers/token';
 import { Alert } from 'src/app/models/alert';
 import { setId } from 'src/app/helpers/id';
 import { Router } from '@angular/router';
+import { ErrorHandler } from '@angular/core';
 
 
 @Component({
@@ -60,6 +61,7 @@ export class SignModalComponent implements OnInit {
       })
       .catch(x => {
         console.log(x);
+        this.data.addAlert(new Alert('danger', 'Usuario ja existente', 3000));
         this.clicked = false;
       });
   }
