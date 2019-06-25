@@ -28,6 +28,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { EventDetailComponent } from './screens/event-detail/event-detail.component';
 import { RankingComponent } from './screens/ranking/ranking.component';
 import { ListEventComponent } from './screens/list-event/list-event.component';
+import { MyEventsComponent } from './screens/my-events/my-events.component';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -48,6 +49,7 @@ registerLocaleData(localePt, 'pt-BR');
     SeeRewardComponent,
     RankingComponent,
     ListEventComponent,
+    MyEventsComponent,
   ],
   imports: [
     BrowserModule,

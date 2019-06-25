@@ -31,6 +31,7 @@
 **Arquiteto de Software**: André Bargas
 
 ## 2. Planejamento
+
 <p style="text-align:justify">&emsp;&emsp;Esta sprint está bastante cheia para a maioria dos integrantes do grupo. Poucos pontos serão planejados para esse ciclo de trabalho, justamente para evitar a situações onde há tarefas planejadas mas não tem trabalho. Deste modo, estou redirecionando o grupo para pequenas revisões documentações na nossa branch de docs.</p>
 
 ## 3. Tarefas da _Sprint_
