@@ -1,16 +1,39 @@
 <div class="all">
   <div class="content">
     <div class="table-responsive">
-      <h2 class="text-center">Eventos</h2>
+      <h2 class="text-center">Meus Eventos</h2>
       <table class="table table-hover text-center">
         <thead>
           <tr>
-            <th scope="col">Evento</th>
+            <th scope="col">Eventos</th>
             <th scope="col">Dia do Evento</th>
             <th scope="col">Horário Inicial</th>
           </tr>
         </thead>
-        <tbody *ngFor="let event of events">
+        <tbody *ngFor="let event of my_events">
+          <tr>
+            <td>
+              <a [routerLink]="['/evento/', event.id]">
+                {{ event.title }}
+              </a>
+            </td>
+            <td>{{ event.date | date : "dd/MM/y" }}</td>
+            <td>{{ event.date | date : "HH:mm" }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <h2 class="text-center">Eventos Participados</h2>
+      <table class="table table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="col">Eventos</th>
+            <th scope="col">Dia do Evento</th>
+            <th scope="col">Horário Inicial</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let event of p_events">
           <tr>
             <td>
               <a [routerLink]="['/evento/', event.id]">
